@@ -1,0 +1,6 @@
+site_name: My Docs
+
+
+theme: # 添加主题
+  name: material
+
