@@ -1,0 +1,3567 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/">
+      
+      
+        <link rel="next" href="../day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>JDBC和连接池02 - liyuelian的网站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jdbc02" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="liyuelian的网站" class="md-header__button md-logo" aria-label="liyuelian的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JDBC和连接池02
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的网站" class="md-nav__button md-logo" aria-label="liyuelian的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        欢迎来到我的网站
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          The Missing Semester笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%E7%AC%94%E8%AE%B0/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-nav__link">
+        主题 1 The Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%E7%AC%94%E8%AE%B0/%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        主题 2 Shell工具和脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%E7%AC%94%E8%AE%B0/%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          尚硅谷Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="尚硅谷Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          尚硅谷Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        Git学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        主要
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="true">
+          狂神JavaSE基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="狂神JavaSE基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          狂神JavaSE基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-2-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-%E9%A2%84%E7%A7%91/" class="md-nav__link">
+        预科03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/" class="md-nav__link">
+        面向对象02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JDBC和连接池02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        JDBC和连接池02
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3resultset" class="md-nav__link">
+    3.ResultSet[结果集]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4statement" class="md-nav__link">
+    4.Statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5preparedstatement" class="md-nav__link">
+    5.PreparedStatement[预处理查询]
+  </a>
+  
+    <nav class="md-nav" aria-label="5.PreparedStatement[预处理查询]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51dml" class="md-nav__link">
+    5.1预处理DML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6jdbc-api" class="md-nav__link">
+    6.JDBC API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7jdbcutils" class="md-nav__link">
+    7.JDBCUtils开发
+  </a>
+  
+    <nav class="md-nav" aria-label="7.JDBCUtils开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71jdbcutils" class="md-nav__link">
+    7.1封装JDBCUtils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_56" type="checkbox" id="__nav_4_56" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_56" tabindex="0" aria-expanded="false">
+          坦克大战
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="坦克大战" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_56">
+          <span class="md-nav__icon md-icon"></span>
+          坦克大战
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day01-%E5%9D%90%E6%A0%87%E4%B8%8E%E7%BB%98%E5%9B%BE/" class="md-nav__link">
+        JavaGUI-坦克大战01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day02-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        JavaGUI-坦克大战02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day03-2-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B02/" class="md-nav__link">
+        JavaGUI-坦克大战03-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day03-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B01/" class="md-nav__link">
+        JavaGUI-坦克大战03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day04-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B03/" class="md-nav__link">
+        JavaGUI-坦克大战04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day05-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B04/" class="md-nav__link">
+        Java坦克大战05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day06-IO%E6%B5%81%E5%BA%94%E7%94%A801/" class="md-nav__link">
+        Java坦克大战06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day07-IO%E6%B5%81%E5%BA%94%E7%94%A802/" class="md-nav__link">
+        Java坦克大战07
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_57" type="checkbox" id="__nav_4_57" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_57" tabindex="0" aria-expanded="false">
+          多用户即时通讯系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="多用户即时通讯系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_57">
+          <span class="md-nav__icon md-icon"></span>
+          多用户即时通讯系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day01-%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        多用户即时通讯系统01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day02-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        多用户即时通讯系统02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-1%E6%8B%89%E5%8F%96%E5%9C%A8%E7%BA%BF%E7%94%A8%E6%88%B7%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-2%E6%97%A0%E5%BC%82%E5%B8%B8%E9%80%80%E5%87%BA/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-3%E7%A7%81%E8%81%8A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-1%E7%BE%A4%E8%81%8A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-2%E5%8F%91%E9%80%81%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-3%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E9%80%81%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day05-%E7%A6%BB%E7%BA%BF%E7%95%99%E8%A8%80%E5%92%8C%E7%A6%BB%E7%BA%BF%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        多用户即时通讯系统05
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_58" type="checkbox" id="__nav_4_58" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_58" tabindex="0" aria-expanded="false">
+          满汉楼
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="满汉楼" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_58">
+          <span class="md-nav__icon md-icon"></span>
+          满汉楼
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-1-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        满汉楼01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-2-%E5%AF%BC%E5%85%A5%E9%A9%B1%E5%8A%A8%E5%92%8C%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="md-nav__link">
+        满汉楼01-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-3-%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%26%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/" class="md-nav__link">
+        满汉楼01-3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-4-%E9%A4%90%E6%A1%8C%E7%8A%B6%E6%80%81%E6%98%BE%E7%A4%BA%26%E8%AE%A2%E5%BA%A7%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼01-4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day02-%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E8%8F%9C%E5%93%81%26%E7%82%B9%E9%A4%90%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day03-1-%E6%9F%A5%E7%9C%8B%E8%B4%A6%E5%8D%95%26%E7%BB%93%E8%B4%A6%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%A1%E6%B1%89%E6%A5%BC/day03-2-%E6%8B%93%E5%B1%95/" class="md-nav__link">
+        满汉楼03
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          韩顺平JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_38" type="checkbox" id="__nav_5_38" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_38" tabindex="0" aria-expanded="false">
+          手动实现Tomcat底层机制+自己设计Servlet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="手动实现Tomcat底层机制+自己设计Servlet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_38">
+          <span class="md-nav__icon md-icon"></span>
+          手动实现Tomcat底层机制+自己设计Servlet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day01-Tomcat%E6%A1%86%E6%9E%B6%E5%88%86%E6%9E%90/" class="md-nav__link">
+        引入课程和Maven
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day02-%E5%AE%9E%E7%8E%B001/" class="md-nav__link">
+        实现01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day03-%E5%AE%9E%E7%8E%B002/" class="md-nav__link">
+        实现02
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_39" type="checkbox" id="__nav_5_39" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_39" tabindex="0" aria-expanded="false">
+          项目 家居网购
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="项目 家居网购" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_39">
+          <span class="md-nav__icon md-icon"></span>
+          项目 家居网购
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day01-%E5%AE%B6%E5%85%B7%E7%BD%91%E8%B4%AD%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        家居网购项目说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day02-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B001/" class="md-nav__link">
+        家居网购项目实现01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day03-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B002/" class="md-nav__link">
+        家居网购项目实现02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day04-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B003/" class="md-nav__link">
+        家居网购项目实现03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day05-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B004/" class="md-nav__link">
+        家居网购项目实现04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day06-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B005/" class="md-nav__link">
+        家居网购项目实现05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day07-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B006/" class="md-nav__link">
+        家居网购项目实现06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day08-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B007/" class="md-nav__link">
+        家居网购项目实现07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day09-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B008/" class="md-nav__link">
+        家居网购项目实现08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day10-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B009/" class="md-nav__link">
+        家居网购项目实现09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day11-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B010/" class="md-nav__link">
+        家居网购项目实现010
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day12-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B011/" class="md-nav__link">
+        家居网购项目实现011
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day13-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B012/" class="md-nav__link">
+        家居网购项目实现012
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day14-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B013/" class="md-nav__link">
+        家居网购项目实现013
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          韩顺平MySQL学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平MySQL学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平MySQL学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Java数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        5.MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          韩顺平前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3resultset" class="md-nav__link">
+    3.ResultSet[结果集]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4statement" class="md-nav__link">
+    4.Statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5preparedstatement" class="md-nav__link">
+    5.PreparedStatement[预处理查询]
+  </a>
+  
+    <nav class="md-nav" aria-label="5.PreparedStatement[预处理查询]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51dml" class="md-nav__link">
+    5.1预处理DML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6jdbc-api" class="md-nav__link">
+    6.JDBC API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7jdbcutils" class="md-nav__link">
+    7.JDBCUtils开发
+  </a>
+  
+    <nav class="md-nav" aria-label="7.JDBCUtils开发">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71jdbcutils" class="md-nav__link">
+    7.1封装JDBCUtils
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="jdbc02">JDBC和连接池02</h1>
+<h2 id="3resultset">3.ResultSet[结果集]</h2>
+<ul>
+<li>
+<p>基本介绍</p>
+</li>
+<li>
+<p>表示数据库结果集的数据表，通常通过执行查询数据库的语句生成</p>
+</li>
+<li>ResultSet对象保持一个光标指向其当前的数据行，最初，光标位于第一行的之前</li>
+<li>next方法将光标移动到下一行，并且由于在ResultSet对象中没有更多行时返回false，因此可以在while循环中使用循环来遍历结果集</li>
+</ul>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<p>首先在数据库的actor表中添加两行数据</p>
+<pre><code class="language-mysql">INSERT INTO actor VALUES(NULL,'刘德华','男','1970-12-12','110'),
+            (NULL,'jack','男','1990-11-11','112')
+</code></pre>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014173529899.png" alt="image-20221014173529899" style="zoom:80%;" /></p>
+<pre><code class="language-java">package li.jdbc.resultset_;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.Properties;
+
+@SuppressWarnings(&quot;all&quot;)
+public class ResultSet_ {
+    public static void main(String[] args) throws Exception {
+        //通过Properties对象拿到配置文件的信息
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(&quot;src\\mysql.properties&quot;));
+        //获取相关的值
+        String user = properties.getProperty(&quot;user&quot;);
+        String password = properties.getProperty(&quot;password&quot;);
+        String url = properties.getProperty(&quot;url&quot;);
+        String driver = properties.getProperty(&quot;driver&quot;);
+
+        //1.注册驱动
+        Class.forName(driver);//建议写上
+        //2.得到连接
+        Connection connection = DriverManager.getConnection(url, user, password);
+
+        //3.得到statement
+        Statement statement = connection.createStatement();
+        //4.组织sql
+        String sql = &quot;select id,name,sex,borndate from actor&quot;;
+        //执行给定的sql语句，该语句返回单个ResultSet对象
+
+        /**
+         +----+-----------+-----+----------------------+
+         | id | name      | sex | borndate             |
+         +----+-----------+-----+----------------------+
+         |  1 | 刘德华    | 男  | 1970-12-12 00:00:00   |
+         |  2 | jack     | 男  | 1990-11-11 00:00:00   |
+         +----+-----------+-----+----------------------+
+         */
+        /**
+         * resultset源码 ResultSet对象的结构
+         *
+         */
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        //5.使用while循环取出数据
+        //最开始时next指向表头（第一行之前）
+        while (resultSet.next()) {//让光标向后移动，如果没有更多行，则返回false
+            int id = resultSet.getInt(1);//获取该行的第1列数据
+            String name = resultSet.getString(2);//获取该行的第2列数据
+            String sex = resultSet.getString(3);//获取该行的第3列数据
+            Date date = resultSet.getDate(4);//获取该行的第4列数据
+            System.out.println(id+&quot;\t&quot;+name+&quot;\t&quot;+sex+&quot;\t&quot;+date);
+        }
+
+        //6.关闭连接
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
+}
+</code></pre>
+<p>运行结果如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014173656930.png" alt="image-20221014173656930" style="zoom:67%;" /></p>
+<p>在语句<code>ResultSet resultSet = statement.executeQuery(sql);</code>旁打上断点，点击debug，点击step over，选择resultset数组，再选择rowdata。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014173946558.png" alt="image-20221014173946558" style="zoom:67%;" /></p>
+<p>可以看到底层是arraylist的一个对象数组。</p>
+<p><img alt="image-20221014173342335" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014173342335.png" /></p>
+<h2 id="4statement">4.Statement</h2>
+<ul>
+<li>
+<p>基本介绍</p>
+</li>
+<li>
+<p>Statement对象，用于执行静态SQL语句并返回其生成的结果的对象</p>
+</li>
+<li>在建立连接后，需要对数据库进行访问，执行命名或是SQL语句，可以通过</li>
+<li>Statement  [存在SQL注入问题]</li>
+<li><strong>PreparedStatement</strong>  [预处理]</li>
+<li>CallableStatement  [存储过程]</li>
+<li>Statement对象执行SQL语句，存在SQL注入风险</li>
+<li>SQL注入是利用某些系统没有对用户输入的数据进行充分的检查，而在用户输入数据中注入非法的SQL语句段或命令，恶意攻击数据库</li>
+<li>要防范SQL注入，只要用PreparedStatement（从Statement扩展而来）取代Statement就可以了</li>
+</ul>
+<blockquote>
+<p>例子1-sqlyog演示sql注入</p>
+</blockquote>
+<pre><code class="language-mysql">-- 演示sql注入
+-- 创建一张表
+CREATE TABLE admin( -- 管理员表
+    NAME VARCHAR(32) NOT NULL UNIQUE,
+    pwd VARCHAR(32) NOT NULL DEFAULT ''
+)CHARACTER SET utf8;
+
+-- 添加数据
+INSERT INTO admin VALUES('tom','123');
+
+-- 正常情况下，查找某个管理是否存在
+SELECT * FROM admin
+    WHERE NAME = 'tom' AND pwd = '123';
+
+-- SQL注入
+-- 输入用户名为  1' or 
+-- 输入密码为  or '1'='1
+-- 这样就变成了下面的语句，可以将所有的数据都查找出来
+SELECT * FROM admin
+    WHERE NAME = '1' OR' AND pwd = 'OR '1'='1';
+</code></pre>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014224056436.png" alt="image-20221014224056436" style="zoom:67%;" /></p>
+<blockquote>
+<p>例子2-java程序演示SQL注入</p>
+</blockquote>
+<pre><code class="language-java">package li.jdbc.statement;
+
+//演示statement的注入问题
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+import java.util.Scanner;
+
+public class Statement_ {
+    public static void main(String[] args) throws Exception {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //让用户输入管理员的名字和密码
+        System.out.print(&quot;请输入管理员的名字：&quot;);
+        String admin_name = scanner.nextLine();//如果希望看到SQL注入，这里需要使用nextLine，如果用next():当接收到空格或者 '就是表示结束
+        System.out.print(&quot;请输入管理员的密码：&quot;);
+        String admin_pwd = scanner.nextLine();
+
+        //通过Properties对象拿到配置文件的信息
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(&quot;src\\mysql.properties&quot;));
+        //获取相关的值
+        String user = properties.getProperty(&quot;user&quot;);
+        String password = properties.getProperty(&quot;password&quot;);
+        String url = properties.getProperty(&quot;url&quot;);
+        String driver = properties.getProperty(&quot;driver&quot;);
+
+        //1.注册驱动
+        Class.forName(driver);
+        //2.获取连接
+        Connection connection = DriverManager.getConnection(url, user, password);
+        //3.得到Statement对象
+        Statement statement = connection.createStatement();
+        //4.组织SQL语句
+
+        String sql = &quot;select name,pwd from admin where name='&quot;
+                + admin_name + &quot;' and pwd ='&quot; + admin_pwd + &quot;'&quot;;
+        ResultSet resultSet = statement.executeQuery(sql);
+        if (resultSet.next()) {//如果查询到一条记录，则说明该管理员存在
+            System.out.println(&quot;恭喜，登录成功&quot;);
+        } else {
+            System.out.println(&quot;对不起，登录失败&quot;);
+        }
+
+        //5.关闭连接
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
+}
+</code></pre>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014182719032.png" alt="image-20221014182719032" style="zoom: 67%;" /></p>
+<h2 id="5preparedstatement">5.PreparedStatement[预处理查询]</h2>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014183841737.png" alt="image-20221014183841737" style="zoom:67%;" /></p>
+<ul>
+<li>
+<p>基本介绍</p>
+</li>
+<li>
+<p>PreparedStatement执行的SQL语句中的 参数用问号(?)来表示，调用PreparedStatement对象的setXxx()方法来设置这些参数。</p>
+</li>
+</ul>
+<p>setXxx()方法有两个参数，第一个参数是要设置的SQL语句中的参数的索引(从1开始)，第二个参数是设置的SQL语句中的参数的值</p>
+<ol>
+<li>
+<p>调用executeQuery()，返回ResultSet对象</p>
+</li>
+<li>
+<p>调用executeUpdate()：执行更新，包括增，删，修改</p>
+</li>
+<li>
+<p>预处理的好处</p>
+</li>
+<li>
+<p>不再使用+拼接sql语句，减少语法错误</p>
+</li>
+<li>有效地解决了SQL注入问题</li>
+<li>大大减少了编译次数，效率较高</li>
+</ol>
+<blockquote>
+<p>例子-解决SQL注入问题</p>
+</blockquote>
+<pre><code class="language-java">package li.jdbc.preparedstatement_;
+
+import java.io.FileInputStream;
+import java.sql.*;
+import java.util.Properties;
+import java.util.Scanner;
+
+//演示PreparedStatement的使用
+@SuppressWarnings(&quot;all&quot;)
+public class PreparedStatement_ {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+
+        //让用户输入管理员的名字和密码
+        System.out.print(&quot;请输入管理员的名字：&quot;);
+        String admin_name = scanner.nextLine();
+        System.out.print(&quot;请输入管理员的密码：&quot;);
+        String admin_pwd = scanner.nextLine();
+
+        //通过Properties对象拿到配置文件的信息
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(&quot;src\\mysql.properties&quot;));
+        //获取相关的值
+        String user = properties.getProperty(&quot;user&quot;);
+        String password = properties.getProperty(&quot;password&quot;);
+        String url = properties.getProperty(&quot;url&quot;);
+        String driver = properties.getProperty(&quot;driver&quot;);
+
+        //1.注册驱动
+        Class.forName(driver);
+        //2.获取连接
+        Connection connection = DriverManager.getConnection(url, user, password);
+        //3.得到PreparedStatement对象
+        //3.1组织SQL语句,sql语句的问号就相当于占位符
+        String sql = &quot;select name,pwd from admin where name= ? and pwd = ?&quot;;
+        //3.2preparedStatement对象是实现了 PreparedStatement接口的 实现类的 对象
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        //3.3给 ? 赋值
+        preparedStatement.setString(1,admin_name);
+        preparedStatement.setString(2,admin_pwd);
+
+        //4.执行select语句使用 executeQuery
+        // 如果执行的是dml(update,insert,delete)语句使用executeUpdate
+        // 这里执行 executeQuery，不用再写sql进去了
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {//如果查询到一条记录，则说明该管理员存在
+            System.out.println(&quot;恭喜，登录成功&quot;);
+        } else {
+            System.out.println(&quot;对不起，登录失败&quot;);
+        }
+
+        //5.关闭连接
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+    }
+}
+</code></pre>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014190218693.png" alt="image-20221014190218693" style="zoom:67%;" /></p>
+<h3 id="51dml">5.1预处理DML</h3>
+<pre><code class="language-java">package li.jdbc.preparedstatement_;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Properties;
+import java.util.Scanner;
+
+//演示PreparedStatement的使用
+@SuppressWarnings(&quot;all&quot;)
+public class PreparedStatementDML_ {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+
+        //让用户输入管理员的名字和密码
+        System.out.print(&quot;请输入管理员的名字：&quot;);
+        String admin_name = scanner.nextLine();
+//        System.out.print(&quot;请输入管理员的密码：&quot;);
+//        String admin_pwd = scanner.nextLine();
+
+        //通过Properties对象拿到配置文件的信息
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(&quot;src\\mysql.properties&quot;));
+        //获取相关的值
+        String user = properties.getProperty(&quot;user&quot;);
+        String password = properties.getProperty(&quot;password&quot;);
+        String url = properties.getProperty(&quot;url&quot;);
+        String driver = properties.getProperty(&quot;driver&quot;);
+
+        //1.注册驱动
+        Class.forName(driver);
+        //2.获取连接
+        Connection connection = DriverManager.getConnection(url, user, password);
+        //3.得到PreparedStatement对象
+        //3.1组织SQL语句,sql语句的问号就相当于占位符
+        //添加记录
+        //String sql = &quot;insert into admin values (?,?)&quot;;
+        //更改
+        //String sql = &quot;update admin set pwd=? where name =?&quot;;
+        //删除
+        String sql = &quot;delete from admin where name=?&quot;;
+
+        //3.2preparedStatement对象是实现了 PreparedStatement接口的 实现类的 对象
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        //3.3给 ? 赋值
+        preparedStatement.setString(1, admin_name);
+        // preparedStatement.setString(2, admin_pwd);
+
+        //4.执行dml(update,insert,delete)语句使用executeUpdate
+        int rows = preparedStatement.executeUpdate();
+        System.out.println(rows &gt; 0 ? &quot;执行成功&quot; : &quot;执行失败&quot;);
+
+        //5.关闭连接
+        preparedStatement.close();
+        connection.close();
+    }
+}
+</code></pre>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014192148070.png" alt="image-20221014192148070" style="zoom:67%;" /></p>
+<ul>
+<li>练习</li>
+</ul>
+<p>参考上面的代码</p>
+<ol>
+<li>创建admin表</li>
+<li>使用PreparedStatement添加5条数据</li>
+<li>修改tom的记录，将name改成King</li>
+<li>删除一条记录</li>
+<li>查询全部记录，并显示在控制台</li>
+</ol>
+<h2 id="6jdbc-api">6.JDBC API</h2>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/JDBC%20Api.png" style="zoom:67%;" /></p>
+<h2 id="7jdbcutils">7.JDBCUtils开发</h2>
+<h3 id="71jdbcutils">7.1封装JDBCUtils</h3>
+<ul>
+<li>说明</li>
+</ul>
+<p>在jdbc操作中，<strong>获取连接和释放资源是经常使用到的，可以将其封装为JDBC连接的工具类JDBCUtils</strong></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014213412387.png" alt="image-20221014213412387" style="zoom:67%;" /></p>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<p>封装的工具类JDBCUtils：</p>
+<pre><code class="language-java">package li.jdbc.utils;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
+import java.util.Properties;
+
+/**
+ * 这是一个工具类，完成mysql的连接和关闭资源
+ */
+public class JDBCUtils {
+    //定义相关的属性（4个），因为只需要一份，因此我们将其做成static属性
+    private static String user;//用户名
+    private static String password;//密码
+    private static String url;//url
+    private static String driver;//驱动名
+
+    //在static代码块去初始化
+    static {
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream(&quot;src\\mysql.properties&quot;));
+            user = properties.getProperty(&quot;user&quot;);
+            password = properties.getProperty(&quot;password&quot;);
+            url = properties.getProperty(&quot;url&quot;);
+            driver = properties.getProperty(&quot;driver&quot;);
+        } catch (IOException e) {
+            //在实际开发中往往会这样处理
+            // 1.将 编译异常 转为 运行异常
+            // 2.这时调用者可以选择捕获该异常，亦可以选择默认处理该异常，比较方便
+            // （对于运行异常，程序中如果没有处理，默认就是throw的方式处理）
+            throw new RuntimeException(e);
+        }
+    }
+
+    //连接数据库，返回Connection
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            //将 编译异常 转为 运行异常,原因同上
+            throw new RuntimeException(e);
+        }
+    }
+
+    //关闭相关资源
+    /**
+     * 1.ResultSet 结果集
+     * 2.Statement 或者 PreparedStatement
+     * 3.Connection
+     * 4.如果需要关闭资源，就传入对象，否则就传入null
+     */
+    //这里用Statement作为参数接收，是因为Statement是PreparedStatement的父接口，
+    // 因此Statement参数既可以接收Statement的对象实现，也可以接收PreparedStatement类型的对象实现
+    public static void close(ResultSet set, Statement statement, Connection connection) {
+        //判断是否为null
+        try {
+            if (set != null) {
+                set.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            //将 编译异常 转为 运行异常,原因同上
+            throw new RuntimeException(e);
+        }
+    }
+}
+</code></pre>
+<p>使用测试JDBCUtils_Use：</p>
+<pre><code class="language-java">package li.jdbc.utils;
+
+import org.junit.Test;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+
+/**
+ * 该类演示如何使用JDBCUtils工具类，完成 dml和 select
+ */
+public class JDBCUtils_Use {
+
+    @Test
+    public void testSelect() {
+        //1.得到连接
+        Connection connection = null;
+
+        //2.组织一个sql语句
+        String sql = &quot;Select * from actor&quot;;
+
+        //3.创建PreparedStatement对象
+        PreparedStatement preparedStatement = null;
+        ResultSet set = null;
+        try {
+            connection = JDBCUtils.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            //执行sql,得到结果集
+            set = preparedStatement.executeQuery();
+            //遍历该结果集
+            while (set.next()) {
+                int id = set.getInt(&quot;id&quot;);
+                String name = set.getString(&quot;name&quot;);
+                String sex = set.getString(&quot;sex&quot;);
+                Date borndate = set.getDate(&quot;borndate&quot;);
+                String phone = set.getString(&quot;phone&quot;);
+                System.out.println(id + &quot;\t&quot; + name + &quot;\t&quot; + sex + &quot;\t&quot; + borndate + &quot;\t&quot; + phone);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            //关闭资源
+            JDBCUtils.close(set, preparedStatement, connection);
+        }
+    }
+
+    @Test
+    public void testDML() {//insert update delete
+        //1.得到连接
+        Connection connection = null;
+
+        //2.组织一个sql语句
+        String sql = &quot;update actor set name=? where id=?&quot;;
+
+        //3.创建PreparedStatement对象
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = JDBCUtils.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+            //给占位符赋值
+            preparedStatement.setString(1, &quot;周星星&quot;);//第1个占位符的值为周星星
+            preparedStatement.setInt(2, 1);//第2个占位符的值为1
+            //执行sql
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            //关闭资源
+            JDBCUtils.close(null, preparedStatement, connection);
+        }
+    }
+}
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014222311448.png" alt="image-20221014222311448" style="zoom:67%;" /> </p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014223453320.png" alt="image-20221014223453320" style="zoom:67%;" /> </p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221014222329046.png" alt="image-20221014222329046" style="zoom:67%;" /> </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

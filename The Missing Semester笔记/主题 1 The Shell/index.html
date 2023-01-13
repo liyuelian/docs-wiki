@@ -1,0 +1,3502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>主题 1 The Shell - liyuelian的网站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-the-shell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="liyuelian的网站" class="md-header__button md-logo" aria-label="liyuelian的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              主题 1 The Shell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的网站" class="md-nav__button md-logo" aria-label="liyuelian的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        欢迎来到我的网站
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          The Missing Semester笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          主题 1 The Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        主题 1 The Shell
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    使用Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    在Shell中导航
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    在程序间创建连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一个功能全面又强大的工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    练习
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        主题 2 Shell工具和脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          尚硅谷Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="尚硅谷Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          尚硅谷Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        Git学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        主要
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%B0%9A%E7%A1%85%E8%B0%B7Git/github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          狂神JavaSE基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="狂神JavaSE基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          狂神JavaSE基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day02-2-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day02-%E9%A2%84%E7%A7%91/" class="md-nav__link">
+        预科03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/" class="md-nav__link">
+        面向对象02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day46-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A002/" class="md-nav__link">
+        JDBC和连接池02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_56" type="checkbox" id="__nav_4_56" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_56" tabindex="0" aria-expanded="false">
+          坦克大战
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="坦克大战" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_56">
+          <span class="md-nav__icon md-icon"></span>
+          坦克大战
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day01-%E5%9D%90%E6%A0%87%E4%B8%8E%E7%BB%98%E5%9B%BE/" class="md-nav__link">
+        JavaGUI-坦克大战01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day02-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        JavaGUI-坦克大战02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day03-2-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B02/" class="md-nav__link">
+        JavaGUI-坦克大战03-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day03-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B01/" class="md-nav__link">
+        JavaGUI-坦克大战03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day04-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B03/" class="md-nav__link">
+        JavaGUI-坦克大战04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day05-%E5%BA%94%E7%94%A8%E7%BA%BF%E7%A8%8B04/" class="md-nav__link">
+        Java坦克大战05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day06-IO%E6%B5%81%E5%BA%94%E7%94%A801/" class="md-nav__link">
+        Java坦克大战06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98/day07-IO%E6%B5%81%E5%BA%94%E7%94%A802/" class="md-nav__link">
+        Java坦克大战07
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_57" type="checkbox" id="__nav_4_57" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_57" tabindex="0" aria-expanded="false">
+          多用户即时通讯系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="多用户即时通讯系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_57">
+          <span class="md-nav__icon md-icon"></span>
+          多用户即时通讯系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day01-%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        多用户即时通讯系统01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day02-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        多用户即时通讯系统02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-1%E6%8B%89%E5%8F%96%E5%9C%A8%E7%BA%BF%E7%94%A8%E6%88%B7%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-2%E6%97%A0%E5%BC%82%E5%B8%B8%E9%80%80%E5%87%BA/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day03-3%E7%A7%81%E8%81%8A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-1%E7%BE%A4%E8%81%8A%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-2%E5%8F%91%E9%80%81%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day04-3%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A8%E9%80%81%E6%96%B0%E9%97%BB/" class="md-nav__link">
+        多用户即时通讯系统04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E5%A4%9A%E7%94%A8%E6%88%B7%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%E7%B3%BB%E7%BB%9F/day05-%E7%A6%BB%E7%BA%BF%E7%95%99%E8%A8%80%E5%92%8C%E7%A6%BB%E7%BA%BF%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        多用户即时通讯系统05
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_58" type="checkbox" id="__nav_4_58" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_58" tabindex="0" aria-expanded="false">
+          满汉楼
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="满汉楼" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_58">
+          <span class="md-nav__icon md-icon"></span>
+          满汉楼
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-1-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        满汉楼01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-2-%E5%AF%BC%E5%85%A5%E9%A9%B1%E5%8A%A8%E5%92%8C%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="md-nav__link">
+        满汉楼01-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-3-%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%26%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/" class="md-nav__link">
+        满汉楼01-3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day01-4-%E9%A4%90%E6%A1%8C%E7%8A%B6%E6%80%81%E6%98%BE%E7%A4%BA%26%E8%AE%A2%E5%BA%A7%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼01-4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day02-%E6%98%BE%E7%A4%BA%E6%89%80%E6%9C%89%E8%8F%9C%E5%93%81%26%E7%82%B9%E9%A4%90%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day03-1-%E6%9F%A5%E7%9C%8B%E8%B4%A6%E5%8D%95%26%E7%BB%93%E8%B4%A6%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        满汉楼03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%8B%82%E7%A5%9EJavaSE%E5%9F%BA%E7%A1%80/%E6%BB%A1%E6%B1%89%E6%A5%BC/day03-2-%E6%8B%93%E5%B1%95/" class="md-nav__link">
+        满汉楼03
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          韩顺平JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_38" type="checkbox" id="__nav_5_38" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_38" tabindex="0" aria-expanded="false">
+          手动实现Tomcat底层机制+自己设计Servlet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="手动实现Tomcat底层机制+自己设计Servlet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_38">
+          <span class="md-nav__icon md-icon"></span>
+          手动实现Tomcat底层机制+自己设计Servlet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day01-Tomcat%E6%A1%86%E6%9E%B6%E5%88%86%E6%9E%90/" class="md-nav__link">
+        引入课程和Maven
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day02-%E5%AE%9E%E7%8E%B001/" class="md-nav__link">
+        实现01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0Tomcat%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%2B%E8%87%AA%E5%B7%B1%E8%AE%BE%E8%AE%A1Servlet/day03-%E5%AE%9E%E7%8E%B002/" class="md-nav__link">
+        实现02
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_39" type="checkbox" id="__nav_5_39" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_39" tabindex="0" aria-expanded="false">
+          项目 家居网购
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="项目 家居网购" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_39">
+          <span class="md-nav__icon md-icon"></span>
+          项目 家居网购
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day01-%E5%AE%B6%E5%85%B7%E7%BD%91%E8%B4%AD%E9%A1%B9%E7%9B%AE%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        家居网购项目说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day02-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B001/" class="md-nav__link">
+        家居网购项目实现01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day03-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B002/" class="md-nav__link">
+        家居网购项目实现02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day04-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B003/" class="md-nav__link">
+        家居网购项目实现03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day05-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B004/" class="md-nav__link">
+        家居网购项目实现04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day06-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B005/" class="md-nav__link">
+        家居网购项目实现05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day07-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B006/" class="md-nav__link">
+        家居网购项目实现06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day08-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B007/" class="md-nav__link">
+        家居网购项目实现07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day09-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B008/" class="md-nav__link">
+        家居网购项目实现08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day10-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B009/" class="md-nav__link">
+        家居网购项目实现09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day11-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B010/" class="md-nav__link">
+        家居网购项目实现010
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day12-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B011/" class="md-nav__link">
+        家居网购项目实现011
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day13-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B012/" class="md-nav__link">
+        家居网购项目实现012
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3JavaWeb/%E9%A1%B9%E7%9B%AE-%E5%AE%B6%E5%B1%85%E7%BD%91%E8%B4%AD/day14-%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B013/" class="md-nav__link">
+        家居网购项目实现013
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          韩顺平MySQL学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平MySQL学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平MySQL学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Java数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        5.MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3MySQL%E5%AD%A6%E4%B9%A0/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          韩顺平前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="韩顺平前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          韩顺平前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9F%A9%E9%A1%BA%E5%B9%B3%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    使用Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    在Shell中导航
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    在程序间创建连接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一个功能全面又强大的工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    练习
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-the-shell">主题 1 The Shell</h1>
+<p><a href="https://missing-semester-cn.github.io/2020/course-shell/">课程概览与 shell · the missing semester of your cs education (missing-semester-cn.github.io)</a></p>
+<h2 id="shell">Shell是什么？</h2>
+<p>一旦你想脱离可视化界面让你做的，然后做点别的事情，那么Shell将是你和计算机交互的最主要的方式之一。</p>
+<p>可视化界面受限于，它只能做被设计出来的操作——比如你不能点击一个不存在的按钮或者是用语音输入一个还没有被录入的指令。这就是这门课介绍命令行工具和基于文本的工具的理由，shell则是你去做这些操作的地方。</p>
+<p>在Windows和Linux可以找到成堆的终端（Terminal），这些是能显示Shell的文本窗口。其中普遍的是bash，或者叫Bourne Again Shell。由于bash的普遍性，这门课中将使用bash。</p>
+<h2 id="shell_1">使用Shell</h2>
+<p>终端（Terminal）是你电脑上和shell交互的主要文本界面。</p>
+<p>当你打开一个终端，你通常会在终端中看到这样的一行，称为命令行提示符（Shell Prompt）</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# 
+</code></pre>
+<p>它告诉你，你的主机名是<code>VM-8-17-centos</code>，你的用户名是<code>root</code>，还有你当前所在的路径为<code>~</code>（path）。</p>
+<p>可以在终端上执行命令，通常是带着参数（argument）执行程序。参数一般是一些紧随程序名后面的，用空格分开的东西。</p>
+<ul>
+<li>date</li>
+</ul>
+<p>date输入当前日期和时间</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# date
+Sat Dec 17 01:04:35 CST 2022
+</code></pre>
+<ul>
+<li>echo</li>
+</ul>
+<p>echo打印出你传给它的参数</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# echo hello
+hello
+</code></pre>
+<ul>
+<li>参数以空格分隔</li>
+</ul>
+<p>如上所说，参数是被空格分隔的，如果传递一个多单词的参数，就必须用引号括起来，如：</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# echo &quot;Hello Wrold&quot;
+Hello Wrold
+</code></pre>
+<p>这样echo程序会收到一个字符串参数<code>Hello World</code>，中间还有一个空格。此外使用单引号也是可以的。</p>
+<blockquote>
+<p>单双引号的区别将在bash scripting 再说</p>
+</blockquote>
+<p>此外也可以使用转义符将空格转义，如：</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# echo Hello\ World
+Hello World
+</code></pre>
+<blockquote>
+<p>关于如何给参数，变量转义，解析和加括号将在之后涉及</p>
+</blockquote>
+<p>我们在创建目录或文件时，如果某个参数是带空格的，也需要使用引号转义或者用转义符将空格转义，否者shell将会将该参数识别成两个参数。</p>
+<p>如下shell将<code>my photo</code>识别成两个参数，创建了两个目录：</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# mkdir my photo
+[root@VM-8-17-centos ~]# ls
+my  photo
+</code></pre>
+<p>正确的做法为：</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# mkdir &quot;my photo&quot;
+[root@VM-8-17-centos ~]# ll
+total 4
+drwxr-xr-x 2 root root 4096 Dec 17 01:23 'my photo'
+</code></pre>
+<h2 id="shell_2">在Shell中导航</h2>
+<ul>
+<li>环境变量</li>
+</ul>
+<p>你可能会好奇，当输入date或者echo等命令时，Shell怎么知道这些程序要做什么。</p>
+<p>你的机器可能内嵌了终端程序，或者某些浏览器。同样的，电脑也内嵌了很多围绕终端工作的程序，这些程序位于你的文件系统（File System），Shell有办法在系统中搜索某个程序，然后执行。</p>
+<p>当然，Shell不会在所有文件中进行搜索，那样效率太低了。</p>
+<p>Shell借助一个叫做 <strong>环境变量（Environment Variable）</strong> 的东西来完成搜索。</p>
+<blockquote>
+<p>环境变量就类似编程语言中的变量，Shell或者说bash本身就是一种程序设计语言。你输入的提示符（Prompt）不仅能带参运行程序，你也可以写入while循环，for循环，条件语句等，甚至可以定义函数，甚至变量。关于Shell Scripting的下一讲会有涉及</p>
+</blockquote>
+<p>环境变量是Shell本就设定好的，无论何时打开shell都无需重新设置。一堆东西都会预先设置好，比如哪里是home目录，你的用户名是什么等。</p>
+<ul>
+<li>PATH变量</li>
+</ul>
+<p>如下，当我们执行<code>echo $PATH</code>时，将会输出一些电脑上的目录，这些目录就是Shell寻找程序时所查找的目录。这些目录以冒号分隔。</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+</code></pre>
+<p>当你输入一个程序名称时，电脑会在这个列表中的每个目录里，查找名字与你所输入的指令相同的一个程序或者文件。如果在这些目录中可以找到待运行的程序，程序可以正常运行，否则失败。</p>
+<ul>
+<li>which</li>
+</ul>
+<p>如果我们想要知道电脑具体运行了哪一个目录里的程序，可以使用which指令。</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# which echo
+/usr/bin/echo
+[root@VM-8-17-centos ~]# which date
+/usr/bin/date
+</code></pre>
+<ul>
+<li>路径</li>
+</ul>
+<p>路径是用来描述你的计算机里文件位置的东西。</p>
+<p>在Linux或者Mac Os上，路径被一连串的斜杠分隔，可以看到上面echo指令的路径起点在根目录<code>/</code>（/ 即整个文件系统的最顶层）</p>
+<blockquote>
+<p>在Windows里，路径以反斜杠\ 而非斜杠/分隔。</p>
+</blockquote>
+<p>在Linux或Mac Os上，所有东西都在一个叫根（root）的空间的下面的某处。因此所有以斜杠开头/的路径都是<strong>绝对路径</strong>。</p>
+<p>而在Windows下，每一个分区都有一个根，类似于C:\或者D:\，所以Windows里每一个驱动器(硬盘)下都有独立的一套文件系统的层次结构。</p>
+<blockquote>
+<p>绝对路径：是可以绝对准确地确定一个文件的位置的路径</p>
+<p>相对路径：是相对于你当前所在位置的路径</p>
+</blockquote>
+<ul>
+<li>pwd</li>
+</ul>
+<p>打印工作目录（print working directory）</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# pwd
+/root
+</code></pre>
+<p>你可以改变当前工作目录，所有的相对路径都是相对于当前工作目录的</p>
+<ul>
+<li>cd</li>
+</ul>
+<p>change directory 改变当前工作目录</p>
+<pre><code class="language-bash">[root@VM-8-17-centos ~]# cd /home
+[root@VM-8-17-centos home]# pwd
+/home
+</code></pre>
+<blockquote>
+<p>shell提示只会给路径的最后一段名称，当然也可以通过设置是它总能显示当前的完整路径</p>
+</blockquote>
+<ul>
+<li>特殊的目录 <code>.</code>和<code>..</code></li>
+</ul>
+<p><code>.</code> 表示当前目录，<code>..</code>表示上一级（父）目录</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# pwd
+/home/lighthouse
+[root@VM-8-17-centos lighthouse]# cd ../../..
+[root@VM-8-17-centos /]# pwd
+/
+</code></pre>
+<blockquote>
+<p>使用相对or绝对路径取决于哪个方便，但是如果有时候你需要运行某个程序或者写一个程序，它调用了类似echo或者date这样的程序，你希望它在哪个地方都能跑起来，要么你就只给出这个要被运行的程序的名字(让shell用path去找出它们在哪里)，要么就需要给出绝对路径</p>
+<p>一般来说程序默认在当前目录运行</p>
+</blockquote>
+<ul>
+<li>ls</li>
+</ul>
+<p>输入本级目录下的所有文件信息</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# ls
+bin  boot  data  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre>
+<p>如果给定路径参数，则会输出给定路径目录下的文件信息</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# ls home/lighthouse/
+dirdemo  hello2.txt  hello.txt
+</code></pre>
+<ul>
+<li>特殊符号<code>-</code>和<code>~</code></li>
+</ul>
+<p><code>~</code>表示<strong>当前</strong>用户的home目录</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# cd ~
+[root@VM-8-17-centos ~]# pwd
+/root
+</code></pre>
+<p>在cd命令中，<code>-</code>参数表示之前所处的工作目录</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# cd -
+/home
+[root@VM-8-17-centos home]# cd -
+/
+</code></pre>
+<ul>
+<li>--help</li>
+</ul>
+<p>大多数命令都有一个 --help选项，可以帮助你了解命令的用法</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+……
+……
+</code></pre>
+<p>比如usage这行信息，[ ]表示这部分内容可填可不填，...表示可以填写多个option或flag</p>
+<blockquote>
+<p>option是有多个参数字符可以选择，flag是只有一个参数字符选择</p>
+</blockquote>
+<ul>
+<li>权限</li>
+</ul>
+<p>使用ls -l 命令可以以长列表格式输出当前目录下的文件信息</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# ls -l
+total 12
+drwxrwxr-x 2 lighthouse lighthouse 4096 Dec 13 00:33 dirdemo
+-rw-r--r-- 1 root       root          6 Dec 15 19:56 hello2.txt
+-rw-rw-r-- 1 lighthouse lighthouse   52 Dec 15 19:59 hello.txt
+</code></pre>
+<p>首先前面带着d的这行条目，代表这是一个目录，例如上面的dirdemo就是一个目录，hello2.txt和hello.txt则是文件。</p>
+<p>d后面的字符<code>rwxrwxr-x</code>代表文件被授予的权限。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222225758192.png" alt="image-20221222225758192" style="zoom:67%;" /></p>
+<p>阅读这一串字符的方法如下：9个字符，每三个一组，分为三组。</p>
+<p>第一组：代表权限被授予给了文件的所有者</p>
+<p>第二组：代表给拥有这些文件的用户组的权限</p>
+<p>第三组：代表给非所有者的其他人的权限</p>
+<p>其中 <code>-</code> 表示该用户不具备相应的权限。</p>
+<p>同时可以发现所有字符都是有rwx组成的，r（read）表示读取权限，w（write）表示写入权限，x（execute）表示执行权限。这三者的权限使用数字表示：4表示r，2表示w，1表示x。</p>
+<p>权限对于文件和目录有不同的解释：</p>
+<p>对文件而言，如果你有读取权限，可以读取文件的内容。文件的写权限就是</p>
+<p>目录的读取权限可以允许你<strong>看</strong>这个文件夹中有哪些东西（列出这个目录的内容）；目录的写入权限是你能否<strong>重命名、新建或者删除</strong>里面的文件；注意如果你有目录里的文件的写入权限，却没有目录的写入权限，那你就不能删除这个文件（即使你清空了这个文件也不能删除它，因为这要目录的写入权限）；最后是目录的执行权限，通常来讲就是搜索权限。这意味着你能不能<strong>进入</strong>这个目录。</p>
+<blockquote>
+<p>为了进入某个文件夹，用户需要具备该文件夹以及其父文件夹的“搜索”权限(即目录的执行权限)</p>
+</blockquote>
+<ul>
+<li>mv</li>
+</ul>
+<p>它接受两个路径作为参数，第一个是原有的路径，第二个是新的路径。这意味着mv既可以让你重命名一个文件，又可以让你移动一个文件。</p>
+<ul>
+<li>cp</li>
+</ul>
+<p>copy复制，该命令可以让你复制文件，用法很类似。它也接受两个路径作为参数，复制源路径和目标路径，这些路径要是完整路径（意为着你需要明确指定文件路径，这个命令没有搜索功能）</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# cp hello.txt ../food.txt
+[root@VM-8-17-centos lighthouse]# cd ..
+[root@VM-8-17-centos home]# ls
+food.txt  lighthouse
+</code></pre>
+<ul>
+<li>rm</li>
+</ul>
+<p>移除（删除一个文件），你可以传递一个路径作为参数。</p>
+<p>需要注意默认的移除是非递归的，也就是说你不能rm移除一个目录（因为目录中可能会有文件），你可以传递一个执行递归移除的-r 标识，它就会递归删除目录下的所有内容</p>
+<ul>
+<li>rmdir</li>
+</ul>
+<p>移除目录，同样也是非递归的，这意味着你不能使用该命令删除一个非空目录</p>
+<ul>
+<li>mkdir</li>
+</ul>
+<p>创建一个新目录</p>
+<ul>
+<li>man</li>
+</ul>
+<p>manual pages(手册/说明书)，这个程序接受其他程序的名字作为一个参数，然后显示它的说明书。</p>
+<p>和<code>程序名 --help</code>命令相似。</p>
+<ul>
+<li>快捷键Ctrl+L</li>
+</ul>
+<p>清空终端，让光标回到顶部（和clear命令相似）</p>
+<h2 id="_1">在程序间创建连接</h2>
+<ul>
+<li>流（Stream）</li>
+</ul>
+<p>程序有两个主要的流（stream），默认下程序会有一个输入流（input stream）和一个输出流（output stream）</p>
+<ol>
+<li>
+<p>默认输入流里的内容来自你的键盘，基本上输入流是终端，无论你向终端输入什么，最后都会传到程序里。</p>
+</li>
+<li>
+<p>默认的输出流（即当程序想要输出一些内容时），默认也是终端</p>
+</li>
+</ol>
+<blockquote>
+<p>这也是为什么当你在终端中打入<code>echo hello</code>时，hello会直接显示在你的终端里</p>
+</blockquote>
+<p>Shell提供了重定向这些流的方法，把输入和输出都改到程序员指明的地方。最直接的方式就是使用大于小于号(即所谓的尖角括号)。</p>
+<ol>
+<li>小于号表示重定向这个程序的输入流</li>
+<li>大于号表示重定向程序的输出流</li>
+</ol>
+<p>例如：</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# echo hello &gt; hello.txt
+[root@VM-8-17-centos lighthouse]# cat hello.txt 
+hello
+</code></pre>
+<p>将echo程序输出的内容hello，输入到hello.txt文件中</p>
+<p>cat的作用是打印出一个文件的内容，cat同样支持流的重定向。</p>
+<p>在这个例子中，Shell就会打开hello.txt，取出它的内容，设置成cat的输入，cat就会把这些内容打印到它的输出流，这里没有重定向，所以cat的输出流还是终端</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# cat &lt; hello.txt
+hello
+</code></pre>
+<p>也可以同时使用两种重定向，如</p>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# cat &lt; hello.txt &gt; hello2.txt
+[root@VM-8-17-centos lighthouse]# cat hello2.txt 
+hello
+</code></pre>
+<p>用hello.txt的内容作为cat的输入流，然后把cat输出的所欲内容存到hello2.txt中</p>
+<ul>
+<li>双大于号</li>
+</ul>
+<p>作用是追加（append）而不是覆写（overwrite）</p>
+<blockquote>
+<p>追加指向文件尾继续添加内容，覆写是清空文件再写入内容</p>
+</blockquote>
+<pre><code class="language-bash">[root@VM-8-17-centos lighthouse]# cat &lt; hello.txt &gt; hello2.txt
+[root@VM-8-17-centos lighthouse]# cat hello2.txt 
+hello
+[root@VM-8-17-centos lighthouse]# cat &lt; hello.txt &gt;&gt; hello2.txt
+[root@VM-8-17-centos lighthouse]# cat hello2.txt 
+hello
+hello
+</code></pre>
+<ul>
+<li>管道符</li>
+</ul>
+<p>pipe，管道符就是一个竖线<code>|</code>。管道的意思是，取左侧程序的输出，称为右侧程序的输入。</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# ls -l | tail -n3
+drwxrwxrwt.  10 root root  4096 Dec 22 22:03 tmp
+drwxr-xr-x.  12 root root  4096 Dec 31  2021 usr
+drwxr-xr-x.  20 root root  4096 Dec 31  2021 var
+</code></pre>
+<p>ls的输出作为tail的输入，tail的输出则会输到终端（因为你没有重定向tail的输出）</p>
+<blockquote>
+<p>tail 打印它输入的最后n行</p>
+</blockquote>
+<p>当然也可以重定向tail的输出</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# ls -l | tail -n3 &gt; ls.txt
+[root@VM-8-17-centos /]# cat ls.txt
+drwxrwxrwt.  10 root root  4096 Dec 22 22:03 tmp
+drwxr-xr-x.  12 root root  4096 Dec 31  2021 usr
+drwxr-xr-x.  20 root root  4096 Dec 31  2021 var
+</code></pre>
+<p>使用管道可以构建一些复杂的命令：</p>
+<p>我们可以做一些操作例如</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# curl --head --silent baidu.com
+HTTP/1.1 200 OK
+Date: Thu, 22 Dec 2022 16:17:30 GMT
+Server: Apache
+Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT
+ETag: &quot;51-47cf7e6ee8400&quot;
+Accept-Ranges: bytes
+Content-Length: 81
+Cache-Control: max-age=86400
+Expires: Fri, 23 Dec 2022 16:17:30 GMT
+Connection: Keep-Alive
+Content-Type: text/html
+</code></pre>
+<p>这会给你访问baidu.com的时候所有的HTTP Headers</p>
+<p>你可以使用管道将这些输出接到grep -i content-length</p>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# curl --head --silent baidu.com | grep -i content-length
+Content-Length: 81
+</code></pre>
+<blockquote>
+<p>grep 命令支持在输入流里搜索给定的关键字</p>
+</blockquote>
+<pre><code class="language-bash">[root@VM-8-17-centos /]# curl --head --silent baidu.com | grep -i content-length | cut --delimiter=' ' -f2
+81
+</code></pre>
+<blockquote>
+<p>cut 命令可以接收一个分隔符delimiter，将输入流以分隔符的形式输出，-f设置输出第几个字段</p>
+</blockquote>
+<p>可以发现通过将命令链接起来，你可以做很多文本操作的特技</p>
+<p>并且pipe不止用于文本数据，还可以拿来处理比如图片。当你有一个程序可以接收并处理二进制图片，然后输出一个二进制图片的时候，可以像这样把它连进去，你甚至可以这样处理视频。</p>
+<h2 id="_2">一个功能全面又强大的工具</h2>
+<ul>
+<li>root用户</li>
+</ul>
+<p>在linux和Mac OS中，root用户类似于Windows的管理员（Administrator），有值为0的用户ID。</p>
+<p>root用户允许在系统上做<strong>任意行为</strong>。就算一个文件中任何人都不可读的或者任何人都不可写的，root却可以访问这个文件并且读写。多数情况下，应该使用一个普通用户来操作电脑，因为root具有风险，比如在root下运行了一个错误的程序，可能会毁掉你的整个电脑。</p>
+<ul>
+<li>sudo</li>
+</ul>
+<p>但是如果在普通用户下需要使用root权限操作时，可以使用sudo命令，这可以让你使用超级用户权限运行程序。</p>
+<p>sudo的通常用法是，<code>sudo 需要调用的命令</code></p>
+<p>应用场景：</p>
+<p>在你的电脑中有很多特别的文件系统，例如sysfs。我们进入到在/sys目录，这个文件系统不是真实存在的文件，相反，这是一堆内核参数。内核（kernel）基本上就是你电脑（操作系统）的核心。</p>
+<pre><code class="language-bash">[lighthouse@VM-8-17-centos sys]$ ls
+block  bus  class  dev  devices  firmware  fs  hypervisor  kernel  module  power
+</code></pre>
+<p>通过这些像是文件系统的东西，可以访问到内核的参数。</p>
+<p>由于这些内核参数是以文件形式展露的，我们可以使用先前的所有工具去操作它们。例如：</p>
+<p>你可以在/sys/class/backlight/intel_backlight/下的brightness操作背光亮度</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221223021905164.png" alt="image-20221223021905164" style="zoom:67%;" /></p>
+<p>但是如果直接操作，会显示拒绝访问，因为内核的东西基本上都要root权限。</p>
+<p>但是如果运行命令<code>sudo echo 500 &gt; brightness</code>，依然显示没有权限</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221223022224630.png" alt="image-20221223022224630" style="zoom: 67%;" /></p>
+<p>因为输入输出的重定向是程序不知道的，管道和重定向都是Shell设好的，现在的情况是，我告诉Shell去运行sudo，并且包括参数echo 500 ，然后发送输出到brightness这个文件。也就是说，sudo的root权限只给了前面的echo命令。Shell打开brightness的时候，用的不是sudo，因此显示没有权限。</p>
+<p>因此，现在的解决方法是：</p>
+<p>方法一：切换到root终端，<code>sudo su</code></p>
+<blockquote>
+<p>su命令能让你以超级用户登录shell</p>
+</blockquote>
+<p>使用超级用户登录后，可以看到提示符从<code>$</code>变成了<code>#</code>。然后运行<code>echo 500 &gt; brightness</code>,屏幕的亮度变暗了，并且没有出现权限不足提示。因为现在Shell以root身份运行，root用户允许打开该内核文件。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221223023516151.png" alt="image-20221223023516151" style="zoom:67%;" /></p>
+<p>方法二：使用管道和重定向</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221223024934470.png" alt="image-20221223024934470" style="zoom:67%;" /></p>
+<p>Shell去运行<code>echo 1060</code>，会输出1060，然后告诉Shell去运行<code>sudo tee brightness</code>命令，然后把echo的输出送入tee的输入，然后tee打开brightness文件（tee程序以root权限运行），并将tee的输入流写入到brightness文件和标准输出流（这里是终端）</p>
+<blockquote>
+<p>tee命令取它的输入，然后写入到一个文件，并且写入到标准输出流</p>
+<p>tee - read from standard input and write to standard output and files</p>
+</blockquote>
+<p>使用方法二可以毋需登录到root用户。</p>
+<p>可以在其他需要root权限的地方法使用这种方法：</p>
+<p>例如我现在想让键盘上的滚动锁定灯亮起来，该内核文件在/sys/class/leds/input1::scrolllock/brightness</p>
+<p>使用同样的方法，将参数由0变为1</p>
+<pre><code class="language-bash">[lighthouse@VM-8-17-centos input1::scrolllock]$ ls
+brightness  device  max_brightness  power  subsystem  trigger  uevent
+[lighthouse@VM-8-17-centos input1::scrolllock]$ cat brightness 
+0
+[lighthouse@VM-8-17-centos input1::scrolllock]$ echo 1 | tee brightness 
+tee: brightness: Permission denied
+1
+[lighthouse@VM-8-17-centos input1::scrolllock]$ echo 1 |sudo tee brightness 
+1
+</code></pre>
+<p>现在键盘上的滚动锁定灯已经亮起来了</p>
+<ul>
+<li>打开文件</li>
+</ul>
+<p>xdg-open命令，这个指令可能只在linux上运行，在Mac Os上可能叫做open</p>
+<p>你给出一个文件名，然后xdg-open就会使用合适的程序打开它</p>
+<h2 id="_3">练习</h2>
+<ol>
+<li>本课程需要使用类Unix shell，例如 Bash 或 ZSH。使用<code>echo $SHELL</code>命令可以查看您的 shell 是否满足要求。如果打印结果为<code>/bin/bash</code>或<code>/usr/bin/zsh</code>则是可以的。</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos tmp]$ echo $SHELL
+   /bin/bash</code></p>
+<ol>
+<li>在 <code>/tmp</code> 下新建一个名为 <code>missing</code> 的文件夹。</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos tmp]$ mkdir missing</code></p>
+<ol>
+<li>用 <code>man</code> 查看程序 <code>touch</code> 的使用手册。</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos tmp]$ man touch</code></p>
+<ol>
+<li>用 <code>touch</code> 在 <code>missing</code> 文件夹中新建一个叫 <code>semester</code> 的文件。</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos tmp]$ touch ./missing/semester</code></p>
+<ol>
+<li>将以下内容一行一行地写入</li>
+</ol>
+<p><code>#!/bin/sh
+    curl --head --silent https://missing.csail.mit.edu</code></p>
+<p>第一行可能有点棘手， <code>#</code> 在Bash中表示注释，而 <code>!</code> 即使被双引号（<code>"</code>）包裹也具有特殊的含义。 单引号（<code>'</code>）则不一样，此处利用这一点解决输入问题。更多信息请参考 <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html">Bash quoting 手册</a></p>
+<p><code>bash
+   [lighthouse@VM-8-17-centos missing]$ echo '#!/bin/sh' &gt; semester 
+   [lighthouse@VM-8-17-centos missing]$ echo "curl --head --silent https://missing.csail.mit.edu" &gt;&gt; semester
+   [lighthouse@VM-8-17-centos missing]$ cat semester 
+   #!/bin/sh
+   curl --head --silent https://missing.csail.mit.edu</code></p>
+<ol>
+<li>尝试执行这个文件。例如，将该脚本的路径（<code>./semester</code>）输入到您的shell中并回车。如果程序无法执行，请使用 <code>ls</code> 命令来获取信息并理解其不能执行的原因。</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos missing]$ ./semester
+   -bash: ./semester: Permission denied
+   [lighthouse@VM-8-17-centos missing]$ ls -l
+   total 4
+   -rw-rw-r-- 1 lighthouse lighthouse 60 Dec 30 23:44 semester</code></p>
+<p>原因是没有执行x权限</p>
+<ol>
+<li>查看 <code>chmod</code> 的手册(例如，使用 <code>man chmod</code> 命令)</li>
+</ol>
+<p>略</p>
+<ol>
+<li>使用 <code>chmod</code> 命令改变权限，使 <code>./semester</code> 能够成功执行，不要使用 <code>sh semester</code> 来执行该程序。您的 shell 是如何知晓这个文件需要使用 <code>sh</code> 来解析呢？更多信息请参考：<a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a></li>
+</ol>
+<p>```bash
+   [lighthouse@VM-8-17-centos missing]$ chmod 764 semester
+   [lighthouse@VM-8-17-centos missing]$ ./semester
+   HTTP/1.1 200 OK
+   Connection: keep-alive
+   Content-Length: 7991
+   Server: GitHub.com
+   Content-Type: text/html; charset=utf-8
+   Last-Modified: Mon, 05 Dec 2022 15:59:23 GMT
+   Access-Control-Allow-Origin: *
+   ETag: "638e155b-1f37"
+   expires: Tue, 27 Dec 2022 02:31:08 GMT
+   Cache-Control: max-age=600
+   x-proxy-cache: MISS
+   X-GitHub-Request-Id: 5400:19D5:CB919:12261D:63AA5694
+   Accept-Ranges: bytes
+   Date: Fri, 30 Dec 2022 15:59:50 GMT
+   Via: 1.1 varnish
+   Age: 0
+   X-Served-By: cache-nrt-rjtf7700066-NRT
+   X-Cache: HIT
+   X-Cache-Hits: 1
+   X-Timer: S1672415990.322601,VS0,VE211
+   Vary: Accept-Encoding
+   X-Fastly-Request-ID: b5ca5ecd45fb43becb00f6f5b089c1d56b46a765</p>
+<p>```</p>
+<ol>
+<li>使用 <code>|</code> 和 <code>&gt;</code> ，将 <code>semester</code> 文件输出的最后更改日期信息，写入主目录下的 <code>last-modified.txt</code> 的文件中</li>
+</ol>
+<p><code>bash
+   [lighthouse@VM-8-17-centos missing]$ ./semester | grep Last &gt; ~/last-modified.txt
+   [lighthouse@VM-8-17-centos missing]$ cat ~/last-modified.txt
+   Last-Modified: Mon, 05 Dec 2022 15:59:23 GMT</code></p>
+<ol>
+<li>
+<p>写一段命令来从 <code>/sys</code> 中获取笔记本的电量信息，或者台式机 CPU 的温度。注意：macOS 并没有 sysfs，所以 Mac 用户可以跳过这一题。</p>
+<p>略</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>
