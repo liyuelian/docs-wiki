@@ -1,0 +1,3035 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="liyuelian">
+      
+      
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A002.md/">
+      
+      
+        <link rel="prev" href="../Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/">
+      
+      
+        <link rel="next" href="../github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>Git原理学习02-远程篇 - liyuelian的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git02-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="liyuelian的博客" class="md-header__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git原理学习02-远程篇
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      welcome
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link md-tabs__link--active">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-tabs__link">
+        JavaSE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-tabs__link">
+        JavaWeb
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-tabs__link">
+        MySQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        Spring
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-tabs__link">
+        The Missing Semester
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
+        前端技术栈
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的博客" class="md-nav__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        Git学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/" class="md-nav__link">
+        Git原理学习01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git原理学习02-远程篇
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Git原理学习02-远程篇
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pushpullgit" class="md-nav__link">
+    Push&amp;Pull——Git 远程仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="Push&amp;Pull——Git 远程仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-clone" class="md-nav__link">
+    git clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    远程分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-fetch" class="md-nav__link">
+    git fetch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-pull" class="md-nav__link">
+    git pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模拟团队合作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-push" class="md-nav__link">
+    git push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    偏离的提交
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-rejected" class="md-nav__link">
+    Remote Rejected
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day02-2-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day02-%E9%A2%84%E7%A7%91/" class="md-nav__link">
+        预科03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/" class="md-nav__link">
+        面向对象02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day46-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A002/" class="md-nav__link">
+        JDBC和连接池02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MySQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Java数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        5.MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Spring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Spring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        Spring基本介绍
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          The Missing Semester
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-nav__link">
+        主题 1 The Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        主题 2 Shell工具和脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pushpullgit" class="md-nav__link">
+    Push&amp;Pull——Git 远程仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="Push&amp;Pull——Git 远程仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-clone" class="md-nav__link">
+    git clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    远程分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-fetch" class="md-nav__link">
+    git fetch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-pull" class="md-nav__link">
+    git pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模拟团队合作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-push" class="md-nav__link">
+    git push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    偏离的提交
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-rejected" class="md-nav__link">
+    Remote Rejected
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+
+<h1 id="git02-">Git原理学习02-远程篇<a class="headerlink" href="#git02-" title="Permanent link">&para;</a></h1>
+<h2 id="pushpullgit">Push&amp;Pull——Git 远程仓库<a class="headerlink" href="#pushpullgit" title="Permanent link">&para;</a></h2>
+<h3 id="git-clone">git clone<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h3>
+<ul>
+<li>远程仓库</li>
+</ul>
+<p>远程仓库并不复杂, 在如今的云计算盛行的世界很容易把远程仓库想象成一个富有魔力的东西, 但实际上它们只是你的仓库在另个一台计算机上的拷贝。你可以通过因特网与这台计算机通信 —— 也就是增加或是获取提交记录</p>
+<p>话虽如此, 远程仓库却有一系列强大的特性</p>
+<ul>
+<li>首先也是最重要的的点, 远程仓库是一个强大的备份。本地仓库也有恢复文件到指定版本的能力, 但所有的信息都是保存在本地的。有了远程仓库以后，即使丢失了本地所有数据, 你仍可以通过远程仓库拿回你丢失的数据。</li>
+<li>还有就是, 远程让代码社交化了! 既然你的项目被托管到别的地方了, 你的朋友可以更容易地为你的项目做贡献(或者拉取最新的变更)</li>
+</ul>
+<p>现在用网站来对远程仓库进行可视化操作变得越发流行了(像 <a href="https://github.com/">GitHub</a>), 但远程仓库<strong>永远</strong>是这些工具的顶梁柱, 因此理解其概念非常的重要!</p>
+<p>我们现在需要学习远程仓库的操作 —— 我们需要一个配置这种环境的命令, 它就是 <code>git clone</code>。 从技术上来讲，<code>git clone</code> 命令在真实的环境下的作用是在<strong>本地</strong>创建一个远程仓库的拷贝（比如从 github.com）</p>
+<h3 id="_1">远程分支<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>既然你已经看过 <code>git clone</code> 命令了，咱们深入地看一下发生了什么。</p>
+<p>你可能注意到的第一个事就是在我们的本地仓库多了一个名为 <code>o/main</code> 的分支, 这种类型的分支就叫<strong>远程分支</strong>。由于远程分支的特性导致其拥有一些特殊属性。</p>
+<p>远程分支反映了远程仓库(在你上次和它通信时)的<strong>状态</strong>。这会有助于你理解本地的工作与公共工作的差别 —— 这是你与别人分享工作成果前至关重要的一步.</p>
+<p>远程分支有一个特别的属性，在你检出时自动进入分离 HEAD 状态。Git 这么做是出于不能直接在这些分支上进行操作的原因, 你必须在别的地方完成你的工作, （更新了远程分支之后）再用远程分享你的工作成果。</p>
+<ul>
+<li>为什么有 <code>o/</code>？</li>
+</ul>
+<p>你可能想问这些远程分支的前面的 <code>o/</code> 是什么意思呢？好吧, 远程分支有一个命名规范 —— 它们的格式是:</p>
+<p><code>&lt;remote name&gt;/&lt;branch name&gt;</code></p>
+<p>因此，如果你看到一个名为 <code>o/main</code> 的分支，那么这个分支就叫 <code>main</code>，远程仓库的名称就是 <code>o</code>。</p>
+<p>大多数的开发人员会将它们主要的远程仓库命名为 <code>origin</code>，并不是 <code>o</code>。这是因为当你用 <code>git clone</code> 某个仓库时，Git 已经帮你把远程仓库的名称设置为 <code>origin</code> 了</p>
+<p>不过 <code>origin</code> 对于我们的 UI 来说太长了，因此不得不使用简写 <code>o</code> :) 但是要记住, 当你使用真正的 Git 时, 你的远程仓库默认为 <code>origin</code>!</p>
+<p>说了这么多，让我们看看实例。</p>
+<p>如果检出远程分支会怎么样呢？（注：虚线的是远程仓库）</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222202151997.png" alt="image-20221222202151997" style="zoom:67%;" /></p>
+<p><code>git checkout o/mian;git commit</code></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222202251909.png" alt="image-20221222202251896" style="zoom:67%;" /></p>
+<p>正如你所见，Git 变成了分离 HEAD 状态，当添加新的提交时 <code>o/main</code> 也不会更新。这是因为 <code>o/main</code> 只有在远程仓库中相应的分支更新了以后才会更新。</p>
+<h3 id="git-fetch">git fetch<a class="headerlink" href="#git-fetch" title="Permanent link">&para;</a></h3>
+<p>Git 远程仓库相当的操作实际可以归纳为两点：向远程仓库传输数据以及从远程仓库获取数据。既然我们能与远程仓库同步，那么就可以分享任何能被 Git 管理的更新（因此可以分享代码、文件、想法、情书等等）。</p>
+<p>本节课我们将学习如何从远程仓库获取数据 —— 命令如其名，它就是 <code>git fetch</code>。</p>
+<p>你会看到当我们从远程仓库获取数据时, 远程分支也会更新以反映最新的远程仓库。在上一节课程中我们已经提及过这一点了。</p>
+<p>在解释 <code>git fetch</code> 前，我们先看看实例。这里我们有一个远程仓库, 它有两个我们本地仓库中没有的提交。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222202555552.png" alt="image-20221222202555552" style="zoom:60%;" /> <code>git fetch</code><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222202738220.png" alt="image-20221222202738220" style="zoom:67%;" /></p>
+<p>就是这样了! <code>C2</code>,<code>C3</code> 被下载到了本地仓库，同时远程分支 <code>o/main</code> 也被更新，反映到了这一变化</p>
+<ul>
+<li>git fetch 做了些什么</li>
+</ul>
+<p><code>git fetch</code> 完成了仅有的但是很重要的两步:</p>
+<ol>
+<li>从远程仓库下载本地仓库中缺失的提交记录</li>
+<li>更新远程分支指针(如 <code>o/main</code>)</li>
+</ol>
+<p><code>git fetch</code> 实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。</p>
+<p>如果你还记得上一节课程中我们说过的，远程分支反映了远程仓库在你<strong>最后一次与它通信时</strong>的状态，<code>git fetch</code> 就是你与远程仓库通信的方式了！希望我说的够明白了，你已经了解 <code>git fetch</code> 与远程分支之间的关系了吧。</p>
+<p><code>git fetch</code> 通常通过互联网（使用 <code>http://</code> 或 <code>git://</code> 协议) 与远程仓库通信。</p>
+<ul>
+<li>git fetch 不会做的事</li>
+</ul>
+<p><code>git fetch</code> 并不会改变你本地仓库的状态。它不会更新你的 <code>main</code> 分支，也不会修改你磁盘上的文件。</p>
+<p>理解这一点很重要，因为许多开发人员误以为执行了 <code>git fetch</code> 以后，他们本地仓库就与远程仓库同步了。它可能已经将进行这一操作所需的所有数据都下载了下来，但是<strong>并没有</strong>修改你本地的文件。我们在后面的课程中将会讲解能完成该操作的命令 :D</p>
+<p>所以, 你可以将 <code>git fetch</code> 的理解为单纯的下载操作。</p>
+<h3 id="git-pull">git pull<a class="headerlink" href="#git-pull" title="Permanent link">&para;</a></h3>
+<p>既然我们已经知道了如何用 <code>git fetch</code> 获取远程的数据, 现在我们学习如何将这些变化更新到我们的工作当中。</p>
+<p>其实有很多方法的 —— 当远程分支中有新的提交时，你可以像合并本地分支那样来合并远程分支。也就是说就是你可以执行以下命令:</p>
+<ul>
+<li><code>git cherry-pick o/main</code></li>
+<li><code>git rebase o/main</code></li>
+<li><code>git merge o/main</code></li>
+<li>等等</li>
+</ul>
+<p>实际上，由于先抓取更新再合并到本地分支这个流程很常用，因此 Git 提供了一个专门的命令来完成这两个操作。它就是我们要讲的 <code>git pull</code>。</p>
+<p>我们先来看看 <code>fetch</code>、<code>merge</code> 依次执行的效果：</p>
+<blockquote>
+<p>虚线为远程仓库，o/main为远程分支</p>
+</blockquote>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222203951010.png" alt="image-20221222203951010" style="zoom:60%;" /> <code>git fetch;git merge o/main</code><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204130135.png" style="zoom:52%;" /></p>
+<p>我们用 <code>fetch</code> 下载了 <code>C3</code>, 然后通过 <code>git merge o/main</code> 合并了这一提交记录。现在我们的 <code>main</code> 分支包含了远程仓库中的更新（在本例中远程仓库名为 <code>origin</code>）</p>
+<p>如果使用 <code>git pull</code> 呢?</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204130135.png" style="zoom:52%;" /></p>
+<p>同样的结果！这清楚地说明了 <code>git pull</code> 就是 git fetch 和 git merge 的缩写！</p>
+<h3 id="_2">模拟团队合作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="git-push">git push<a class="headerlink" href="#git-push" title="Permanent link">&para;</a></h3>
+<p>OK，我们已经学过了如何从远程仓库获取更新并合并到本地的分支当中。这非常棒……但是我如何与大家分享<strong>我的</strong>成果呢？</p>
+<p>嗯，上传自己分享内容与下载他人的分享刚好相反，那与 <code>git pull</code> 相反的命令是什么呢？<code>git push</code>！</p>
+<p><code>git push</code> 负责将<strong>你的</strong>变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录。一旦 <code>git push</code> 完成, 你的朋友们就可以从这个远程仓库下载你分享的成果了！</p>
+<p>你可以将 <code>git push</code> 想象成发布你成果的命令。它有许多应用技巧，稍后我们会了解到，但是咱们还是先从基础的开始吧……</p>
+<p>注意 —— <code>git push</code> 不带任何参数时的行为与 Git 的一个名为 <code>push.default</code> 的配置有关。它的默认值取决于你正使用的 Git 的版本，但是在教程中我们使用的是 <code>upstream</code>。 这没什么太大的影响，但是在你的项目中进行推送之前，最好检查一下这个配置。</p>
+<p>这里我们准备了一些远程仓库中没有的提交记录, 咱们开始先上传吧!</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204506335.png" alt="image-20221222204506335" style="zoom:67%;" /> <code>git push</code><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204538170.png" alt="image-20221222204538170" style="zoom:67%;" /></p>
+<p>过去了, 远程仓库接收了 <code>C2</code>，远程仓库中的 <code>main</code> 分支也被更新到指向 <code>C2</code> 了，我们的远程分支 (o/main) 也同样被更新了。所有的分支都同步了！</p>
+<h3 id="_3">偏离的提交<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>现在我们已经知道了如何从其它地方 <code>pull</code> 提交记录，以及如何 <code>push</code> 我们自己的变更。看起来似乎没什么难度，但是为何还会让人们如此困惑呢？</p>
+<p>困难来自于远程库提交历史的<strong>偏离</strong>。在讨论这个问题的细节前，我们先来看一个例子……</p>
+<p>假设你周一克隆了一个仓库，然后开始研发某个新功能。到周五时，你新功能开发测试完毕，可以发布了。但是 —— 天啊！你的同事这周写了一堆代码，还改了许多你的功能中使用的 API，这些变动会导致你新开发的功能变得不可用。但是他们已经将那些提交推送到远程仓库了，因此你的工作就变成了基于项目<strong>旧版</strong>的代码，与远程仓库最新的代码不匹配了。</p>
+<p>这种情况下, <code>git push</code> 就不知道该如何操作了。如果你执行 <code>git push</code>，Git 应该让远程仓库回到星期一那天的状态吗？还是直接在新代码的基础上添加你的代码，亦或由于你的提交已经过时而直接忽略你的提交？</p>
+<p>因为这情况（历史偏离）有许多的不确定性，Git 是不会允许你 <code>push</code> 变更的。实际上它会强制你先合并远程最新的代码，然后才能分享你的工作。</p>
+<p>说了这么多，咱们还是看看实际案例吧！</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204756441.png" alt="image-20221222204756441" style="zoom:67%;" /> <code>git push</code><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204756441.png" style="zoom:67%;" /></p>
+<p>看见了吧？什么都没有变，因为命令失败了！<code>git push</code> 失败是因为你最新提交的 <code>C3</code> 基于远程分支中的 <code>C1</code>。而远程仓库中该分支已经更新到 <code>C2</code> 了，所以 Git 拒绝了你的推送请求。</p>
+<p>那该如何解决这个问题呢？很简单，你需要做的就是使你的工作基于最新的远程分支。</p>
+<p>有许多方法做到这一点呢，不过最直接的方法就是通过 rebase 调整你的工作。咱们继续，看看怎么 rebase！</p>
+<p>如果我们在 push 之前做 rebase 呢？</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204756441.png" alt="image-20221222204756441" style="zoom:67%;" /></p>
+<p><code>git fetch;git rebase o/main;git push</code></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222205052497.png" alt="image-20221222205052497" style="zoom:67%;" /></p>
+<p>我们用 <code>git fetch</code> 更新了本地仓库中的远程分支，然后用 rebase 将我们的工作移动到最新的提交记录下，最后再用 <code>git push</code> 推送到远程仓库。</p>
+<p>还有其它的方法可以在远程仓库变更了以后更新我的工作吗? 当然有，我们还可以使用 <code>merge</code></p>
+<p>尽管 <code>git merge</code> 不会移动你的工作（它会创建新的合并提交），但是它会告诉 Git 你已经合并了远程仓库的所有变更。这是因为远程分支现在是你本地分支的祖先，也就是说你的提交已经包含了远程分支的所有变化。</p>
+<p>咱们们用 merge 替换 rebase 来试一下……</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204756441.png" alt="image-20221222204756441" style="zoom:67%;" /></p>
+<p><code>git fetch;git merge o/main;git push</code></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222205316741.png" alt="image-20221222205316741" style="zoom:67%;" /></p>
+<p>我们用 <code>git fetch</code> 更新了本地仓库中的远程分支，然后<strong>合并</strong>了新变更到我们的本地分支（为了包含远程仓库的变更），最后我们用 <code>git push</code> 把工作推送到远程仓库</p>
+<p>很好！但是要敲那么多命令，有没有更简单一点的？</p>
+<p>当然 —— 前面已经介绍过 <code>git pull</code> 就是 fetch 和 merge 的简写，类似的 <code>git pull --rebase</code> 就是 fetch 和 rebase 的简写！</p>
+<p>让我们看看简写命令是如何工作的。</p>
+<p>这次用 <code>--rebase</code>……</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222204756441.png" alt="image-20221222204756441" style="zoom:67%;" /></p>
+<p><code>git pull --rebase;git push</code></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222205554169.png" alt="image-20221222205554169" style="zoom:60%;" /></p>
+<p>跟之前结果一样，但是命令更短了。</p>
+<p>换用常规的 <code>pull</code></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221222205316741.png" alt="image-20221222205316741" style="zoom:67%;" /></p>
+<p>还是跟以前一样!</p>
+<p>由 fetch、rebase/merge 和 push 组成的工作流很普遍。后续课程我们会讲解更复杂的工作流</p>
+<h3 id="remote-rejected">Remote Rejected<a class="headerlink" href="#remote-rejected" title="Permanent link">&para;</a></h3>
+<p>远程服务器拒绝!</p>
+<p>如果你是在一个大的合作团队中工作, 很可能是main被锁定了, 需要一些Pull Request流程来合并修改。如果你直接提交(commit)到本地main, 然后试图推送(push)修改, 你将会收到这样类似的信息:</p>
+<p><code>! [远程服务器拒绝] main -&gt; main (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)</code></p>
+<ul>
+<li>为什么会被拒绝?</li>
+</ul>
+<p>远程服务器拒绝直接推送(push)提交到main, 因为策略配置要求 pull requests 来提交更新.</p>
+<p>你应该按照流程,新建一个分支, 推送(push)这个分支并申请pull request,但是你忘记并直接提交给了main.现在你卡住并且无法推送你的更新.</p>
+<ul>
+<li>解决办法</li>
+</ul>
+<p>新建一个分支feature, 推送到远程服务器. 然后reset你的main分支和远程服务器保持一致, 否则下次你pull并且他人的提交和你冲突的时候就会有问题.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Git原理学习01" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                Git原理学习01
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-footer__link md-footer__link--next" aria-label="下一页: Github基本使用" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                Github基本使用
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/liyuelian" target="_blank" rel="noopener noreferrer">liyuelian</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/liyuelian/docs-wiki/" target="_blank" rel="noopener" title="GitHub | Li-Yue-Lian" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

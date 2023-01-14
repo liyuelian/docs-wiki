@@ -1,0 +1,4069 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="liyuelian">
+      
+      
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/JavaSE/day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/">
+      
+      
+        <link rel="prev" href="../day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/">
+      
+      
+        <link rel="next" href="../day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>面向对象02 - liyuelian的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="liyuelian的博客" class="md-header__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              面向对象02
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      welcome
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../day01-%E5%89%8D%E8%A8%80/" class="md-tabs__link md-tabs__link--active">
+        JavaSE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-tabs__link">
+        JavaWeb
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-tabs__link">
+        MySQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        Spring
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-tabs__link">
+        The Missing Semester
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
+        前端技术栈
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的博客" class="md-nav__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        Git学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/" class="md-nav__link">
+        Git原理学习01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A002.md/" class="md-nav__link">
+        Git原理学习02-远程篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-2-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-%E9%A2%84%E7%A7%91/" class="md-nav__link">
+        预科03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          面向对象02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        面向对象02
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.==继承==
+  </a>
+  
+    <nav class="md-nav" aria-label="7.==继承==">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71object" class="md-nav__link">
+    7.1Object类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72super" class="md-nav__link">
+    7.2Super关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3方法重写
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.==多态==
+  </a>
+  
+    <nav class="md-nav" aria-label="8.==多态==">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1多态的定义和使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82instanceof" class="md-nav__link">
+    8.2instanceof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    8.3类的类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    8.4向上转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84_1" class="md-nav__link">
+    8.4向下转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85dynamicbinding" class="md-nav__link">
+    8.5动态绑定机制(DynamicBinding)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9static" class="md-nav__link">
+    9.static关键字详解
+  </a>
+  
+    <nav class="md-nav" aria-label="9.static关键字详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    9.1静态变量和静态方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    9.2静态代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    9.3静态导入包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day46-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A002/" class="md-nav__link">
+        JDBC和连接池02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MySQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Java数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        5.MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Spring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Spring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        Spring基本介绍
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          The Missing Semester
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-nav__link">
+        主题 1 The Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        主题 2 Shell工具和脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.==继承==
+  </a>
+  
+    <nav class="md-nav" aria-label="7.==继承==">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71object" class="md-nav__link">
+    7.1Object类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72super" class="md-nav__link">
+    7.2Super关键字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    7.3方法重写
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.==多态==
+  </a>
+  
+    <nav class="md-nav" aria-label="8.==多态==">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1多态的定义和使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82instanceof" class="md-nav__link">
+    8.2instanceof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    8.3类的类型转换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    8.4向上转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84_1" class="md-nav__link">
+    8.4向下转型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85dynamicbinding" class="md-nav__link">
+    8.5动态绑定机制(DynamicBinding)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9static" class="md-nav__link">
+    9.static关键字详解
+  </a>
+  
+    <nav class="md-nav" aria-label="9.static关键字详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    9.1静态变量和静态方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    9.2静态代码块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    9.3静态导入包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+
+<h1 id="02">面向对象02<a class="headerlink" href="#02" title="Permanent link">&para;</a></h1>
+<h2 id="7">7.==继承==<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>继承的本质是对某一批类的抽象，从而实现对现实世界更好地建模</li>
+<li>extends的意思是“扩展”。子类是父类的扩展。</li>
+<li>Java类中只有单继承，没有多继承！（一个儿子只能有一个爸爸，一个爸爸可以有多个儿子）</li>
+<li><strong>继承是类和类之间的一种关系</strong>。除此之外，类和类之间的关系还有依赖、组合、聚合等。</li>
+<li>继承关系的两个类，一个为子类（派生类），一个为父类（基类）。子类继承父类，使用关键字extends表示</li>
+<li>子类和父类之间，从意义上讲应该具有“is a”的关系</li>
+<li><strong>object类</strong></li>
+<li><strong>super</strong></li>
+<li><strong>方法重写</strong></li>
+</ul>
+<p>子类继承了父类，就会有父类的全部方法！（私有的东西无法被继承）</p>
+<blockquote>
+<p>例子1：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+
+<span class="c1">//父类：Person 人</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//public</span>
+<span class="w">    </span><span class="c1">//protected</span>
+<span class="w">    </span><span class="c1">//default</span>
+<span class="w">    </span><span class="c1">//private</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10_0000_0000</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">say</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;说了一句话&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMoney</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">money</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMoney</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">money</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+<span class="c1">//学生 is 人</span>
+<span class="c1">//派生类（子类）,子类继承了父类，就会有父类的全部方法</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo05.Student</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">student</span><span class="p">.</span><span class="na">say</span><span class="p">();</span><span class="c1">//说了一句话</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">money</span><span class="p">);</span><span class="c1">// 1000000000</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220729214339154.png" alt="image-20220729214339154" style="zoom:50%;" /></p>
+<h3 id="71object">7.1Object类<a class="headerlink" href="#71object" title="Permanent link">&para;</a></h3>
+<p>在Java中，所有的类都默认直接或者间接继承Object类</p>
+<h3 id="72super">7.2Super关键字<a class="headerlink" href="#72super" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>super. 大部分情况下是可以省略的。
+  当父中类有，子类中又有，如果想在子中访问“父的特征”，super. 不能省略。
+  在父和子中有同名的属性，或者说有相同的方法，如果此时想在子类中访问父中的数据，必须使用“super.”加以区分。</p>
+</li>
+<li>
+<p>super.属性名 ---&gt;访问父类的属性</p>
+</li>
+<li>
+<p>super.方法名(实参) ---&gt;访问父类的方法</p>
+</li>
+<li>
+<p>super(实参) ----&gt;调用父类的构造方法</p>
+</li>
+<li>
+<p>子类继承父类，<strong>子类的构造方法必须调用super（）即父类的构造方法，而且必须放在构造方法的第一行。</strong></p>
+</li>
+</ul>
+<p>子类构造方法第一行都有调用父类无参的构造方法，如果你不显示地写出了，系统会自己加上；</p>
+<p><strong>但是如果你的父类重载了一个或多个构造方法，系统将不再默认加上无参的构造方法，必须自己加上。</strong></p>
+<ol>
+<li>super调用父类的构造方法，必须在构造方法中的第一行</li>
+<li>super必须只能出现在子类的方法或者构造方法中</li>
+<li>super和this不能同时调用构造方法</li>
+<li><strong>super&amp;&amp;this</strong></li>
+<li>代表的对象不同：<ul>
+<li>this：代表本身调用者这个对象</li>
+<li>代表当前类的父类对象的引用</li>
+</ul>
+</li>
+<li>前提：<ul>
+<li>this：没有继承也可以使用</li>
+<li>super：只能在继承条件下才可以使用</li>
+</ul>
+</li>
+<li>构造方法的区别：<ul>
+<li>this（）；     本类的构造</li>
+<li>super（）；  父类的构造</li>
+</ul>
+</li>
+</ol>
+<h3 id="73">7.3方法重写<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>例子1：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+<span class="c1">//重写都是方法的重写，和属性无关</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B==&gt;test&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">B</span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A==&gt;test&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo05.A</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo05.B</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="c1">//静态方法：方法的调用只和左边定义的类型有关</span>
+<span class="w">       </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
+<span class="w">       </span><span class="n">a</span><span class="p">.</span><span class="na">test</span><span class="p">();</span><span class="c1">//调用的是A类方法</span>
+
+<span class="w">       </span><span class="c1">//父类的引用指向了子类</span>
+<span class="w">       </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
+<span class="w">       </span><span class="n">b</span><span class="p">.</span><span class="na">test</span><span class="p">();</span><span class="c1">//调用的是B类方法</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730150501414.png" alt="image-20220730150501414" style="zoom:67%;" /></p>
+<p><strong>静态方法：方法的调用只和左边定义的类型有关</strong></p>
+<blockquote>
+<p>例子2：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+<span class="c1">//重写都是方法的重写，和属性无关</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B==&gt;test&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo05</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">B</span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Override  重写</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="c1">// 注解：有功能的注解！</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A==&gt;test&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo05.A</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo05.B</span><span class="p">;</span>
+
+<span class="c1">//静态方法和非静态方法区别很大！</span>
+<span class="c1">//静态方法：方法的调用只和左边定义的类型有关</span>
+<span class="c1">//非静态：重写</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">       </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
+<span class="w">       </span><span class="n">a</span><span class="p">.</span><span class="na">test</span><span class="p">();</span>
+
+<span class="w">       </span><span class="c1">//父类的引用指向了子类</span>
+<span class="w">       </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span><span class="c1">//子类重写了父类的方法</span>
+<span class="w">       </span><span class="n">b</span><span class="p">.</span><span class="na">test</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730151534644.png" alt="image-20220730151534644" style="zoom:67%;" /></p>
+<p><strong>总结：</strong></p>
+<p><strong>重写</strong>  ：子类的方法和父类的方法必须要一致，方法体不同</p>
+<p>--    重写前提：需要有继承关系，子类重写父类的方法</p>
+<ol>
+<li>方法名必须相同</li>
+<li>参数列表必须相同</li>
+<li>修饰符：范围可扩大，但不能缩小：public&gt;protected&gt;default&gt;private</li>
+<li>抛出的异常：范围可以被缩小，但不能扩大。例如：ClassNotFoundException（范围小）--&gt;Exception(范围大)</li>
+</ol>
+<p><strong>为什么需要重写？</strong>：父类的功能，子类不一定需要，或者不一定满足！</p>
+<p>快捷键：Alt+insert：Override；</p>
+<h2 id="8">8.==多态==<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1多态的定义和使用<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>即同一方法可以根据发送对象的不同而采取多种不同的行为方式</p>
+</li>
+<li>
+<p>一个对象的实际类型是确定的，但可以指向对象的引用类型有很多</p>
+</li>
+</ul>
+<blockquote>
+<p>这里的引用一般指父类或者有关系的类</p>
+</blockquote>
+<ul>
+<li>
+<p>==多态存在的条件：==</p>
+</li>
+<li>
+<p>有继承关系</p>
+</li>
+<li>子类重写父类方法</li>
+<li>父类引用指向子类对象</li>
+<li>注意：多态是方法的多态，属性没有多态性</li>
+<li>instanceof    （类型转换）引用类型</li>
+</ul>
+<blockquote>
+<p>例子1：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;run&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Person</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Student</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">//一个对象的实际类型是确定的</span>
+<span class="w">        </span><span class="c1">//new Student();</span>
+<span class="w">        </span><span class="c1">//new Person();</span>
+
+<span class="w">        </span><span class="c1">//但是可以指向的引用类型就不确定了</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="c1">//父类的引用指向子类</span>
+<span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="c1">//父类的引用指向子类</span>
+
+<span class="w">        </span><span class="n">s2</span><span class="p">.</span><span class="na">run</span><span class="p">();</span><span class="c1">//这里虽然new的是Student，但是是它依旧走的是父类的方法，因为子类继承了父类的全部方法</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730154506673.png" alt="image-20220730154506673" style="zoom:67%;" /></p>
+<p>这里的 s2 虽然new的是Student，但是是s2.run() 依旧走的是父类的方法，因为子类继承了父类的全部方法</p>
+<blockquote>
+<p>例子2</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;run&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;son&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;eat&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Person</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Student</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">//一个对象的实际类型是确定的</span>
+<span class="w">        </span><span class="c1">//new Student();</span>
+<span class="w">        </span><span class="c1">//new Person();</span>
+<span class="w">        </span><span class="c1">//但是可以指向的引用类型就不确定了</span>
+
+<span class="w">        </span><span class="c1">//Sudent能调用的方法都是自己的或者继承父类的</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//Person父类型：可以指向子类，但是不能调用子类独有的方法</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="c1">//父类的引用指向子类</span>
+<span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="c1">//父类的引用指向子类</span>
+
+<span class="w">        </span><span class="n">s2</span><span class="p">.</span><span class="na">run</span><span class="p">();</span><span class="c1">//子类重写了父类的方法,执行子类的方法</span>
+<span class="w">        </span><span class="n">s1</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//s2.eat 不能调用  s2为Person父类型：可以指向子类，但是不能调用子类独有的方法</span>
+<span class="w">        </span><span class="p">((</span><span class="n">Student</span><span class="p">)</span><span class="w"> </span><span class="n">s2</span><span class="p">).</span><span class="na">eat</span><span class="p">();</span><span class="c1">//强制类型转换后才可以使用</span>
+<span class="w">        </span><span class="c1">//对象能够执行的方法主要看对象左边的类型和右边关系不大</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>对象能够执行的方法主要看对象左边的类型和右边关系不大。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//Person父类型：可以指向子类，但是不能调用子类独有的方法</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span><span class="c1">//父类的引用指向子类</span>
+<span class="c1">//子类Sudent能调用的方法都是自己的或者继承父类的</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730155646033.png" alt="image-20220730155646033" style="zoom:67%;" /></p>
+<p><strong>多态注意事项：</strong></p>
+<ul>
+<li>多态是方法的多态，属性没有多态</li>
+<li>父类和子类，有联系       </li>
+<li>多态存在的必要条件：</li>
+<li>有继承关系  </li>
+<li>方法需要重写  <ul>
+<li>不能重写的方法：</li>
+<li>1.static 方法，属于类，它不属于实例</li>
+<li>final 常量</li>
+<li>private 方法</li>
+</ul>
+</li>
+<li>父类的引用指向子类对象</li>
+</ul>
+<h3 id="82instanceof">8.2instanceof<a class="headerlink" href="#82instanceof" title="Permanent link">&para;</a></h3>
+<p>instanceof(类型转换)引用类型，判断一个对象是什么类型</p>
+<blockquote>
+<p>例子1：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;run&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Teacher</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Person</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Student</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Teacher</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">//Object &gt; Person &gt; Student</span>
+<span class="w">        </span><span class="c1">//Object &gt; Person &gt; Teacher</span>
+<span class="w">        </span><span class="c1">//Object &gt; String</span>
+
+<span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Student</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Person</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Object</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Teacher</span><span class="p">);</span><span class="c1">//false</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">String</span><span class="p">);</span><span class="c1">//false</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==============&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Student</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Person</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Object</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Teacher</span><span class="p">);</span><span class="c1">//false</span>
+<span class="w">       </span><span class="c1">// 编译就报错了 System.out.println(person instanceof String);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==============&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">student</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Student</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">student</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Person</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">student</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Object</span><span class="p">);</span><span class="c1">//true</span>
+<span class="w">        </span><span class="c1">// 编译就报错了 System.out.println(student instanceof Teacher);</span>
+<span class="w">        </span><span class="c1">//编译就报错了 System.out.println(student instanceof String);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>总结：</p>
+<p>System.out.println(X instanceof Y);</p>
+<p>能不能编译通过，取决于X与Y之间是否存在直系继承关系</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730170759125.png" alt="image-20220730170759125" style="zoom: 50%;" /></p>
+<h3 id="83">8.3类的类型转换<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<ul>
+<li>基本类型转换</li>
+<li>高容量转换成低容量：强制类型转换</li>
+<li>低容量转换成高容量：自动类型转换</li>
+<li>类之间的转化：父类代表高的，子类代表低的</li>
+<li>父转子：强制转换</li>
+<li>子转父：自动转换</li>
+</ul>
+<blockquote>
+<p>例子：</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo06</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">go</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;go&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Person</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">li.oop.demo06.Student</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Application</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="cm">/*类型之间的转换：</span>
+<span class="cm">         1.基本类型转换--&gt;高容量转换成低容量：强制类型转换</span>
+<span class="cm">                       低容量转换成高容量：自动类型转换</span>
+<span class="cm">         2.类之间的转化：父类代表高的，子类代表低的</span>
+<span class="cm">         */</span>
+
+<span class="w">        </span><span class="c1">//高   &lt;--- ---- ---     低</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//这里只有在子类Student类中才有go（）方法，</span>
+<span class="w">        </span><span class="c1">// 而student对象是Person类型的，因此不能直接调用，需要强制类型转换成子类类型才能使用go（）方法</span>
+<span class="w">        </span><span class="c1">//高   --- ---- --- &gt;    低</span>
+<span class="w">        </span><span class="p">((</span><span class="n">Student</span><span class="p">)</span><span class="w"> </span><span class="n">student</span><span class="p">).</span><span class="na">go</span><span class="p">();</span><span class="c1">//go</span>
+
+<span class="w">        </span><span class="c1">//或者</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">student1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Student</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span><span class="c1">//强制转换</span>
+<span class="w">        </span><span class="n">student1</span><span class="p">.</span><span class="na">go</span><span class="p">();</span><span class="c1">//go</span>
+
+
+<span class="w">        </span><span class="cm">/*</span>
+<span class="cm">        子类转换成父类可能会丢失自己本来的一些方法</span>
+<span class="cm">         */</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">student2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">student2</span><span class="p">.</span><span class="na">go</span><span class="p">();</span><span class="c1">//go</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">student2</span><span class="p">;</span><span class="c1">//自动转换 低--&gt;高</span>
+<span class="w">       </span><span class="c1">//这里的 person对象就不能使用原本子类的go()方法了</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730172902824.png" alt="image-20220730172902824" style="zoom:67%;" /></p>
+<p>总结：</p>
+<ol>
+<li>
+<p><strong>父类的引用指向子类的对象</strong>（子类的引用<strong>不能</strong>指向父类的对象）</p>
+</li>
+<li>
+<p>把子类转换为父类，向上转型（自动转换）</p>
+</li>
+<li>
+<p>把父类转换为子类，向下转型（强制转换）</p>
+</li>
+</ol>
+<blockquote>
+<p>基本数据类型的强制转换可能会丢失精度，类的强制转换可能会丢失一些方法</p>
+</blockquote>
+<ol>
+<li>为什么会存在类的类型转换？方便方法的调用，减少重复代码，更简洁</li>
+</ol>
+<h3 id="84">8.4向上转型<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
+<ol>
+<li>本质：父类的引用指向子类的对象</li>
+<li>语法：父类类型 引用名=new 子类类型();</li>
+<li>特点：编译类型看左边，运行类型看右边。可以调用父类中的所有成员（须遵守访问权限），不能调用子类中特有成员。</li>
+<li>最终运行效果看子类的具体实现，即调用方法时，从子类开始查找方法，然后调用。</li>
+</ol>
+<p>父类类型的引用可以调用父类中定义的所有属性和方法，而对于子类中定义而父类中没有的方法，父类引用是无法调用的；</p>
+<p><strong>因为在编译阶段，能调用哪些成员，是由编译类型来决定的。</strong></p>
+<p>==<strong>编译时，会从顶级类开始找调用的方法。运行时，会从运行类型开始，向父类查找方法。</strong>==</p>
+<h3 id="84_1">8.4向下转型<a class="headerlink" href="#84_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>语法：子类类型 引用名 =（子类类型）父类引用；</li>
+<li>只能强转父类的引用，不能强转父类的对象</li>
+<li><strong>要求父类的引用必须指向的是当前目标类型的对象</strong></li>
+<li>当向下转型后，可以调用子类类型中的所有成员</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//如下 Animal是父类，Cat是子类</span>
+<span class="c1">//声明的父类animal引用指向子类Cat</span>
+<span class="c1">//则 animal的编译类型是Animal，运行类型是Cat</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+<span class="c1">//现在我们向下转型</span>
+<span class="n">Cat</span><span class="w"> </span><span class="n">cat</span><span class="o">=</span><span class="p">(</span><span class="n">Cat</span><span class="p">)</span><span class="n">animal</span><span class="p">;</span><span class="c1">//此刻，编译类型是Cat，运行类型还是Cat</span>
+</code></pre></div></td></tr></table></div>
+<p>Animal animal = new Cat(); --&gt;意为在堆中有一个Cat对象，然后有一个名为animal的对象引用指向了这个Cat对象；</p>
+<p>Cat cat=(Cat)animal; --&gt;意为，有一个名为cat的对象引用，指向了animal指向的Cat对象</p>
+<p>现在相当于有两个对象引用（animal，cat）指向了堆中的这个Cat对象。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221129003854392.png" alt="image-20221129003854392" style="zoom: 70%;" /></p>
+<p>这也是为什么向下转型，要求父类的引用必须指向的是当前目标类型的对象。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//现在,假如Dog也是Animal的子类，那么</span>
+<span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="o">=</span><span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="n">animal</span><span class="p">;</span><span class="c1">//正确吗？</span>
+<span class="c1">//答案是不正确！！</span>
+<span class="c1">//因为animal是一个对象引用，它指向的是前面所说的Cat对象。向下转型，要求父类的引用必须指向的是当前目标类型的对象。但当前目标类型变成了Dog</span>
+<span class="c1">//在编译时不会出错，但是运行时会出现类型转换异常！！</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="85dynamicbinding">8.5动态绑定机制(DynamicBinding)<a class="headerlink" href="#85dynamicbinding" title="Permanent link">&para;</a></h3>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221129010030892.png" alt="image-20221129010030892" style="zoom:67%;" /></p>
+<p>运行结果如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221129010236374.png" alt="image-20221129010236374" style="zoom:67%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221129010330497.png" alt="image-20221129010330497" style="zoom:67%;" /></p>
+<ul>
+<li>现在我们把子类B的sum方法删除，请问a.sum()运行结果是什么？</li>
+</ul>
+<p>由于子类没有了sum方法，在运行时，根据继承机制，会找到父类的sum方法，在父类的sum方法中会调用getI()+10; 那么问题来了，getI()方法子父类都有，会调用子类的还是父类的呢？</p>
+<p>答案是子类的。</p>
+<p>这就涉及到动态绑定机制：当调用对象方法的时候，在运行时，该方法会和该类型的运行类型绑定。</p>
+<p>在例子中，由于a的运行类型是B，因此会到B类中找getI()方法。在子类的getI()方法中，返回i，由于属性是没有动态绑定机制的，因此返回的就是子类的属性i=20；</p>
+<p>所以结果其实是20+10=30；</p>
+<ul>
+<li>现在我们把子类B的sum1方法也删除了，请问a.sum1()运行结果是什么？</li>
+</ul>
+<p>根据之前的分析，一旦调用对象的方法，该方法会和该对象的内存地址/运行类型绑定。调用a.sum1()方法时，由于a的运行类型是B，因此会到B类中找sum1()方法，但是B中没有sum1方法，于是继承机制发挥作用，去找父类A有没有这个方法，发现有，就调用父类的sum1方法，返回的是i+10；由于属性没有动态绑定机制，就在当前类，即A类中拿到i，使用。</p>
+<p>所以结果是10+10=20；</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221129012611207.png" alt="image-20221129012611207" style="zoom: 67%;" /></p>
+<p>动态绑定机制：</p>
+<ol>
+<li>当调用对象<strong>方法</strong>的时候，<strong>该方法会和该对象的内存地址/运行类型</strong>绑定</li>
+<li>当调用对象属性的时候，没有动态绑定机制，哪里声明，哪里使用</li>
+</ol>
+<h2 id="9static">9.static关键字详解<a class="headerlink" href="#9static" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1静态变量和静态方法<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>例子1：静态变量尽量使用类名来访问</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo07</span><span class="p">;</span>
+
+<span class="c1">//static</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="c1">//静态的变量</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="c1">//非静态的变量</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//1.静态变量尽量使用类名来访问</span>
+<span class="w">        </span><span class="c1">//通过类来使用</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Student</span><span class="p">.</span><span class="na">age</span><span class="p">);</span><span class="c1">//0</span>
+<span class="w">        </span><span class="c1">//通过对象来使用</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">age</span><span class="p">);</span><span class="c1">//0</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">score</span><span class="p">);</span><span class="c1">//0.0</span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>例子2：静态方法</p>
+</blockquote>
+<ul>
+<li>
+<p>调用非静态方法需要通过实例对象来调用</p>
+</li>
+<li>
+<p>调用静态方法可以直接通过类调用，如果如果静态方法和main方法在同一个类中，甚至可以直接调用</p>
+</li>
+<li>非静态方法可以去调用静态方法里的所有东西，而静态方法不能调非静态方法</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo07</span><span class="p">;</span>
+
+<span class="c1">//static</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="c1">//静态的变量</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="c1">//非静态的变量</span>
+
+
+<span class="w">    </span><span class="kd">public</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;run&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">go</span><span class="p">(){</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;go&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">       </span><span class="c1">//2.静态方法</span>
+<span class="w">        </span><span class="c1">//调用非静态方法需要通过实例对象来调用</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s2</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//调用静态方法可以直接通过类调用，如果如果静态方法和main方法在同一个类中，甚至可以直接调用</span>
+<span class="w">        </span><span class="n">Student</span><span class="p">.</span><span class="na">go</span><span class="p">();</span>
+<span class="w">        </span><span class="n">go</span><span class="p">();</span>
+
+<span class="w">         </span><span class="c1">//3.非静态方法可以去调用静态方法里的所有东西，而静态方法不能调非静态方法</span>
+<span class="w">        </span><span class="c1">//比如在静态方法main()中不能直接调用非静态方法run()</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="92">9.2静态代码块<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo07</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//代码块（匿名代码块）</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">static</span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//静态代码块</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>
+<p>如上所示，在类中用大括号括起来的一段没有名字的代码块称为匿名代码块。在括号前加上static关键字的代码块称为静态代码块。</p>
+</li>
+<li>
+<p>匿名代码块没有名字，程序在执行时并不能主动去调用这些模块。在创建对象的时候匿名代码块自动创建，并且在构造器之前</p>
+</li>
+<li>
+<p>静态代码块是类加载的同时就直接执行，永久只执行一次</p>
+</li>
+</ul>
+<blockquote>
+<p>例子：匿名代码块、静态代码块、构造方法的加载顺序</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo07</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;匿名代码块&quot;</span><span class="p">);</span><span class="c1">//代码块（匿名代码块）</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">static</span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;静态代码块&quot;</span><span class="p">);</span><span class="c1">//静态代码块</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;构造方法&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==========111&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">person1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;==========222&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Person</span><span class="w"> </span><span class="n">person2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">();</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730193306924.png" alt="image-20220730193306924" style="zoom:67%;" /></p>
+<p>加载顺序：</p>
+<p><strong>静态代码块&gt;匿名代码块&gt;构造函数</strong></p>
+<p>静态代码块在person1实例化前就执行了，<strong>静态代码块是在类加载的同时就执行了，并且只执行一次</strong></p>
+<h3 id="93">9.3静态导入包<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo07</span><span class="p">;</span>
+
+<span class="c1">//静态导入包~</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">java.lang.Math.random</span><span class="p">;</span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">java.lang.Math.PI</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">random</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">PI</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730194156371.png" alt="image-20220730194156371" style="zoom:67%;" /></p>
+<p>PS：<strong>被final修饰的类不能被其他类继承</strong></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730194358164.png" alt="image-20220730194358164" style="zoom: 67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220730194335674.png" alt="image-20220730194335674" style="zoom:67%;" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 面向对象01" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                面向对象01
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-footer__link md-footer__link--next" aria-label="下一页: 面向对象03" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                面向对象03
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/liyuelian" target="_blank" rel="noopener noreferrer">liyuelian</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/liyuelian/docs-wiki/" target="_blank" rel="noopener" title="GitHub | Li-Yue-Lian" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

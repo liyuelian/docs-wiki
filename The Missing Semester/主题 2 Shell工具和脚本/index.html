@@ -1,0 +1,4144 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="liyuelian">
+      
+      
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/">
+      
+      
+        <link rel="prev" href="../%E4%B8%BB%E9%A2%98%201%20The%20Shell/">
+      
+      
+        <link rel="next" href="../%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>主题 2 Shell工具和脚本 - liyuelian的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-shell" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="liyuelian的博客" class="md-header__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              主题 2 Shell工具和脚本
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      welcome
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-tabs__link">
+        JavaSE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-tabs__link">
+        JavaWeb
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-tabs__link">
+        MySQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        Spring
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-tabs__link md-tabs__link--active">
+        The Missing Semester
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
+        前端技术栈
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的博客" class="md-nav__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        Git学习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/" class="md-nav__link">
+        Git原理学习01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A002.md/" class="md-nav__link">
+        Git原理学习02-远程篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day02-2-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day02-%E9%A2%84%E7%A7%91/" class="md-nav__link">
+        预科03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/" class="md-nav__link">
+        面向对象02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day46-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A002/" class="md-nav__link">
+        JDBC和连接池02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MySQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Java数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        5.MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Spring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Spring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        Spring基本介绍
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="true">
+          The Missing Semester
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-nav__link">
+        主题 1 The Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          主题 2 Shell工具和脚本
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        主题 2 Shell工具和脚本
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell脚本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    Shell工具
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查看命令如何使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查找文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    查找代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    查找shell命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件夹导航
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    练习
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    Shell脚本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    Shell工具
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查看命令如何使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查找文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    查找代码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    查找shell命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件夹导航
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    练习
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+
+<h1 id="2-shell">主题 2 Shell工具和脚本<a class="headerlink" href="#2-shell" title="Permanent link">&para;</a></h1>
+<p><a href="https://missing-semester-cn.github.io/2020/shell-tools/">Shell 工具和脚本 · the missing semester of your cs education (missing-semester-cn.github.io)</a></p>
+<h2 id="shell">Shell脚本<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<p>shell 脚本是一种更加复杂度的工具。</p>
+<ul>
+<li>定义变量</li>
+</ul>
+<p>在bash中为变量赋值的语法是<code>foo=bar</code>，意为定义变量foo，foo的值为bar。访问变量使用$变量名</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nv">foo</span><span class="o">=</span>bar
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$foo</span><span class="s2">&quot;</span>
+bar
+</code></pre></div></td></tr></table></div>
+<p>需要注意的是，Shell中使用空格作为分隔参数的保留字符。</p>
+<p>如果将上诉赋值语句写为<code>foo = bar</code>，将不起作用。事实上，这样写并没有将bar赋给foo，而是用<code>=</code>和<code>bar</code>作为参数调用<code>foo</code>程序。因为这样Shell会认为你正在执行一个名为<code>foo</code>的命令。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>bar
+-bash:<span class="w"> </span>foo:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
+</code></pre></div></td></tr></table></div>
+<p>你需要特别注意这类问题，比如如果有带空格的文件名，你需要使用引号将其括起来。</p>
+<ul>
+<li>在bash中处理字符串</li>
+</ul>
+<p>有两种定义字符串的方法，可以使用双引号定义字符串，也可以使用单引号定义字符串。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
+Hello
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span>
+Hello
+</code></pre></div></td></tr></table></div>
+<p>Bash中的字符串通过<code>'</code> 和 <code>"</code>分隔符来定义，但是它们的含义并不相同。</p>
+<p>以<code>'</code>定义的字符串为原义字符串，其中的变量不会被转义，而 <code>"</code>定义的字符串会将变量值进行替换。</p>
+<p>例如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Value is </span><span class="nv">$foo</span><span class="s2">&quot;</span>
+Value<span class="w"> </span>is<span class="w"> </span>bar
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Value is $foo&#39;</span>
+Value<span class="w"> </span>is<span class="w"> </span><span class="nv">$foo</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>定义函数</li>
+</ul>
+<p>和其他大多数的编程语言一样，<code>bash</code>也支持<code>if</code>, <code>case</code>, <code>while</code> 和 <code>for</code> 这些控制流关键字。同样地， <code>bash</code> 也支持函数，它可以接受参数并基于参数进行操作。</p>
+<p>下面这个函数是一个例子，它会创建一个文件夹并使用<code>cd</code>进入该文件夹。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>mcd.sh
+mcd<span class="o">(){</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>这里 <code>$1</code> 是脚本的第一个参数的意思</p>
+</blockquote>
+<p><code>source 脚本名</code>，这将会在Shell中加载脚本并运行。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>mcd.sh
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>mcd<span class="w"> </span><span class="nb">test</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>test<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>如上，在执行了<code>source mcd.sh</code>之后，看似无事发生，但实际上Shel中已经定义了mcd函数。我们给mcd传递一个参数test，这个参数被用于作为创建的目录名（即$1），然后Shell自动切换到了test目录里。整个过程就是，我们创建了文件夹并进入其中。</p>
+<ul>
+<li>保留字</li>
+</ul>
+<p>在bash中，许多$开头的东西一般都是被保留的（指留作特定用途）</p>
+<p><code>$1</code> 是脚本的第一个参数的意思。与其他脚本语言不同的是，bash使用了很多特殊的变量来表示参数、错误代码和相关变量。下面列举其中一些变量，更完整的列表可以参考 <a href="https://www.tldp.org/LDP/abs/html/special-chars.html">这里</a>。</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0</td>
+<td>脚本名</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1~\)</span>9</td>
+<td>脚本的参数， $1 是第一个参数，依此类推</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>所有参数</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>参数个数</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>前一个命令的返回值</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前脚本的进程识别码</td>
+</tr>
+<tr>
+<td>!!</td>
+<td>完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 <code>sudo !!</code>再尝试一次。</td>
+</tr>
+<tr>
+<td>$_</td>
+<td>上一条命令的最后一个参数，如果你正在使用的是交互式 shell，你可以通过按下 <code>Esc</code> 之后键入 <code>.</code> 来获取这个值。</td>
+</tr>
+</tbody>
+</table>
+<p>有一些保留字可以直接在Shell中使用，例如<code>$?</code>可以获取上一条命令的错误代码(返回值)，再比如<code>$_</code>会返回上一条命令的最后一个参数。</p>
+<p>例如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span><span class="nb">test</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$_</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>test<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>如上，我们无需在写一次<code>test</code>，使用<code>$_</code>访问该参数，它就会被替换成test，现在我们进入到test目录中了。</p>
+<p>这样的例子有很多，再例如<code>!!</code>，它返回完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 <code>sudo !!</code>再尝试一次。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span>/mnt/new
+mkdir:<span class="w"> </span>cannot<span class="w"> </span>create<span class="w"> </span>directory<span class="w"> </span>‘/mnt/new’:<span class="w"> </span>Permission<span class="w"> </span>denied
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>!!
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/mnt/new
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>rmdir<span class="w"> </span>/mnt/new
+rmdir:<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span><span class="s1">&#39;/mnt/new&#39;</span>:<span class="w"> </span>Permission<span class="w"> </span>denied
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>!!
+sudo<span class="w"> </span>rmdir<span class="w"> </span>/mnt/new
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>标准错误流</li>
+</ul>
+<p>如果你的程序出错了，你想输出错误但不想污染标准输出，那么你可以写进这个流。</p>
+<ul>
+<li>错误代码</li>
+</ul>
+<p>还有一种叫做错误代码<code>$?</code>（error code）的东西，是一种告诉你整个运行过程结果如何的方式。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
+Hello
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">0</span>
+</code></pre></div></td></tr></table></div>
+<p>这里显示<code>echo "Hello"</code>运行的错误代码为0，0是因为一切正常，没有出现问题。</p>
+<p>这种退出码和如C语言里代表的意思一样。</p>
+<p>0代表一切正常，没有出现错误。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>grep<span class="w"> </span>foobar<span class="w"> </span>mcd.sh
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">1</span>
+</code></pre></div></td></tr></table></div>
+<p>如上，我们尝试着在mcd.sh脚本中查找<code>foobar</code>字符串，而它不存在，所以grep什么都没输出。但是通过反馈一个1的错误代码，它让我们知道这件事没有成功。</p>
+<p>此外，true的错误代码始终是0；false的错误代码则是1。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">true</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">0</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">false</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">1</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>逻辑运算符</li>
+</ul>
+<p>下面bash要做的是执行第一个命令，如果第一个命令失败，再去执行第二个（短路运算法则）。因为它尝试做一个逻辑或，如果第一个命令没有0错误码，就会去执行第二个命令</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops fail&quot;</span>
+Oops<span class="w"> </span>fail
+</code></pre></div></td></tr></table></div>
+<p>相似地，如果我们把false换成true，那么将不会执行第二个命令，因为第一个命令已经返回一个0错误码了，第二个命令将会被短路。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops fail&quot;</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>相似的，我们使用与运算符<code>&amp;&amp;</code>，它仅当第一个命令执行无错误时，才会执行第二个部分。如果第一个命令失败，那么第二个命令就不会被执行。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
+Things<span class="w"> </span>went<span class="w"> </span>well
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will not print&quot;</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>使用<code>;</code>号连接的代码，无论你执行什么，都可以通过。在同一行使用分号来连接命令，如下，它始终会被打印出来。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always print&quot;</span>
+This<span class="w"> </span>will<span class="w"> </span>always<span class="w"> </span>print
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>把命令的输出存到变量里</li>
+</ul>
+<p>这里我们获取pwd命令的输出，它会打印出我们当前的工作路径，然后把其存入foo变量中。然后我们询问变量foo的值，我们就可以看到这个字符串</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nv">foo</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$foo</span>
+/home/lighthouse/missing-semester/tools
+</code></pre></div></td></tr></table></div>
+<p>更广泛地来说，我们可以通过一个叫做命令替换的东西，把它放进任意字符串中。并且因为我们使用的不是单引号，所以这串东西会被展开。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We are in </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+We<span class="w"> </span>are<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/lighthouse/missing-semester/tools
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>过程替换</li>
+</ul>
+<p>另一个比较好用知名度更低的东西叫做过程替换。和之前的命令替换是类似的，例如</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>..<span class="o">)</span>
+mcd.sh
+<span class="nb">test</span>
+tools
+</code></pre></div></td></tr></table></div>
+<p>如上，<code>&lt;(ls) &lt;(ls ..)</code>的作用是，<code>()</code>内部的命令会被执行，其输出将被存储到一个临时文件内，然后把文件的标识符handle交给最左边的命令。</p>
+<p>因此，这里我们在ls这个目录，把输出放到临时文件内，再对父目录如法炮制，然后把两个文件连接。</p>
+<p>这种写法非常方便，因为有些命令会从某个文件的内容，而不是从标准输入里，获得输入参数</p>
+<p>综合案例：</p>
+<p>现在来看一个里面包含这些内容的简单示例脚本：</p>
+<p>example.sh</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Start program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
+
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="k">do</span>
+<span class="w">        </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<span class="w">        </span><span class="c1"># When pattern is not found,grep has exit status</span>
+<span class="w">        </span><span class="c1"># We redirect STDOUT and STDERR to a null register ..</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="k">fi</span><span class="w">      </span>
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<p>第三行：有一个<code>$(date)</code>的参数，date打印出当前的时间。</p>
+<p>第五行：<code>$0</code>代表着当前运行的脚本的名称，<code>$#</code>代表给定的参数个数，<code>$$</code>是这个命令的进程ID，一般缩写为PID。</p>
+<p>第七行：<code>$@</code>可以展开成所有参数，比如有三个参数，你可以键入<code>$1 $2 $3</code>，如果你不知道有多少个参数，也可以直接键入<code>$@</code>。这里我们通过这种方式将所有参数放在这里，然后这些参数被传给for循环，for循环会创建一个<code>file</code>变量，依次地用这些参数赋值给<code>file</code>变量。</p>
+<p>第八行：我们运行grep命令，它会在一堆文件里搜索一个子串。这里我们在文件里搜索字符串foobar，文件变量<code>file</code>将会展开为赋给它的值。</p>
+<p>之前说过，如果我们在意程序的输出的话，我们可以把它重定向到某处（比如到一个文件里面保存下来，或者连接组合）。但有时候情况恰恰相反，例如有时候我们只想知道某个脚本的错误代码是什么，例如这里想知道grep能不能成功查找。我们并不在意程序的运行结果，因此我们甚至能直接扔掉整个输出，包括标准输出和标准错误流。这里我们做的就是把两个输出重定向到<code>/dev/null</code>，/dev/null是UNIX系统的一种特殊设备，输入到它的内容会被丢弃（就是说你可以随意乱写乱画，然后所有的内容都会被丢掉）。</p>
+<p>这里的<code>&gt;</code>代表重定向输出流，<code>2&gt;</code>代表重定向标准错误流（因为这两个流是分立的，所以你要告诉bash去操作哪一个）。</p>
+<p>所以这里我们执行命令，去检查文件有没有foobar字符串，如果有的话，返回一个0错误代码，如果没有返回一个非0错误代码。</p>
+<p>第十一行：我们获取前一个命令的错误代码（<code>$?</code>），然后是一个比较运算符<code>-ne</code>（代表不等于Non Equal）</p>
+<blockquote>
+<p>其他编程序语言中有像=和≠，bash里有很多预设的比较运算(可以使用命令<code>man test</code>查看)，这主要是为了你用Shell的时候，有很多东西要去测试。比如我们现在正在对比两个数，看它们是否相同。</p>
+</blockquote>
+<p>如果文件中没有foobar，前一个命令将会返回一个非零错误代码。</p>
+<p>第十二行：我们将会如果前一个命令返回一个非0错误代码，我们将会输出一句话<code>File xxx does not have any foobar, adding one</code></p>
+<p>第十三行：使用<code>&gt;&gt;</code>往对应文件中追加一行注释<code># foobar</code></p>
+<p>现在我们来运行这个脚本，当前目录下有一些文件，我们将这些文件作为参数传给example.sh，检查是否有foobar。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls
+example.sh<span class="w">  </span>hello.txt<span class="w">  </span>mcd.sh
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>./example.sh<span class="w"> </span>hello.txt<span class="w"> </span>mcd.sh
+Start<span class="w"> </span>program<span class="w"> </span>at<span class="w"> </span>Sun<span class="w"> </span>Dec<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">23</span>:06:13<span class="w"> </span>CST<span class="w"> </span><span class="m">2022</span>
+Running<span class="w"> </span>program<span class="w"> </span>./example.sh<span class="w"> </span>with<span class="w"> </span><span class="m">2</span><span class="w"> </span>arguments<span class="w"> </span>with<span class="w"> </span>pid<span class="w"> </span><span class="m">2570038</span>
+File<span class="w"> </span>hello.txt<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>any<span class="w"> </span>foobar,<span class="w"> </span>adding<span class="w"> </span>one
+File<span class="w"> </span>mcd.sh<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>any<span class="w"> </span>foobar,<span class="w"> </span>adding<span class="w"> </span>one
+</code></pre></div></td></tr></table></div>
+<p>我们在文件hello.txt和mcd.sh中没有找到foobar字符串，因此脚本分别给这两个文件添加了一个<code># foobar</code> 注释</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>hello.txt
+hello,this<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>txt<span class="w"> </span>file
+<span class="c1"># foobar</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>mcd.sh<span class="w"> </span>
+mcd<span class="o">(){</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+<span class="c1"># foobar</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>通配符</li>
+</ul>
+<p>如果我们不想一个一个查找文件，可以使用通配符来进行匹配。</p>
+<p>比如这里<code>*</code>匹配任意字符，这里将会显示出所有含有任意字符，并以<code>.sh</code>结尾的文件</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls
+example.sh<span class="w">  </span>hello.txt<span class="w">  </span>image.png<span class="w">  </span>mcd.sh<span class="w">  </span>project1<span class="w">  </span>project2<span class="w">  </span><span class="nb">test</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>*.sh
+example.sh<span class="w">  </span>mcd.sh
+</code></pre></div></td></tr></table></div>
+<p>现在如果我只想找有一个而不是两个特定字符的项，可以使用<code>?</code>，<code>?</code>匹配一个字符</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls
+example.sh<span class="w">  </span>hello.txt<span class="w">  </span>image.png<span class="w">  </span>mcd.sh<span class="w">  </span>project1<span class="w">  </span>project2<span class="w">  </span>project42<span class="w">  </span><span class="nb">test</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>project?
+project1:
+src
+
+project2:
+src
+</code></pre></div></td></tr></table></div>
+<p>现在我们得到了匹配的目录project1和project2</p>
+<blockquote>
+<p>src是匹配的目录下的子项</p>
+</blockquote>
+<p>总而言之，通配符非常强大，你也可以组合它们。</p>
+<p>一个常用模式是花括号<code>{}</code>。</p>
+<p>比如目录下有一个image.png图片，我们想转变该图像的格式，一般的做法是<code>convert image.png image.jpg</code>，但是你也可以键入<code>convert image.{png,jpg}</code>，它会展开成上面的那行。</p>
+<p>又如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>touch<span class="w"> </span>foo<span class="o">{</span>,1,2,10<span class="o">}</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls
+example.sh<span class="w">  </span>foo<span class="w">  </span>foo1<span class="w">  </span>foo10<span class="w">  </span>foo2<span class="w">  </span>hello.txt<span class="w">  </span>mcd.sh<span class="w"> </span>project1<span class="w">  </span>project2<span class="w"> </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div>
+<p>如上所述，我们可以touch一串foo，所有的foo都会被展开。</p>
+<p>你也可以进行多层操作，建立笛卡尔系：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>project?/src/test<span class="o">)</span>
+project1/src/test:
+
+project2/src/test:
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>touch<span class="w"> </span>project<span class="o">{</span><span class="m">1</span>,2<span class="o">}</span>/src/test/test<span class="o">{</span><span class="m">1</span>,2,3<span class="o">}</span>.py
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>project?/src/test<span class="o">)</span>
+project1/src/test:
+test1.py
+test2.py
+test3.py
+
+project2/src/test:
+test1.py
+test2.py
+test3.py
+</code></pre></div></td></tr></table></div>
+<p>如上，我们在创建文件的路径上有两组花括号，这会用两组展开式形成笛卡尔积，意味着展开后所有的路径有2*3组。因此当我们运行命令<code>touch project{1,2}/src/test/test{1,2,3}.py</code>时，实际上分别在<code>./project1/src/test/</code>目录下和<code>./project2/src/test/</code>目录下创建了<code>test1.py</code>，<code>test2.py</code>，<code>test3.py</code>文件。</p>
+<p>你也可以将<code>*</code>通配符和<code>{}</code>通配符结合，甚至用一些范围表示，如</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..d<span class="o">}</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">)</span>
+bar/:
+a
+b
+c
+d
+
+foo/:
+a
+b
+c
+d
+</code></pre></div></td></tr></table></div>
+<p>如上，这将会从foo/a一直到展开到foo/d，而bar目录下同理。</p>
+<ul>
+<li>diff</li>
+</ul>
+<p>diff 命令用于比较文件的差异。diff 以逐行的方式，比较文本文件的异同处。如果指定要比较目录，则 diff 会比较目录中相同文件名的文件，但不会比较其中子目录。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
+5c5
+&lt;<span class="w"> </span>x
+---
+&gt;<span class="w"> </span>y
+</code></pre></div></td></tr></table></div>
+<p>如上，x只在第一个文件夹里，而y只在第二个文件夹内。</p>
+<ul>
+<li>其他Shell脚本</li>
+</ul>
+<p>目前为止我们只看了bash脚本，如果你喜欢其他脚本（bash对一些工作可能并不是最好的选择），你可以用很多语言写和Shell工具交互的脚本。注意，脚本并不一定只有用 bash 写才能在终端里调用。比如说，这是一段 Python 脚本，作用是将输入的参数倒序输出：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/local/bin/python</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>如上，python默认不会尝试和Shell交互，所以我们需要导入一些库<code>import sys</code>。第一行叫做shebang，Shell通过它了解怎么运行这个程序。</p>
+<blockquote>
+<p>shebang这个单词源于这行以<code>#!</code>开头，<code>#</code>是sharp，<code>!</code>是bang</p>
+</blockquote>
+<p>你可以随时键入类似<code>python script.py a b c</code>的命令来运行这个python脚本：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>python<span class="w"> </span>script.py<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
+c
+b
+a
+</code></pre></div></td></tr></table></div>
+<p>但是如果想让它从Shell就能执行呢？这就需要用到shebang行。Shell用首行识别到需要用Python解释器运行这个程序，并且第一行给出了python解释器所在的路径。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>./script.py<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
+c
+b
+a
+</code></pre></div></td></tr></table></div>
+<p>需要注意的是不同的设备很可能会把python放在不同的地方，最好不要假设文件放在固定的位置，其他的东西要是如此。</p>
+<p><code>shebang</code> 行中使用 <a href="https://man7.org/linux/man-pages/man1/env.1.html"><code>env</code></a> 命令，会根据给出的参数（这里是python），<code>env</code> 会利用之前的<code>PATH</code> 环境变量来进行定位，在此路径中找python二进制文件，然后用该文件去解释这个脚本。这会有更好的可移植性</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>shellcheck</li>
+</ul>
+<p>编写bash脚本有时候会很别扭和反直觉。例如 <a href="https://github.com/koalaman/shellcheck">shellcheck</a> 这样的工具可以帮助你定位sh/bash脚本中的错误。</p>
+<blockquote>
+<p><a href="https://github.com/koalaman/shellcheck/tree/v0.7.1#installing">koalaman/shellcheck at v0.7.1 (github.com)</a></p>
+</blockquote>
+<p>shellcheck可以给出warning和语法错误提示，还能指出哪些地方你没正确引用等。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>shellcheck<span class="w"> </span>mcd.sh
+
+In<span class="w"> </span>mcd.sh<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>:
+mcd<span class="o">(){</span>
+^--<span class="w"> </span>SC2148:<span class="w"> </span>Tips<span class="w"> </span>depend<span class="w"> </span>on<span class="w"> </span>target<span class="w"> </span>shell<span class="w"> </span>and<span class="w"> </span>yours<span class="w"> </span>is<span class="w"> </span>unknown.<span class="w"> </span>Add<span class="w"> </span>a<span class="w"> </span>shebang.
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Shell函数和脚本的区别</li>
+</ul>
+<p>shell函数和脚本有如下一些不同点：</p>
+<ol>
+<li>函数只能与shell使用相同的语言，脚本可以使用任意语言。因此在脚本中包含 <code>shebang</code> 是很重要的。</li>
+<li>函数仅在定义时被加载，脚本会在每次被执行时加载。这让函数的加载比脚本略快一些，但每次修改函数定义，都要重新加载一次。</li>
+<li>函数会在当前的shell环境中执行，脚本会在单独的进程中执行。因此，函数可以对环境变量进行更改，比如改变当前工作目录，脚本则不行。脚本需要使用 <a href="https://man7.org/linux/man-pages/man1/export.1p.html"><code>export</code></a> 将环境变量导出，并将值传递给环境变量。</li>
+<li>与其他程序语言一样，函数可以提高代码模块性、代码复用性并创建清晰性的结构。shell脚本中往往也会包含它们自己的函数定义。</li>
+</ol>
+<h2 id="shell_1">Shell工具<a class="headerlink" href="#shell_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">查看命令如何使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>man命令</li>
+</ul>
+<p>给出一个命令，应该怎样了解如何使用这个命令行并找出它的不同的选项呢？最常用的方法是为对应的命令行添加<code>-h</code> 或 <code>--help</code> 标记。另外一个更详细的方法则是使用<code>man</code> 命令。<code>man</code>命令是手册（manual）的缩写，它提供了命令的用户手册。</p>
+<p>事实上，目前我们给出的所有命令的说明链接，都是网页版的Linux命令手册，即使是安装的第三方命令。当然前提是开发者编写了手册并将其包含在了安装包中。在交互式的、基于字符处理的终端窗口中，一般也可以通过 <code>:help</code> 命令或键入 <code>?</code> 来获取帮助。</p>
+<ul>
+<li>tldr (too long don't read)</li>
+</ul>
+<p>有时候手册内容太过详实，让我们难以在其中查找哪些最常用的标记和语法。<a href="https://tldr.sh/">TLDR pages</a>是一个很不错的替代品，它提供了一些案例，可以帮助你快速找到正确的选项。</p>
+<blockquote>
+<p>下载tldr：<code>npm install -g tldr</code></p>
+<p>使用npm命令之前要先下载 <code>yum -y install npm</code></p>
+</blockquote>
+<h3 id="_2">查找文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>你当然可以使用ls，但是如果你想查找一个已经知道名字的文件或者目录，我们可以有更好的做法</p>
+<ul>
+<li>find</li>
+</ul>
+<blockquote>
+<p><a href="https://blog.csdn.net/gexiaobaohelloworld/article/details/8206889">linux-find</a></p>
+</blockquote>
+<p>find大概是每个UNIX系统都有的工具，例如</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
+./project1/src
+./project2/src
+</code></pre></div></td></tr></table></div>
+<p>这里意为，在当前文件夹<code>.</code>调用find，查找名为<code>src</code> 并且类型为目录的东西。键入以上命令，它就可以在当前目录递归查看所有符合规则的文件或者文件夹（find默认递归指定目录）。</p>
+<p>find还有许多有用的flag，比如你甚至可以查询指定格式的文件路径：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;**/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
+./project1/src/test/test2.py
+./project1/src/test/test1.py
+./project1/src/test/test3.py
+./project2/src/test/test2.py
+./project2/src/test/test1.py
+./project2/src/test/test3.py
+</code></pre></div></td></tr></table></div>
+<p>这里<code>**</code>是指可以匹配零或者多个目录名，然后在此路径下找到拓展名为<code>.py</code>的文件，并要求它们在一个test文件夹内，同时检查它是否为F类型（f代表文件file）</p>
+<p>运用不用的flag，可以进行非路径和非文件名的筛选：</p>
+<p>比如可以查找被修改过的文件，这里<code>-mtime</code>代表修改时间，<code>.</code>当前目录下，最近<code>1</code>天被修改过的东西都会被列出</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
+.
+./project1
+./project1/src
+./project1/src/test
+./project1/src/test/test2.py
+./project1/src/test/test1.py
+./project1/src/test/test3.py
+./project2
+./project2/src
+./project2/src/test
+./project2/src/test/test2.py
+./project2/src/test/test1.py
+./project2/src/test/test3.py
+./test
+./mcd.sh
+</code></pre></div></td></tr></table></div>
+<p>你甚至可以使用其他条件，比如大小，所有者，权限等等。</p>
+<p>强大的是，find不仅可以查找东西，找到之后还可以做别的：例如</p>
+<p>我们可以在当前目录下查找所有扩展名为<code>.tmp</code>的文件，然后要求find对于所有这些文件，执行<code>rm</code>命令</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tmp&quot;</span>
+./project1/src/test/test3.tmp
+./project1/src/test/test1.tmp
+./project1/src/test/test2.tmp
+./project2/src/test/test3.tmp
+./project2/src/test/test1.tmp
+./project2/src/test/test2.tmp
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tmp&quot;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">0</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.tmp&quot;</span>
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>如上，执行<code>find . -name "*.tmp" -exec rm {} \;</code>后，对应的tmp文件都被删除了。</p>
+<ul>
+<li>fd</li>
+</ul>
+<p><a href="https://github.com/sharkdp/fd"><code>fd</code></a> 是一个更简单、更快速、更友好的程序，它可以用来作为<code>find</code>的替代品。它有很多不错的默认设置，例如输出着色、默认支持正则匹配、支持unicode并且我认为它的语法更符合直觉。以模式<code>PATTERN</code> 搜索的语法是 <code>fd PATTERN</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>fd<span class="w"> </span><span class="s2">&quot;.*py&quot;</span>
+project1/src/test/test1.py
+project1/src/test/test2.py
+project1/src/test/test3.py
+project2/src/test/test1.py
+project2/src/test/test2.py
+project2/src/test/test3.py
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>locate</li>
+</ul>
+<p>大多数人都认为 <code>find</code> 和 <code>fd</code> 已经很好用了，但是有的人可能想知道，我们是不是可以有更高效的方法，例如不要每次都搜索文件而是通过编译索引或建立数据库的方式来实现更加快速地搜索。</p>
+<p>这就要靠 <a href="https://man7.org/linux/man-pages/man1/locate.1.html"><code>locate</code></a> 了。 <code>locate</code> 使用一个由 <a href="https://man7.org/linux/man-pages/man1/updatedb.1.html"><code>updatedb</code></a>负责更新的数据库，在大多数系统中 <code>updatedb</code> 都会通过 <a href="https://man7.org/linux/man-pages/man8/cron.8.html"><code>cron</code></a> 每日更新。这便需要我们在速度和时效性之间作出权衡。而且，<code>find</code> 和类似的工具可以通过别的属性比如文件大小、修改时间或是权限来查找文件，<code>locate</code>则只能通过文件名。 <a href="https://unix.stackexchange.com/questions/60205/locate-vs-find-usage-pros-and-cons-of-each-other">这里</a>有一个更详细的对比。</p>
+<h3 id="_3">查找代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>查找文件是很有用的技能，但是很多时候你的目标其实是查看文件的内容。常见的场景是查找具有匹配某种模式的全部文件，并找它们的位置。</p>
+<ul>
+<li>grep</li>
+</ul>
+<p>grep是用于对输入文本进行匹配的通用工具。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>grep<span class="w"> </span>foobar<span class="w"> </span>mcd.sh<span class="w"> </span>
+<span class="c1"># foobar</span>
+</code></pre></div></td></tr></table></div>
+<p>使用-R可以递归地搜索</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>grep<span class="w"> </span>-R<span class="w"> </span>foobar<span class="w"> </span>.
+./example.sh:<span class="w">        </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+./example.sh:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+./example.sh:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+./hello.txt:#<span class="w"> </span>foobar
+./mcd.sh:#<span class="w"> </span>foobar
+</code></pre></div></td></tr></table></div>
+<p><code>grep</code> 有很多选项，这也使它成为一个非常全能的工具。 <code>-C</code> ：获取查找结果的上下文（Context）；<code>-v</code> 将对结果进行反选（Invert），也就是输出不匹配的结果。举例来说， <code>grep -C 5</code> 会输出匹配结果前后五行。当需要搜索大量文件的时候，使用 <code>-R</code> 会递归地进入子目录并搜索所有的文本文件。但是也有很多办法可以对 <code>grep -R</code> 进行改进，例如使其忽略<code>.git</code> 文件夹，使用多CPU等等。</p>
+<ul>
+<li>rg（ripgrep）</li>
+</ul>
+<p>此外还出现了很多grep的替代品，包括 <a href="https://beyondgrep.com/">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> 和 <a href="https://github.com/BurntSushi/ripgrep">rg</a>。它们都特别好用，但是功能也都差不多，比较常用的是 ripgrep (<code>rg</code>) ，因为它速度快，而且用法非常符合直觉。</p>
+<blockquote>
+<p><a href="https://outmanzzq.github.io/2019/11/13/ripgrep/">rg安装</a></p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>rg<span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span>-t<span class="w"> </span>sh<span class="w"> </span>~/
+/home/lighthouse/missing/tools/mcd.sh
+<span class="m">5</span>:#<span class="w"> </span>foobar
+
+/home/lighthouse/missing/tools/example.sh
+<span class="m">8</span>:<span class="w">        </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<span class="m">12</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<span class="m">13</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>如上，该命令在<code>~/</code>目录下搜索类型(-t即type)为sh，并且文件内有“foobar”子串的文件。</p>
+<p>rg不仅能找到对应文件，还能精确到匹配的行，比起使用grep，它还增加了代码彩色显示和文件处理啥的，也有Unicode支持，并且运行很快。</p>
+<p>rg有许多有用的flag，比如说你想要点上下文(匹配内容的附近内容)，例如：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>rg<span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span>-t<span class="w"> </span>sh<span class="w"> </span>-C<span class="w"> </span><span class="m">5</span><span class="w"> </span>~/
+/home/lighthouse/missing/tools/mcd.sh
+<span class="m">1</span>-mcd<span class="o">(){</span>
+<span class="m">2</span>-<span class="w">  </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="m">3</span>-<span class="w">  </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="m">4</span>-<span class="o">}</span>
+<span class="m">5</span>:#<span class="w"> </span>foobar
+
+/home/lighthouse/missing/tools/example.sh
+<span class="m">3</span>-echo<span class="w"> </span><span class="s2">&quot;Start program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
+<span class="m">4</span>-
+<span class="m">5</span>-echo<span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
+<span class="m">6</span>-
+<span class="m">7</span>-for<span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="k">do</span>
+<span class="m">8</span>:<span class="w">        </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<span class="m">9</span>-<span class="w">        </span><span class="c1"># When pattern is not found,grep has exit status</span>
+<span class="m">10</span>-<span class="w">        </span><span class="c1"># We redirect STDOUT and STDERR to a null register ..</span>
+<span class="m">11</span>-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="m">12</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<span class="m">13</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<span class="m">14</span>-<span class="w">        </span><span class="k">fi</span><span class="w">      </span>
+<span class="m">15</span>-done
+</code></pre></div></td></tr></table></div>
+<p>如上，我们加上<code>-C [num]</code>（C意为context），不仅能够搜索到匹配内容，还能对每一个匹配的内容显示其前后[num]行的内容。这样你就可以知道匹配内容大概在什么位置，它周围都是什么内容。这个功能在查找在哪调用了什么函数 上十分有用。</p>
+<p>我们也可以使用一个更高级的用法：</p>
+<p><code>-u</code>意为不忽略隐藏文件，<code>--files-without-match</code>是打印出所有不匹配这个pattern的内容，<code>'#!'</code>的意思是匹配有<code>#!</code>的内容。也就是说，我们在搜索没有shebang的文件。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s1">&#39;#!&#39;</span><span class="w"> </span>-t<span class="w"> </span>sh
+mcd.sh
+</code></pre></div></td></tr></table></div>
+<p>此外rg还有些好用的flag，比如<code>--stats</code>这个flag，</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>rg<span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="w"> </span>-t<span class="w"> </span>sh<span class="w"> </span>-C<span class="w"> </span><span class="m">5</span><span class="w"> </span>--stats<span class="w"> </span>~/
+/home/lighthouse/missing/tools/mcd.sh
+<span class="m">1</span>-mcd<span class="o">(){</span>
+<span class="m">2</span>-<span class="w">  </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="m">3</span>-<span class="w">  </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="m">4</span>-<span class="o">}</span>
+<span class="m">5</span>:#<span class="w"> </span>foobar
+
+/home/lighthouse/missing/tools/example.sh
+<span class="m">3</span>-echo<span class="w"> </span><span class="s2">&quot;Start program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
+<span class="m">4</span>-
+<span class="m">5</span>-echo<span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
+<span class="m">6</span>-
+<span class="m">7</span>-for<span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="k">do</span>
+<span class="m">8</span>:<span class="w">        </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<span class="m">9</span>-<span class="w">        </span><span class="c1"># When pattern is not found,grep has exit status</span>
+<span class="m">10</span>-<span class="w">        </span><span class="c1"># We redirect STDOUT and STDERR to a null register ..</span>
+<span class="m">11</span>-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="m">12</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<span class="m">13</span>:<span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<span class="m">14</span>-<span class="w">        </span><span class="k">fi</span><span class="w">      </span>
+<span class="m">15</span>-done
+
+<span class="m">4</span><span class="w"> </span>matches
+<span class="m">4</span><span class="w"> </span>matched<span class="w"> </span>lines
+<span class="m">2</span><span class="w"> </span>files<span class="w"> </span>contained<span class="w"> </span>matches
+<span class="m">5</span><span class="w"> </span>files<span class="w"> </span>searched
+<span class="m">643</span><span class="w"> </span>bytes<span class="w"> </span>printed
+<span class="m">978</span><span class="w"> </span>bytes<span class="w"> </span>searched
+<span class="m">0</span>.000054<span class="w"> </span>seconds<span class="w"> </span>spent<span class="w"> </span>searching
+<span class="m">0</span>.002657<span class="w"> </span>seconds
+</code></pre></div></td></tr></table></div>
+<p>如上，它除了搜索结果之外，还可以输出一些信息。比如成功匹配了多少行，查找了多少行和多少文件，打印了多少byte等。</p>
+<ul>
+<li>ack</li>
+</ul>
+<p><a href="https://beyondgrep.com/">ack</a>也是grep的一个替代工具，还有<a href="https://github.com/ggreer/the_silver_searcher">ag</a> 。当然这些工具都是可以替换的，只要会使用即可。</p>
+<h3 id="shell_2">查找shell命令<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>向上箭头</li>
+</ul>
+<p>首先，按向上的方向键会显示你使用过的上一条命令，继续按上键则会遍历整个历史记录。</p>
+<p>向上箭头并不是很有效率，所以bash有一些更加简单的方法。</p>
+<ul>
+<li>history</li>
+</ul>
+<p>它会打印出你的命令历史记录，当然一般来讲这会输出非常多的记录，你可以使用管道和grep来筛选。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nb">echo</span>
+<span class="w">   </span><span class="m">74</span><span class="w">  </span><span class="m">2022</span>-12-29<span class="w"> </span><span class="m">01</span>:16:27<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="w">  </span><span class="m">112</span><span class="w">  </span><span class="m">2022</span>-12-29<span class="w"> </span><span class="m">01</span>:45:37<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>mdc.sh
+<span class="w">  </span><span class="m">115</span><span class="w">  </span><span class="m">2022</span>-12-29<span class="w"> </span><span class="m">01</span>:46:01<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>mcd.sh
+<span class="w">  </span><span class="m">126</span><span class="w">  </span><span class="m">2022</span>-12-29<span class="w"> </span><span class="m">01</span>:50:42<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello,i am a txt file&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>hello.txt
+<span class="w">  </span><span class="m">197</span><span class="w">  </span><span class="m">2022</span>-12-30<span class="w"> </span><span class="m">01</span>:06:13<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nb">echo</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Ctrl+R</li>
+</ul>
+<p>基本上，所有Shell都会默认把Ctrl+R这个组合键设成（按执行时间）倒叙搜索（backward search）</p>
+<p>我们打开（按ctrl+r）倒叙搜索，然后输入<code>echo</code>，就会找到与之匹配的命令，如果我们接着按ctrl+r，就会倒着往前搜索匹配的命令，也可以重新执行命令。</p>
+<ul>
+<li>fzf</li>
+</ul>
+<p><code>Ctrl+R</code> 可以配合 <a href="https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings#ctrl-r">fzf</a> 使用。<code>fzf</code> 是一个通用对模糊查找工具，它可以和很多命令一起使用。这里我们可以对历史命令进行模糊查找并将结果以赏心悦目的格式输出</p>
+<ul>
+<li>基于历史的自动补全</li>
+</ul>
+<p>另外一个和历史命令相关的技巧我喜欢称之为<strong>基于历史的自动补全</strong>。 这一特性最初是由 <a href="https://fishshell.com/">fish</a> shell 创建的，它可以根据你最近使用过的开头相同的命令，动态地对当前对shell命令进行补全。这一功能在 <a href="https://github.com/zsh-users/zsh-autosuggestions">zsh</a> 中也可以使用，它可以极大的提高用户体验。</p>
+<blockquote>
+<p>你可以修改 shell history 的行为，例如，如果在命令的开头加上一个空格，它就不会被加进shell记录中。当你输入包含密码或是其他敏感信息的命令时会用到这一特性。 为此你需要在<code>.bashrc</code>中添加<code>HISTCONTROL=ignorespace</code>或者向<code>.zshrc</code> 添加 <code>setopt HIST_IGNORE_SPACE</code>。 如果你不小心忘了在前面加空格，可以通过编辑。<code>bash_history</code>或 <code>.zhistory</code> 来手动地从历史记录中移除那一项。</p>
+</blockquote>
+<h3 id="_4">文件夹导航<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>你可以使用<code>ls -R</code>递归地列出某目录下所有的文件和目录，但是这样列出的东西比较难理解。</p>
+<ul>
+<li>tree</li>
+</ul>
+<p>有一个叫<code>tree</code>的工具可以以比较友好的格式打印出目录的结构。</p>
+<blockquote>
+<p>centos安装：sudo yum -y install tree</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>tree<span class="w"> </span>/home
+/home
+<span class="sb">`</span>--<span class="w"> </span>lighthouse
+<span class="w">    </span><span class="sb">`</span>--<span class="w"> </span>missing
+<span class="w">        </span><span class="sb">`</span>--<span class="w"> </span>tools
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>example.sh
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>hello.txt
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>mcd.sh
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>project1
+<span class="w">            </span><span class="p">|</span><span class="w">   </span><span class="sb">`</span>--<span class="w"> </span>src
+<span class="w">            </span><span class="p">|</span><span class="w">       </span><span class="sb">`</span>--<span class="w"> </span><span class="nb">test</span>
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="p">|</span>--<span class="w"> </span>test1.py
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="p">|</span>--<span class="w"> </span>test2.py
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="sb">`</span>--<span class="w"> </span>test3.py
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>project2
+<span class="w">            </span><span class="p">|</span><span class="w">   </span><span class="sb">`</span>--<span class="w"> </span>src
+<span class="w">            </span><span class="p">|</span><span class="w">       </span><span class="sb">`</span>--<span class="w"> </span><span class="nb">test</span>
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="p">|</span>--<span class="w"> </span>test1.py
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="p">|</span>--<span class="w"> </span>test2.py
+<span class="w">            </span><span class="p">|</span><span class="w">           </span><span class="sb">`</span>--<span class="w"> </span>test3.py
+<span class="w">            </span><span class="sb">`</span>--<span class="w"> </span><span class="nb">test</span>
+
+<span class="m">10</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">9</span><span class="w"> </span>files
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>broot</li>
+</ul>
+<p>broot也是做差不多的事情，但是比起列出所有文件，它会提示[还有更多文件，未列出]。你可以输入字符，broot可以模糊匹配符合条件的文件，并进行动态显示。这样你就可以快速的选择和定位。</p>
+<ul>
+<li>nnn</li>
+</ul>
+<p>nnn 默认列出运行 nnn 的当前目录的文件和文件夹。 文件夹列在顶部，而文件列在底部。而且是一个交互性的窗口，你可以通过向左箭头返回上一级目录，通过向右箭头到达子目录。按q即可退出窗口。</p>
+<blockquote>
+<p>centos 安装 nnn ：sudo yum install nnn</p>
+</blockquote>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221230014444510.png" alt="image-20221230014444510" style="zoom:60%;" /></p>
+<ul>
+<li>ranger</li>
+</ul>
+<p>ranger 是一个基于文本的由 Python 编写的文件管理器。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容。</p>
+<hr />
+<p>由于本课程的目的是尽可能对你的日常习惯进行优化。因此，我们可以使用<a href="https://github.com/clvv/fasd">fasd</a>和 <a href="https://github.com/wting/autojump">autojump</a> 这两个工具来查找最常用或最近使用的文件和目录。</p>
+<p>Fasd 基于 <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/Places/Frecency_algorithm">frecency </a>对文件和文件排序，也就是说它会同时针对频率（frequency）和时效（recency）进行排序。默认情况下，<code>fasd</code>使用命令 <code>z</code> 帮助我们快速切换到最常访问的目录。例如， 如果您经常访问<code>/home/user/files/cool_project</code> 目录，那么可以直接使用 <code>z cool</code> 跳转到该目录。对于 autojump，则使用<code>j cool</code>代替即可。</p>
+<h2 id="_5">练习<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>阅读 <a href="https://man7.org/linux/man-pages/man1/ls.1.html"><code>man ls</code></a> ，然后使用<code>ls</code> 命令进行如下操作：</p>
+</li>
+<li>
+<p>所有文件（包括隐藏文件）</p>
+</li>
+<li>文件打印以人类可以理解的格式输出 (例如，使用454M 而不是 454279954)</li>
+<li>文件以最近访问顺序排序</li>
+<li>以彩色文本显示输出结果</li>
+</ol>
+<p>典型输出如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>baz
+<span class="w"> </span>drwxr-xr-x<span class="w">   </span><span class="m">5</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">160</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>.
+<span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">514</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">06</span>:42<span class="w"> </span>bar
+<span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span>106M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span>:12<span class="w"> </span>foo
+<span class="w"> </span>drwx------+<span class="w"> </span><span class="m">47</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.5K<span class="w"> </span>Jan<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span>:08<span class="w"> </span>..
+</code></pre></div></td></tr></table></div>
+<hr />
+<p>练习：</p>
+<p>(1) 显示包括隐藏文件</p>
+<blockquote>
+<p>-a, --all
+             do not ignore entries starting with .</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-a
+.<span class="w">  </span>..<span class="w">  </span>example.sh<span class="w">  </span>hello.txt<span class="w">  </span>mcd.sh<span class="w">  </span>project1<span class="w">  </span>project2<span class="w">  </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div>
+<p>(2) 文件以人类可以理解的格式输出</p>
+<blockquote>
+<p>-h, --human-readable
+              with -l, print sizes in human readable format (e.g., 1K 234M 2G)</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-hl
+total<span class="w"> </span>24K
+-rwxrwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">  </span><span class="m">494</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:49<span class="w"> </span>example.sh
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">31</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:55<span class="w"> </span>hello.txt
+-rw-rwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">42</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:46<span class="w"> </span>mcd.sh
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project1
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project2
+drwxrwxr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:55<span class="w"> </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div>
+<p>(3) 文件以最近访问顺序排序</p>
+<blockquote>
+<p>-t     sort by modification time, newest first</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-lt
+total<span class="w"> </span><span class="m">24</span>
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">31</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:55<span class="w"> </span>hello.txt
+-rwxrwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">  </span><span class="m">494</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:49<span class="w"> </span>example.sh
+-rw-rwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">42</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:46<span class="w"> </span>mcd.sh
+drwxrwxr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:55<span class="w"> </span><span class="nb">test</span>
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project1
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project2
+</code></pre></div></td></tr></table></div>
+<p>(4) 以彩色文本显示输出结果</p>
+<blockquote>
+<p>--color[=WHEN]
+             colorize the output; WHEN can be 'never', 'auto', or 'always' (the default); more info below</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>--color<span class="o">=</span>auto
+example.sh<span class="w">  </span>hello.txt<span class="w">  </span>mcd.sh<span class="w">  </span>project1<span class="w">  </span>project2<span class="w">  </span><span class="nb">test</span>
+</code></pre></div></td></tr></table></div>
+<p>综合：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-laht<span class="w"> </span>--color<span class="o">=</span>auto
+total<span class="w"> </span>32K
+drwxrwxr-x<span class="w"> </span><span class="m">5</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">01</span>:14<span class="w"> </span>.
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">31</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:55<span class="w"> </span>hello.txt
+-rwxrwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">  </span><span class="m">494</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:49<span class="w"> </span>example.sh
+-rw-rwxr--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">   </span><span class="m">42</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">01</span>:46<span class="w"> </span>mcd.sh
+drwxrwxr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:55<span class="w"> </span><span class="nb">test</span>
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project1
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:47<span class="w"> </span>project2
+drwxrwxr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">00</span>:46<span class="w"> </span>..
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>编写两个bash函数 <code>marco</code> 和 <code>polo</code> 执行下面的操作。 每当你执行 <code>marco</code> 时，当前的工作目录应当以某种形式保存，当执行 <code>polo</code> 时，无论现在处在什么目录下，都应当 <code>cd</code> 回到当时执行 <code>marco</code> 的目录。 为了方便debug，你可以把代码写在单独的文件 <code>marco.sh</code> 中，并通过 <code>source marco.sh</code>命令，（重新）加载函数。</li>
+</ol>
+<p>练习：</p>
+<p>marco.sh:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>marco<span class="o">(){</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/pwd.txt
+<span class="o">}</span>
+
+polo<span class="o">(){</span>
+<span class="nv">jump</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>~/pwd.txt<span class="k">)</span>
+<span class="c1"># 使用$(命令)的方式可以赋给变量</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$jump</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You had alread jump to --&gt;</span><span class="nv">$jump</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<p>测试：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>marco.sh
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>marco
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>/<span class="o">]</span>$<span class="w"> </span>polo
+You<span class="w"> </span>had<span class="w"> </span>alread<span class="w"> </span>jump<span class="w"> </span>to<span class="w"> </span>--&gt;/home/lighthouse/missing/tools
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>假设您有一个命令，它很少出错。因此为了在出错时能够对其进行调试，需要花费大量的时间重现错误并捕获输出。 编写一段bash脚本，运行如下的脚本直到它出错，将它的标准输出和标准错误流记录到文件，并在最后输出所有内容。 加分项：报告脚本在失败前共运行了多少次。</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="c1">#!/usr/bin/env bash</span>
+
+<span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span>RANDOM<span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="k">))</span>
+
+<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>n<span class="w"> </span>-eq<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Something went wrong&quot;</span>
+<span class="w">    </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The error was using magic numbers&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w"> </span><span class="k">fi</span>
+
+<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Everything went according to plan&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>练习：</p>
+<p>上述脚本的意思是，取一个随机数（RANDOM变量用于生成0~32767之前的任意随机数），随机数模100。如果结果等于42，就输出两句话，然后返回1退出码；否则就输出”Everything went according to plan“</p>
+<blockquote>
+<p>这里的<code>&gt;&amp;2</code>的意思是  将标准输出1和标准错误输出2 都重定向到终端中（标准输出或标准错误输出的目的地默认都为终端）</p>
+<p><a href="https://www.cnblogs.com/itsharehome/p/8503206.html">Linux shell标准输入，标准输出，错误输出</a></p>
+</blockquote>
+<p>run.sh（buggy.sh为题目的脚本名）</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+
+<span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="w"> </span><span class="k">do</span>
+<span class="w">     </span>./buggy.sh<span class="w"> </span><span class="m">1</span>&gt;&gt;<span class="w"> </span>out.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="c1">#把stout和sterr一起重定向到out.log文件中(追加)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;运行错误，记录在out.log中&quot;</span>
+<span class="w">         </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;共运行 </span><span class="nv">$count</span><span class="s2"> 次&quot;</span>
+<span class="w">         </span><span class="nb">break</span>
+<span class="w">     </span><span class="k">fi</span>
+<span class="w">     </span><span class="o">((</span>count++<span class="o">))</span>
+
+<span class="w"> </span><span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>./run.sh<span class="w"> </span>
+运行错误，记录在out.log中
+共运行<span class="w"> </span><span class="m">82</span><span class="w"> </span>次
+<span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>tools<span class="o">]</span>$<span class="w"> </span>./run.sh<span class="w"> </span>
+运行错误，记录在out.log中
+共运行<span class="w"> </span><span class="m">42</span><span class="w"> </span>次
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>本节课我们讲解的 <code>find</code> 命令中的 <code>-exec</code> 参数非常强大，它可以对我们查找的文件进行操作。但是，如果我们要对所有文件进行操作呢？例如创建一个zip压缩文件？我们已经知道，命令行可以从参数或标准输入接受输入。在用管道连接命令时，我们将标准输出和标准输入连接起来，但是有些命令，例如<code>tar</code> 则需要从参数接受输入。这里我们可以使用<a href="https://man7.org/linux/man-pages/man1/xargs.1.html"><code>xargs</code></a> 命令，它可以使用标准输入中的内容作为参数。 例如 <code>ls | xargs rm</code> 会删除当前目录中的所有文件。</li>
+</ol>
+<p>您的任务是编写一个命令，它可以递归地查找文件夹中所有的HTML文件，并将它们压缩成zip文件。注意，即使文件名中包含空格，您的命令也应该能够正确执行（提示：查看 <code>xargs</code>的参数<code>-d</code>，译注：MacOS 上的 <code>xargs</code>没有<code>-d</code>，<a href="https://github.com/missing-semester/missing-semester/issues/93">查看这个issue</a>）</p>
+<p>如果您使用的是 MacOS，请注意默认的 BSD <code>find</code> 与 <a href="https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands">GNU coreutils</a> 中的是不一样的。你可以为<code>find</code>添加<code>-print0</code>选项，并为<code>xargs</code>添加<code>-0</code>选项。作为 Mac 用户，您需要注意 mac 系统自带的命令行工具和 GNU 中对应的工具是有区别的；如果你想使用 GNU 版本的工具，也可以使用 <a href="https://formulae.brew.sh/formula/coreutils">brew 来安装</a>。</p>
+<p>练习：</p>
+<p>事先在当前文件夹下创建了一些html文件（包括带有空格的he llo.html）</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>question4<span class="o">]</span>$<span class="w"> </span>tree<span class="w"> </span>
+.
+<span class="p">|</span>--<span class="w"> </span>he<span class="se">\ </span>llo.html
+<span class="p">|</span>--<span class="w"> </span>index.html
+<span class="p">|</span>--<span class="w"> </span>project1
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span><span class="nb">test</span>
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>test1.html
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>test2.html
+<span class="p">|</span><span class="w">   </span><span class="sb">`</span>--<span class="w"> </span>test3.html
+<span class="p">|</span>--<span class="w"> </span>project2
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span><span class="nb">test</span>
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>test1.html
+<span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>test2.html
+<span class="p">|</span><span class="w">   </span><span class="sb">`</span>--<span class="w"> </span>test3.html
+<span class="p">|</span>--<span class="w"> </span>test1.html
+<span class="p">|</span>--<span class="w"> </span>test2.html
+<span class="p">|</span>--<span class="w"> </span>test3.html
+<span class="p">|</span>--<span class="w"> </span>test4.html
+<span class="p">|</span>--<span class="w"> </span>test5.html
+<span class="p">|</span>--<span class="w"> </span>test6.html
+<span class="p">|</span>--<span class="w"> </span>test7.html
+<span class="p">|</span>--<span class="w"> </span>test8.html
+<span class="sb">`</span>--<span class="w"> </span>test9.html
+
+<span class="m">4</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">17</span><span class="w"> </span>files
+</code></pre></div></td></tr></table></div>
+<p>使用命令：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>question4<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w">  </span>-name<span class="w"> </span><span class="s2">&quot;*.html&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>tar<span class="w"> </span>-cf<span class="w"> </span>html.zip
+</code></pre></div></td></tr></table></div>
+<p>查看压缩包内容：</p>
+<p>可以看到包括有空格文件名的html在内全部压缩成功</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>question4<span class="o">]</span>$<span class="w"> </span>tar<span class="w"> </span>-tf<span class="w"> </span>html.zip<span class="w"> </span>
+./project1/test3.html
+./project1/test2.html
+./project1/test1.html
+./test6.html
+./test3.html
+./test8.html
+./test4.html
+./test9.html
+./project2/test3.html
+./project2/test2.html
+./project2/test1.html
+./test5.html
+./he<span class="w"> </span>llo.html
+./test2.html
+./index.html
+./test1.html
+./test7.html
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/141500550">xargs使用教程 </a>    <a href="https://zhuanlan.zhihu.com/p/91593509">Linux下查看压缩文件内容的 10 种方法</a></p>
+<p>使用 <code>tar -tf</code> 命令可以在不提取 <code>tar</code> 文件的情况下查看压缩包内容。</p>
+</blockquote>
+<ol>
+<li>（进阶）编写一个命令或脚本递归的查找文件夹中最近使用的文件。更通用的做法，你可以按照最近的使用时间列出文件吗？</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>question4<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mmin<span class="w"> </span>-120<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w">  </span>ls<span class="w"> </span>-tl<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-3
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w"> </span><span class="m">10240</span><span class="w"> </span>Jan<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:01<span class="w"> </span>./html.zip
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">     </span><span class="m">0</span><span class="w"> </span>Jan<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:36<span class="w"> </span>./he<span class="w"> </span>llo.html
+-rw-rw-r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>lighthouse<span class="w"> </span>lighthouse<span class="w">     </span><span class="m">0</span><span class="w"> </span>Jan<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:15<span class="w"> </span>./project1/test1.html
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 主题 1 The Shell" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                主题 1 The Shell
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-footer__link md-footer__link--next" aria-label="下一页: 主题 3 编辑器(Vim)" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                主题 3 编辑器(Vim)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/liyuelian" target="_blank" rel="noopener noreferrer">liyuelian</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/liyuelian/docs-wiki/" target="_blank" rel="noopener" title="GitHub | Li-Yue-Lian" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>
