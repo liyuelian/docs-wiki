@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-tabs__link">
         Spring
       </a>
     </li>
@@ -320,6 +320,22 @@
     <li class="md-tabs__item">
       <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
         前端技术栈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-tabs__link">
+        杂记
       </a>
     </li>
   
@@ -2391,6 +2407,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2411,8 +2429,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
-        Spring基本介绍
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-nav__link">
+        Spring基本介绍01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
+        Spring基本介绍02
       </a>
     </li>
   
@@ -2679,6 +2711,77 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
+          杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          杂记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        MkDocs搭建静态站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+        Hexo博客搭建记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2805,7 +2908,7 @@
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221009190711048.png" alt="image-20221009190711048" style="zoom: 67%;" /></p>
 <h3 id="11">1.1基本原理<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <ol>
-<li>视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含列，其<strong>数据来自对应的真实的表（基表）</strong></li>
+<li>视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含列，其**数据来自对应的真实的表（基表）**</li>
 </ol>
 <p>视图和基表关系的示意图：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221009193325802.png" alt="image-20221009193325802" style="zoom: 67%;" /></p>
@@ -2820,37 +2923,17 @@
 <ul>
 <li>语法</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">语句</span><span class="w"> </span><span class="c1">-- 创建一个视图</span>
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">语句</span><span class="w"> </span><span class="c1">-- 创建一个视图</span>
 <span class="mf">2.</span><span class="w"> </span><span class="k">alter</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">语句</span><span class="w"> </span><span class="c1">-- 修改视图，更新成新的视图</span>
 <span class="mf">3.</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名</span><span class="w"> </span><span class="c1">-- 显示创建视图的指令</span>
 <span class="mf">4.</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">视图名1</span><span class="err">[</span><span class="p">,</span><span class="n">视图名2</span><span class="p">,...</span><span class="err">]</span><span class="w"> </span><span class="c1">-- 删除视图</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
 <p>完成前面提出的需求</p>
 <p>创建一个视图emp_view01，只能查询emp表的empno、ename、job和deptno列的信息</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span>
 <span class="c1">-- 创建一个视图emp_view01，只能查询emp表的empno、ename、job和deptno列的信息</span>
 
 <span class="c1">-- 创建视图</span>
@@ -2868,7 +2951,7 @@
 
 <span class="c1">-- 删除视图</span>
 <span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">emp_view01</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>
 <p>视图细节讨论</p>
@@ -2888,22 +2971,7 @@
 <p>视图中可以再使用视图，数据仍然来自基表</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 视图细节讨论</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 视图细节讨论</span>
 <span class="c1">-- 1. 创建视图后，到数据库去看，对应的视图只有一个视图结构文件</span>
 <span class="c1">-- （形式：视图名.frm）</span>
 
@@ -2919,7 +2987,7 @@
 <span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">emp_view02</span>
 <span class="w">    </span><span class="k">AS</span><span class="w"> </span>
 <span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">empno</span><span class="p">,</span><span class="n">ename</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp_view01</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h3 id="13">1.3视图应用实例<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2942,24 +3010,7 @@
 <li>练习</li>
 </ul>
 <p>针对emp，dept，salgrade三张表。创建一个视图emp_view03，可以显示雇员编号，雇员名，雇员部门名称和薪水级别。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 针对emp，dept，salgrade三张表。</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 针对emp，dept，salgrade三张表。</span>
 <span class="c1">-- 创建一个视图emp_view03，可以显示雇员编号，雇员名，雇员部门名称和薪水级别。</span>
 <span class="cm">/*</span>
 <span class="cm">  分析：</span>
@@ -2977,7 +3028,7 @@
 
 <span class="k">DESC</span><span class="w"> </span><span class="n">emp_view03</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp_view03</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221009214949858.png" style="zoom:67%;" /></p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221009214914097.png" alt="image-20221009214914097" style="zoom: 67%;" /></p>
 <h2 id="2mysql">2.MySQL管理<a class="headerlink" href="#2mysql" title="Permanent link">&para;</a></h2>
@@ -2999,34 +3050,17 @@
 <p>创建用户</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;允许登录的位置&#39;</span><span class="w"> </span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="w"> </span><span class="c1">-- 创建用户，同时指定密码</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;允许登录的位置&#39;</span><span class="w"> </span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="w"> </span><span class="c1">-- 创建用户，同时指定密码</span>
+</code></pre></div>
 <ul>
 <li>删除用户</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">drop</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;允许登录的位置&#39;</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">drop</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;允许登录的位置&#39;</span><span class="p">;</span>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- mysql用户管理</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- mysql用户管理</span>
 <span class="c1">-- 原因：当我们做项目开发时，可以根据不同的开发人员，赋给他们相应的操作权限</span>
 <span class="c1">-- 所以，mysql数据库管理人员（root），根据需要创建不同的用户，赋给相应的权限，供人员使用</span>
 
@@ -3044,31 +3078,21 @@
 <span class="k">DROP</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;liyuelian&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="p">;</span>
 
 <span class="c1">-- 3.登录</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>不同的数据库用户，登录到DBMS后，根据相应的权限，可以操作的数据库和数据对象（表，视图，触发器）都不一样</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221010161513484.png" alt="image-20221010161513484" style="zoom:67%;" /></p>
 <ul>
 <li>用户修改密码</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 修改自己的密码</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 修改自己的密码</span>
 <span class="k">set</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">password</span><span class="p">(</span><span class="s1">&#39;密码&#39;</span><span class="p">);</span>
 <span class="c1">-- 修改他人的密码（需要有修改用户密码权限）</span>
 <span class="k">set</span><span class="w"> </span><span class="k">password</span><span class="w"> </span><span class="k">for</span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;登录的位置&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">password</span><span class="p">(</span><span class="s1">&#39;密码&#39;</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 修改本用户密码</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 修改本用户密码</span>
 <span class="k">SET</span><span class="w"> </span><span class="k">PASSWORD</span><span class="o">=</span><span class="w"> </span><span class="k">PASSWORD</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">);</span>
 
 <span class="c1">-- 修改他人的密码（需要有修改用户密码权限）</span>
@@ -3076,7 +3100,7 @@
 
 <span class="c1">-- 切换到root用户，修改一般用户的密码</span>
 <span class="k">SET</span><span class="w"> </span><span class="k">PASSWORD</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="s1">&#39;olien&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">PASSWORD</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span><span class="c1">-- 成功，root用户权限很高</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h3 id="22mysql">2.2Mysql权限管理<a class="headerlink" href="#22mysql" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Mysql中的权限</li>
@@ -3085,21 +3109,7 @@
 <ul>
 <li>给用户授权</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 基本语法：</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 基本语法：</span>
 <span class="k">grant</span><span class="w"> </span><span class="n">权限列表</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">库</span><span class="p">.</span><span class="n">对象名</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;登录位置&#39;</span><span class="w"> </span><span class="err">[</span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="err">]</span>
 
 <span class="c1">#说明：</span>
@@ -3114,23 +3124,20 @@
 <span class="c1"># 3. identified by可以省略，也可以写出</span>
 <span class="c1"># (1)如果用户存在，就是修改该用户的密码</span>
 <span class="c1"># (2)如果该用户不存在，就是创建该用户</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>回收用户权限</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">#基本语法</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#基本语法</span>
 <span class="k">revoke</span><span class="w"> </span><span class="n">权限列表</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">库</span><span class="p">.</span><span class="n">对象名</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="nv">@&#39;登录位置&#39;</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>权限生效指令</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">#如果权限没有生效，可以执行下面命令</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#如果权限没有生效，可以执行下面命令</span>
 <span class="c1">#基本语法</span>
 <span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>练习</p>
 </blockquote>
@@ -3145,37 +3152,7 @@
 <li>使用root用户删除你的用户</li>
 </ol>
 <p>root用户：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 演示用户权限的管理</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 演示用户权限的管理</span>
 <span class="c1">-- 1. 创建一个用户（用户名随意），密码为123，并且只可以从本地登录，不让远程登录mysql</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;olien&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;123&#39;</span><span class="p">;</span><span class="w"> </span>
 
@@ -3206,18 +3183,9 @@
 
 <span class="c1">-- 8. 使用root用户删除你的用户</span>
 <span class="k">DROP</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;olien&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>新创建的用户：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 在默认情况下，olien用户只能看到一个默认的系统数据库</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 在默认情况下，olien用户只能看到一个默认的系统数据库</span>
 
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">news</span><span class="p">;</span>
 
@@ -3227,7 +3195,7 @@
 <span class="c1">-- 不能进行没有授权的操作，如：update</span>
 <span class="k">UPDATE</span><span class="w"> </span><span class="n">news</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;广州新闻&#39;</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 错误，提示没有权限</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h3 id="23mysql">2.3Mysql管理细节<a class="headerlink" href="#23mysql" title="Permanent link">&para;</a></h3>
 <p>细节说明：</p>
 <ol>
@@ -3238,19 +3206,7 @@
 <blockquote>
 <p>例子</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 细节说明：</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 细节说明：</span>
 <span class="c1">-- 1. 在创建用户的时候，如果不指定host，则默认为%，%表示所有的IP都有连接权限.如create user xxx;</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;jack&#39;</span><span class="p">;</span>
 
@@ -3263,7 +3219,7 @@
 <span class="c1">-- 3. 在删除用户时，如果host不是%，需要明确指定&#39;用户&#39;@&#39;host值&#39;</span>
 <span class="k">DROP</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">jack</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 默认就是 drop user &#39;jack&#39;@&#39;%&#39;</span>
 <span class="k">DROP</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">smith</span><span class="nv">@&#39;192.168.1.%&#39;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
 
 

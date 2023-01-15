@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-tabs__link">
         Spring
       </a>
     </li>
@@ -320,6 +320,22 @@
     <li class="md-tabs__item">
       <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
         前端技术栈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-tabs__link">
+        杂记
       </a>
     </li>
   
@@ -2377,6 +2393,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2397,8 +2415,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
-        Spring基本介绍
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-nav__link">
+        Spring基本介绍01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
+        Spring基本介绍02
       </a>
     </li>
   
@@ -2665,6 +2697,77 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
+          杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          杂记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        MkDocs搭建静态站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+        Hexo博客搭建记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2770,21 +2873,7 @@
 <h1 id="java04">Java常用类04<a class="headerlink" href="#java04" title="Permanent link">&para;</a></h1>
 <h2 id="4">4.字符串相关类练习<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="41stringbuilder">4.1StringBuilder练习<a class="headerlink" href="#41stringbuilder" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestBuffer</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2799,7 +2888,7 @@
 <span class="w">        </span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>问： <code>System.out.println(a+"."+b);</code>的输出结果是？</p>
 <p>答：AB.B</p>
 <p>原因如下：</p>
@@ -2808,23 +2897,7 @@
 <p><code>System.out.println(a+"."+b);</code>输出a对象和b对象的值，此时a对象中的值为AB，b对象中的值为B，因此输出的内容为AB.B</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220807155800679.png" alt="image-20220807155800679" style="zoom:67%;" /></p>
 <h3 id="42string">4.2String和字符数组练习<a class="headerlink" href="#42string" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Example</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;good&quot;</span><span class="p">);</span>
@@ -2841,7 +2914,7 @@
 <span class="w">        </span><span class="n">ch</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;g&#39;</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>问： </p>
 <p><code>System.out.print(ex.str+"and");</code></p>
 <p><code>`System.out.print(ex.ch);</code></p>
@@ -2857,16 +2930,7 @@
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220807155735552.png" alt="image-20220807155735552" style="zoom:67%;" /></p>
 <h3 id="43stringstringbuilder">4.3再次理解String和StringBuilder的不同之处<a class="headerlink" href="#43stringstringbuilder" title="Permanent link">&para;</a></h3>
 <h4 id="431string"><strong>4.3.1String</strong><a class="headerlink" href="#431string" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestStringAndBuilder</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2876,22 +2940,12 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str5</span><span class="p">);</span><span class="c1">//北京故宫博物院</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img alt="bdfopjso" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE2.png" /></p>
 <p>采用字面值的方式创建一个字符串时，JVM首先会去字符串池中查找是否存在"北京"这个对象，如果不存在，则在字符串池中创建"北京"这个对象，然后将池中"北京"这个对象的引用地址返回给"北京"对象的引用str5。<strong>使用concat（）方法可以追加子字符串，但是String是不可变长序列，所以是实际上是在常量池重新创建了一个对象，并把追加的字符串连同原字符串一同赋值给新的对象，然后将新对象的引用地址返回给str5，这样str5就指向了一个新的地址空间。每次使用concat（）方法追加子串都会经历上述过程，str5的指向不断改变，最终会指向最后一次开辟的对象地址</strong>。</p>
 <p>因此使用concat（）追加子串的方法效率无疑是很低的，那么有没有一种办法可以直接在创建的对象里添加子串呢？这就是我们要涉及到的StringBuilder类</p>
 <h4 id="432stringbuilder"><strong>4.3.2StringBuilder</strong><a class="headerlink" href="#432stringbuilder" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.normalclass.stringbuilder</span><span class="p">;</span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestStringAndBuilder</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2902,7 +2956,7 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img alt="zsfddawg12" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/3.2StringBuilder.png" /></p>
 <p>StringBuilder对象指向的字符数组是可变的，在创建时的长度为创建时传入的字符长度+16，之后每次增加字符进去，直到要增加的字符长度超过当前字符数组的内存空间容量，就会重新开辟一块地址空间，容量为当前容量的两倍再加上2，然后将StringBuilder对象指向新开辟的内存地址，而在栈内存中的builder存储的地址保持不变，指向StringBuilder对象。</p>
 

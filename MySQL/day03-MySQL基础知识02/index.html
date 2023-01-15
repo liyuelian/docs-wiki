@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-tabs__link">
         Spring
       </a>
     </li>
@@ -320,6 +320,22 @@
     <li class="md-tabs__item">
       <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
         前端技术栈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-tabs__link">
+        杂记
       </a>
     </li>
   
@@ -2398,6 +2414,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2418,8 +2436,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
-        Spring基本介绍
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-nav__link">
+        Spring基本介绍01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
+        Spring基本介绍02
       </a>
     </li>
   
@@ -2686,6 +2718,77 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
+          杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          杂记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        MkDocs搭建静态站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+        Hexo博客搭建记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2819,18 +2922,17 @@
 <li>Select 语句 （查找数据）</li>
 </ol>
 <p>前三种指对数据库中表记录的操作（DML 操作）</p>
-<p>==注意：==</p>
-<p>==alter属于DDL，用来修改基本表，是对表的结构进行操作，比如对字段增加，删除，修改类型；==</p>
-<p>==DML 操例，如，update是用来修改表中的数据，修改某一行某一列的值==</p>
+<p><mark>注意：</mark></p>
+<p><mark>alter属于DDL，用来修改基本表，是对表的结构进行操作，比如对字段增加，删除，修改类型；</mark></p>
+<p><mark>DML 操例，如，update是用来修改表中的数据，修改某一行某一列的值</mark></p>
 <p><strong>对行是数据操纵DML（如，update），对列是数据定义DDL（alter）</strong></p>
 <h3 id="41insert">4.1Insert语句<a class="headerlink" href="#41insert" title="Permanent link">&para;</a></h3>
 <ul>
 <li>使用INSERT 语句向表中插入数据</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tablename</span><span class="w"> </span><span class="err">[</span><span class="p">(</span><span class="k">column</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="k">column</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">)</span><span class="err">]</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tablename</span><span class="w"> </span><span class="err">[</span><span class="p">(</span><span class="k">column</span><span class="w"> </span><span class="err">[</span><span class="p">,</span><span class="k">column</span><span class="w"> </span><span class="p">...</span><span class="err">]</span><span class="p">)</span><span class="err">]</span>
 <span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="k">value</span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="p">...</span><span class="err">]</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
@@ -2838,21 +2940,7 @@
 <li>创建一商品表goods(id int, goods_name varchar(10),price double);</li>
 <li>添加两条记录</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 练习insert语句</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 练习insert语句</span>
 <span class="c1">-- 1. 创建一商品表goods(id int, goods_name varchar(10),price double);</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">goods</span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span>
@@ -2867,7 +2955,7 @@
 <span class="w">    </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;苹果手机&#39;</span><span class="p">,</span><span class="mi">3000</span><span class="p">);</span>
 
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">goods</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221002184244851.png" alt="image-20221002184244851" style="zoom:80%;" /></p>
 <ul>
 <li>INSERT语句注意事项</li>
@@ -2901,46 +2989,7 @@
 </ol>
 <p>如果某个列没有指定not null，那么当添加数据时，没有给定值，则会默认给null</p>
 <p>如果我们希望指定某个默认值，可以在创建表时指定</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- - INSERT语句注意事项</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- - INSERT语句注意事项</span>
 <span class="c1">-- 细节说明：</span>
 <span class="c1">-- 1. 插入的数据应该与字段的数据类型相同</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">goods</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;北京&#39;</span><span class="p">,</span><span class="s1">&#39;小米手机&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span><span class="c1">-- 失败，id对应的列类型是int</span>
@@ -2980,7 +3029,7 @@
 <span class="w">    </span><span class="n">price</span><span class="w"> </span><span class="kt">FLOAT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">goods2</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">goods_name</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;大西瓜手机&#39;</span><span class="p">);</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">goods2</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>goods表：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221002214014175.png" alt="image-20221002214014175" style="zoom:67%;" /></p>
 <p>goods2表：</p>
@@ -2989,12 +3038,10 @@
 <ul>
 <li>语法：</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">tab_name</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">tab_name</span><span class="w"> </span>
 <span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">col_name1</span><span class="o">=</span><span class="n">expr1</span><span class="err">[</span><span class="p">,</span><span class="w"> </span><span class="n">col_name2</span><span class="o">=</span><span class="n">expr2</span><span class="p">...</span><span class="err">]</span>
 <span class="w">    </span><span class="err">[</span><span class="k">WHERE</span><span class="w"> </span><span class="n">where_definition</span><span class="err">]</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
@@ -3004,23 +3051,7 @@
 <li>将姓名为‘小妖怪’的员工薪水改为3000元</li>
 <li>将老妖怪的薪水在原有的基础上加1000元</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 要求：在上面创建的epm表中修改表中的记录</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 要求：在上面创建的epm表中修改表中的记录</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
 
 <span class="c1">-- 1. 将所有员工的薪水改为5000元</span>
@@ -3037,7 +3068,7 @@
 <span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span>
 <span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="s1">&#39;出主意的&#39;</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;老妖怪&#39;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img alt="image-20221002221709227" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221002221709227.png" /></p>
 <ul>
 <li>
@@ -3054,21 +3085,13 @@
 <ul>
 <li>语法</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl_name</span><span class="w"> </span>
 <span class="w">        </span><span class="err">[</span><span class="k">WHERE</span><span class="w"> </span><span class="n">where_definition</span><span class="err">]</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>例子</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- delete语句演示</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- delete语句演示</span>
 <span class="c1">-- 删除表中名称为&#39;老妖怪&#39;的记录</span>
 <span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_name</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;老妖怪&#39;</span>
 
@@ -3076,7 +3099,7 @@
 <span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
 
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">emp</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img alt="image-20221002222608594" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221002222608594.png" /></p>
 <ul>
 <li>
@@ -3090,10 +3113,9 @@
 </ul>
 <h3 id="44select">4.4==Select语句(单表)==<a class="headerlink" href="#44select" title="Permanent link">&para;</a></h3>
 <h4 id="441">4.4.1基本查询<a class="headerlink" href="#441" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="err">[</span><span class="k">DISTINCT</span><span class="err">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="err">{</span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">..</span><span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="err">[</span><span class="k">DISTINCT</span><span class="err">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="err">{</span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">..</span><span class="err">}</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>
 <p>注意事项</p>
@@ -3115,31 +3137,7 @@
 <li>过滤表中的重复数据distinct</li>
 <li>要过滤的记录，每个字段都相同才会去重</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">    </span><span class="n n-Quoted">`name`</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="n">chinese</span><span class="w"> </span><span class="kt">FLOAT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
@@ -3164,17 +3162,16 @@
 <span class="c1">-- 3. 过滤表中的重复数据distinct</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">english</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
 <span class="c1">-- 4. 要过滤的记录，(要查询的)每个字段都相同才会去重  </span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h4 id="442">4.4.2使用表达式对查询的列进行运算<a class="headerlink" href="#442" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*|</span><span class="err">{</span><span class="w"> </span><span class="n">column1</span><span class="o">|</span><span class="n">expression</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="o">|</span><span class="n">expression</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*|</span><span class="err">{</span><span class="w"> </span><span class="n">column1</span><span class="o">|</span><span class="n">expression</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="o">|</span><span class="n">expression</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="err">}</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">tablename</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>在select语句中可使用as语句</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">别名</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">表名</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">别名</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">表名</span><span class="p">;</span>
+</code></pre></div>
 <blockquote>
 <p>练习</p>
 </blockquote>
@@ -3183,14 +3180,7 @@
 <li>给所有学生总分加10分</li>
 <li>使用别名表示学生分数</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 1. 统计每个学生的总分</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 1. 统计每个学生的总分</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="p">,(</span><span class="n">chinese</span><span class="o">+</span><span class="n">english</span><span class="o">+</span><span class="n">math</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
 
 <span class="c1">-- 2. 给所有学生总分加10分</span>
@@ -3198,40 +3188,15 @@
 
 <span class="c1">-- 3. 使用别名表示学生分数</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n n-Quoted">`名字`</span><span class="p">,(</span><span class="n">chinese</span><span class="o">+</span><span class="n">english</span><span class="o">+</span><span class="n">math</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n n-Quoted">`total`</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221003161738587.png" alt="image-20221003161738587" style="zoom:67%;" /> <img src="C:\Users\李\AppData\Roaming\Typora\typora-user-images\image-20221003162112889.png" alt="image-20221003162112889" style="zoom:67%;" /></p>
 <h4 id="443where">4.4.3在where子句中经常使用的运算符<a class="headerlink" href="#443where" title="Permanent link">&para;</a></h4>
-<p>使用wher子句进行<strong>过滤查询</strong></p>
+<p>使用wher子句进行**过滤查询**</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20221003162810869.png" alt="image-20221003162810869" style="zoom: 56%;" /></p>
 <blockquote>
 <p>练习1</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 1. 查询姓名为赵云的学生的成绩</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 1. 查询姓名为赵云的学生的成绩</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Student</span><span class="w"> </span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;赵云&#39;</span>
 
@@ -3257,25 +3222,11 @@
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">chinese</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">english</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">math</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">math</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">chinese</span><span class="w"> </span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;宋%&#39;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>练习2</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 查询英语成绩分数在80-90之间的同学</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 查询英语成绩分数在80-90之间的同学</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">english</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">90</span>
 
@@ -3290,25 +3241,11 @@
 <span class="c1">-- 查询数学分数大于80，语文分大于80的同学    </span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">math</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">chinese</span><span class="w"> </span><span class="o">&gt;</span><span class="mi">80</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <blockquote>
 <p>练习3</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 查询语文在70到80之间的同学</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 查询语文在70到80之间的同学</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w">  </span><span class="n">chinese</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">chinese</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">70</span>
 
@@ -3323,14 +3260,12 @@
 <span class="c1">-- 查询数学比语文多10分的同学</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w">  </span><span class="n">chinese</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="o">+</span><span class="mi">10</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h4 id="444order-by">4.4.4使用order by子句排序查询结果<a class="headerlink" href="#444order-by" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">...</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">column1</span><span class="p">,</span><span class="n">column2</span><span class="p">,</span><span class="n">column3</span><span class="p">...</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="p">;</span>
 <span class="w">    </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="k">asc</span><span class="o">|</span><span class="k">desc</span><span class="p">,...</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ol>
 <li>order by 指定排序的列，排序的列既可以是表中的列名，也可以是select语句后指定的列名</li>
 <li>asc升序（默认），desc降序</li>
@@ -3339,21 +3274,7 @@
 <blockquote>
 <p>练习</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- 对数学成绩排序后输出（升序）</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 对数学成绩排序后输出（升序）</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">math</span>
 
@@ -3368,7 +3289,7 @@
 <span class="k">SELECT</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="p">,(</span><span class="n">chinese</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">math</span><span class="w"> </span><span class="o">+</span><span class="n">english</span><span class="p">)</span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n n-Quoted">`name`</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;张%&#39;</span>
 <span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">total</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
 
 

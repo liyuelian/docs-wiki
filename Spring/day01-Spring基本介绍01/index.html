@@ -10,20 +10,20 @@
         <meta name="author" content="liyuelian">
       
       
-        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/">
       
       
         <link rel="prev" href="../../MySQL/day10-%E4%B9%A0%E9%A2%98/">
       
       
-        <link rel="next" href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/">
+        <link rel="next" href="../day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Spring基本介绍 - liyuelian的博客</title>
+        <title>Spring基本介绍01 - liyuelian的博客</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spring" class="md-skip">
+        <a href="#spring01" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spring基本介绍
+              Spring基本介绍01
             
           </span>
         </div>
@@ -320,6 +320,22 @@
     <li class="md-tabs__item">
       <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
         前端技术栈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-tabs__link">
+        杂记
       </a>
     </li>
   
@@ -2289,6 +2305,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="true">
@@ -2319,12 +2337,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Spring基本介绍
+          Spring基本介绍01
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Spring基本介绍
+        Spring基本介绍01
       </a>
       
         
@@ -2417,19 +2435,40 @@
     4.4注意事项和细节
   </a>
   
-    <nav class="md-nav" aria-label="4.4注意事项和细节">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45spring" class="md-nav__link">
+    4.5.Spring容器的结构/机制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5.Spring容器的结构/机制">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#441" class="md-nav__link">
-    4.4.1类加载路径
+  <a href="#451beandefinitionmapjava" class="md-nav__link">
+    4.5.1beanDefinitionMap保存Java对象的信息
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#442spring" class="md-nav__link">
-    4.4.2spring容器的结构/机制
+  <a href="#452singletonobjectsjava" class="md-nav__link">
+    4.5.2singletonObjects保存Java对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453beandefinitionnamesbean" class="md-nav__link">
+    4.5.3beanDefinitionNames记录配置文件的bean名称
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#454" class="md-nav__link">
+    4.5.4容器结构练习
   </a>
   
 </li>
@@ -2448,6 +2487,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
+        Spring基本介绍02
+      </a>
     </li>
   
 
@@ -2713,6 +2766,77 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
+          杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          杂记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        MkDocs搭建静态站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+        Hexo博客搭建记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2814,19 +2938,40 @@
     4.4注意事项和细节
   </a>
   
-    <nav class="md-nav" aria-label="4.4注意事项和细节">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45spring" class="md-nav__link">
+    4.5.Spring容器的结构/机制
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5.Spring容器的结构/机制">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#441" class="md-nav__link">
-    4.4.1类加载路径
+  <a href="#451beandefinitionmapjava" class="md-nav__link">
+    4.5.1beanDefinitionMap保存Java对象的信息
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#442spring" class="md-nav__link">
-    4.4.2spring容器的结构/机制
+  <a href="#452singletonobjectsjava" class="md-nav__link">
+    4.5.2singletonObjects保存Java对象
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453beandefinitionnamesbean" class="md-nav__link">
+    4.5.3beanDefinitionNames记录配置文件的bean名称
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#454" class="md-nav__link">
+    4.5.4容器结构练习
   </a>
   
 </li>
@@ -2863,15 +3008,15 @@
 
 
 
-<h1 id="spring">Spring基本介绍<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h1>
+<h1 id="spring01">Spring基本介绍01<a class="headerlink" href="#spring01" title="Permanent link">&para;</a></h1>
 <h2 id="1">1.官方资料和下载<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11spring5">1.1Spring5下载<a class="headerlink" href="#11spring5" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>直接访问 https://repo.spring.io/ui/native/release/org/springframework/spring/，选择相应版本即可</p>
+<p>直接访问 <a href="https://repo.spring.io/ui/native/release/org/springframework/spring/">https://repo.spring.io/ui/native/release/org/springframework/spring/</a>，选择相应版本即可</p>
 </blockquote>
 <ol>
 <li>
-<p>进入官网 https://spring.io/</p>
+<p>进入官网 <a href="https://spring.io/">https://spring.io/</a></p>
 </li>
 <li>
 <p>进入Spring5</p>
@@ -2883,7 +3028,7 @@
 </ol>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114155025062.png" alt="image-20230114155025062" style="zoom:50%;" /></p>
 <blockquote>
-<p>也可以直接访问 https://github.com/spring-projects/spring-framework</p>
+<p>也可以直接访问 <a href="https://github.com/spring-projects/spring-framework">https://github.com/spring-projects/spring-framework</a></p>
 </blockquote>
 <ol>
 <li>在github仓库README.md文件往下拉，看到Access to Binaries，点击里面的链接</li>
@@ -2898,7 +3043,7 @@
 </ol>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114155705939.png" alt="image-20230114155705939" style="zoom:67%;" /></p>
 <ol>
-<li>在左边的弹窗中依次点击release--&gt;org--&gt;springframework--&gt;spring</li>
+<li>在左边的弹窗中依次点击release&rarr;org&rarr;springframework&rarr;spring</li>
 </ol>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114155939772.png" alt="image-20230114155939772" style="zoom:67%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114160024529.png" alt="image-20230114160024529" style="zoom:67%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114160137462.png" alt="image-20230114160137462" style="zoom:67%;" /></p>
 <ol>
@@ -3043,61 +3188,7 @@
 <ol>
 <li>创建Javabean：Monster.java</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.bean</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.bean</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
@@ -3152,7 +3243,7 @@
 <span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ol>
 <li>在src目录下创建配置文件：鼠标右击src目录---&gt;new---&gt;XML Configuration File---&gt;Spring Config，我这里起名为beans.xml</li>
 </ol>
@@ -3171,25 +3262,7 @@
 <ol>
 <li>在beans.xml文件中配置monster对象</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
 <span class="w">       </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
 <span class="w">       </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="nt">&gt;</span>
@@ -3208,51 +3281,11 @@
 <span class="w">    </span><span class="nt">&lt;/bean&gt;</span>
 
 <span class="nt">&lt;/beans&gt;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ol>
 <li>创建测试类SpringBeanTest</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.test</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.test</span><span class="p">;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">com.li.bean.Monster</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
@@ -3293,26 +3326,21 @@
 
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114191641703.png" alt="image-20230114191641703" style="zoom:67%;" /></p>
 <h3 id="44">4.4注意事项和细节<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
-<h4 id="441">4.4.1类加载路径<a class="headerlink" href="#441" title="Permanent link">&para;</a></h4>
+<p><strong>类加载路径</strong>：</p>
 <p>一个问题：为什么下面可以读取到beans.xml文件？或者说，读取的文件是src目录下的beans.xml吗？</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
+</code></pre></div>
 <p>我们可以在测试类中输出一下路径：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//验证类加载路径</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//验证类加载路径</span>
 <span class="nd">@Test</span>
 <span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">classPath</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getResource</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">).</span><span class="na">getPath</span><span class="p">());</span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;file=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">file</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>可以看到类的加载路径并不在src目录，而是在一个out目录下：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114192634659.png" alt="image-20230114192634659" style="zoom:67%;" /></p>
 <p>可以看到在out\production\spring目录下有一个beans.xml文件：</p>
@@ -3321,32 +3349,88 @@
 <p>因此运行时，真正读取的配置文件不是在src目录下的beans.xml，而是在out目录下的beans.xml，只是两个文件是一样的。（类的加载路径）</p>
 <hr />
 <p>回到之前的问题，为什么下面的语句，我们直接写“beans.xml”？</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
+</code></pre></div>
 <p>因为默认读取的是.....\out\production\spring目录，而一旦运行过后，在src目录下的beans.xml文件会被直接放在.....\out\production\spring目录下，因此可以直接读取到。</p>
 <p>假如beans.xml文件是放到src下面的某个子文件夹，那么在语句中就要根据子文件夹的结构来进行修改。</p>
-<h4 id="442spring">4.4.2spring容器的结构/机制<a class="headerlink" href="#442spring" title="Permanent link">&para;</a></h4>
+<h3 id="45spring">4.5.Spring容器的结构/机制<a class="headerlink" href="#45spring" title="Permanent link">&para;</a></h3>
 <p>注意配置debugger，通过配置指定哪一些数据在debug的时候会展示，哪一些不展示</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114203350623.png" alt="image-20230114203350623" style="zoom: 55%;" /></p>
-<p>1.如下，打上断点，点击debug</p>
+<p>1.如下，以4.3为例，打上断点，点击debug</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114203724126.png" alt="image-20230114203724126" style="zoom:60%;" /></p>
-<p>2.如下，beanFactory的beanDefinitionMap属性的类型是ConcurrentHashMap集合，保存beans.xml中的bean节点配置的bean对象的<strong>信息</strong></p>
+<p>2.如图所示，ioc就是我们创建的容器对象，是一个”重量级对象“，因为它的内容很多。因此创建该对象比较耗费资源，所以通常情况下，我们应该只有一个这样的对象。</p>
+<p>容器对象中有一个重要的属性：<strong>beanFactory对象</strong>，beanFactory对象有一个beanDefinitionMap属性，该属性的类型是ConcurrentHashMap集合，用于保存配置文件的**对象信息**（注意不是保存对象，而是保存对象信息）</p>
 <blockquote>
-<p>因为在我们的配置文件中，通常会有很多的java对象信息，spring会把这些java对象的信息保存下来，以便将来spring创建对象时使用</p>
+<p>在我们的配置文件中，通常会有很多的java对象，spring会把这些java对象的信息保存下来，以便将来spring重复创建对象时使用</p>
 </blockquote>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114210918228.png" alt="image-20230114210918228" style="zoom: 55%;" /></p>
-<p>3.展开beanDefinitionMap对象，可以看到一个table数组（ConcurrentHashMap类型），初始的大小为512。Spring会将java对象的信息放到table中。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115171620484.png" alt="image-20230115171620484" style="zoom:67%;" /></p>
+<blockquote>
+<p><strong>注意：这里的bean对象指的是任意Java对象，不仅仅是指Javabean！</strong></p>
+</blockquote>
+<h4 id="451beandefinitionmapjava">4.5.1beanDefinitionMap保存Java对象的信息<a class="headerlink" href="#451beandefinitionmapjava" title="Permanent link">&para;</a></h4>
+<p>3.点击展开beanDefinitionMap对象，可以看到一个table数组（ConcurrentHashMap$Node类型），初始的大小为512，Spring会将所有的Java对象的信息放到table中。</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114210951927.png" alt="image-20230114210951927" style="zoom:55%;" /></p>
-<p>4.index=127位置以ConcurrentHashMap$Node类型保存Monster01对象信息</p>
-<p>其中key=“monster01”就是beans.xml中配置的bean的id</p>
-<p>value存放了很多数据，例如：monster01对象的信息（属性，属性值，类信息，是否懒加载）</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114211150763.png" alt="image-20230114211150763" style="zoom:55%;" /></p>
-<p>propertyValues就是记录beans.xml中配置的monster01对象的属性名和属性值</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114212202852.png" alt="image-20230114212202852" style="zoom: 54%;" /></p>
+<p>4.在这个例子中，table数组的index=127位置以ConcurrentHashMap$Node类型保存了Monster01对象信息（Node是ConcurrentHashMap的内部类）</p>
+<p>其中key=“monster01”就是beans.xml中配置的bean的id，value存放了很多数据，例如：monster01对象的信息（属性，属性值，类全路径，是否懒加载）</p>
+<blockquote>
+<p>非懒加载：在使用前已经创建好对象；懒加载：使用到时再动态创建对象</p>
+</blockquote>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115173208556.png" alt="image-20230115173208556" style="zoom:67%;" /></p>
+<p>value的propertyValues就是记录beans.xml中配置的monster01对象的属性名和属性值。其中的elementData属性是一个Object类型的数组。点击展开elementData数组的一个元素，可以看到该元素记录了对象信息的name、value，即属性名称和属性值。</p>
+<blockquote>
+<p>当spring再次创建对象时，就会到这里来获取对象的属性值</p>
+</blockquote>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114211325108.png" alt="image-20230114211325108" style="zoom:55%;" /></p>
-<p>5.此外beanFactory还有一个重要属性singletonObjects，singletonObjects也是一个ConcurrentHashMap集合</p>
+<h4 id="452singletonobjectsjava">4.5.2singletonObjects保存Java对象<a class="headerlink" href="#452singletonobjectsjava" title="Permanent link">&para;</a></h4>
+<p>5.此外beanFactory还有一个重要属性**singletonObjects**，singletonObjects也是一个ConcurrentHashMap集合，singleonObjects有一个table数组，类型是ConcurrentHashMap$Node.</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230114212935943.png" alt="image-20230114212935943" style="zoom:55%;" /></p>
-<p>12-11spring容器机制剖析</p>
+<p>如下，在singleonObjects的table.index=217处存放了spring创建的monster**对象**</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115174515056.png" alt="image-20230115174515056" style="zoom:67%;" /></p>
+<h4 id="453beandefinitionnamesbean">4.5.3beanDefinitionNames记录配置文件的bean名称<a class="headerlink" href="#453beandefinitionnamesbean" title="Permanent link">&para;</a></h4>
+<p>6.beanFactory还有一个**beanDefinitionNames**属性，存放配置文件的bean-id，主要是为了方便快速查找。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115174731189.png" alt="image-20230115174731189" style="zoom:67%;" /></p>
+<hr />
+<p>beanFactory的beanDefinitionMap用于保存Java对象的信息；</p>
+<p>beanFactory的singletonObjects对象用于保存Java对象；</p>
+<p>beanFactory的beanDefinitionNames用于记录配置文件的bean的名称（即Java对象的id）</p>
+<h4 id="454">4.5.4容器结构练习<a class="headerlink" href="#454" title="Permanent link">&para;</a></h4>
+<p>如下在配置文件配置两个bean对象</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115180812320.png" alt="image-20230115180812320" style="zoom:60%;" /></p>
+<p>练习：查看容器注入了哪些bean对象，输出bean的id</p>
+<p>根据5.1-5.3的分析，获取bean的id可以输出beanDefinitionNames的属性值。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.test</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SpringBeanTest</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getMonster</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//创建容器 ApplicationContext</span>
+<span class="w">        </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">//查看容器注入了哪些bean对象，输出bean的id</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">beanDefinitionNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBeanDefinitionNames</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">beanDefinitionName</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">beanDefinitionNames</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;beanDefinitionName=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanDefinitionName</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>输出如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115180845213.png" alt="image-20230115180845213" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115181032348.png" alt="image-20230115181032348" style="zoom:70%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115181245010.png" alt="image-20230115181245010" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115181431524.png" alt="image-20230115181431524" style="zoom:67%;" /></p>
 
 
 
@@ -3389,13 +3473,13 @@
         
         
           
-          <a href="../../The%20Missing%20Semester/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-footer__link md-footer__link--next" aria-label="下一页: 主题 1 The Shell" rel="next">
+          <a href="../day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-footer__link md-footer__link--next" aria-label="下一页: Spring基本介绍02" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                主题 1 The Shell
+                Spring基本介绍02
               </div>
             </div>
             <div class="md-footer__button md-icon">
