@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-tabs__link">
         Git
       </a>
     </li>
@@ -447,8 +447,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
-        Git学习
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        Git入门
       </a>
     </li>
   
@@ -2423,6 +2423,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2473,6 +2477,34 @@
     <li class="md-nav__item">
       <a href="../../Spring/day03-Spring%E7%AE%A1%E7%90%86Bean-IOC-01/" class="md-nav__link">
         Spring管理Bean-IOC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day04-Spring%E7%AE%A1%E7%90%86Bean-IOC-02/" class="md-nav__link">
+        Spring管理Bean-IOC-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day05-Spring%E7%AE%A1%E7%90%86Bean-IOC-03/" class="md-nav__link">
+        Spring管理Bean-IOC-03
       </a>
     </li>
   
@@ -3231,6 +3263,32 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220727173511801.png" alt="image-20220727173511801" style="zoom: 67%;" /></p>
+<p><strong>注意事项和使用细节：</strong></p>
+<ol>
+<li>定义一维数组时，必须显式指明数组的长度； </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">//int[] a = new int[];//编译报错 Array initializer expected</span>
+
+<span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span><span class="c1">//编译通过</span>
+</code></pre></div>
+<ol>
+<li>定义N维数组时（N&gt;2），其一维数组的长度必须首先指明，其他维数组长度可以稍后指定；</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">//int[][] c = new int[][5];//编译报错，必须指明其一维长度，也不能先分配第二个以后的数组再分配第一个数组</span>
+
+<span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">][]</span><span class="p">;</span><span class="c1">//编译通过</span>
+</code></pre></div>
+<ol>
+<li>
+<p>采用给定值初始化数组时，不必指明长度； </p>
+</li>
+<li>
+<p>[] 是数组运算符的意思，在声明一个数组时，数组运算符可以放在数据类型与变量之间，也可以放在变量之后</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="n">f</span><span class="o">[]</span><span class="p">;</span><span class="c1">//二维数组，编译通过</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="n">g</span><span class="o">[][]</span><span class="p">;</span><span class="c1">//三维数组，编译通过</span>
+</code></pre></div>
 <h2 id="7arrays">7.Arrays类<a class="headerlink" href="#7arrays" title="Permanent link">&para;</a></h2>
 <ul>
 <li>数组的工具类java.util.Arrays</li>

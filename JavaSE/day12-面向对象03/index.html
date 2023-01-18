@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-tabs__link">
         Git
       </a>
     </li>
@@ -447,8 +447,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
-        Git学习
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        Git入门
       </a>
     </li>
   
@@ -852,8 +852,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12n" class="md-nav__link">
-    12.N种内部类
+  <a href="#12" class="md-nav__link">
+    12.内部类
   </a>
   
 </li>
@@ -2348,6 +2348,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2398,6 +2402,34 @@
     <li class="md-nav__item">
       <a href="../../Spring/day03-Spring%E7%AE%A1%E7%90%86Bean-IOC-01/" class="md-nav__link">
         Spring管理Bean-IOC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day04-Spring%E7%AE%A1%E7%90%86Bean-IOC-02/" class="md-nav__link">
+        Spring管理Bean-IOC-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day05-Spring%E7%AE%A1%E7%90%86Bean-IOC-03/" class="md-nav__link">
+        Spring管理Bean-IOC-03
       </a>
     </li>
   
@@ -2776,8 +2808,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12n" class="md-nav__link">
-    12.N种内部类
+  <a href="#12" class="md-nav__link">
+    12.内部类
   </a>
   
 </li>
@@ -2833,13 +2865,13 @@
 <p><strong>答：1. 抽象类一定有而且是必须有构造器，是供子类创建对象时，初始化父类成员使用的。</strong></p>
 <p>​            理解:子类的构造器中，有默认的super()需要访问父类构造器。</p>
 <p>​        <strong>2. 代码复用，提高开发效率</strong></p>
-<h2 id="11">11.<mark>接口</mark><a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
-<p><strong>extends 单继承</strong>            <strong>接口可以多继承</strong></p>
+<h2 id="11">11.接口<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p><strong>extends 单继承，而使用接口可以实现多继承</strong></p>
 <ul>
 <li>普通类：只有具体实现</li>
 <li>抽象类：具体实现和规范（抽象方法）都有！</li>
 <li>接口类：只有规范，自己无法写方法---&gt;专业的约束！实现约束和实现分离：面向接口编程</li>
-<li><mark>接口的本质是契约</mark>，就像法律一样。制定好大家都必须遵守。</li>
+<li>接口的本质是**契约**，就像法律一样。制定好大家都必须遵守。</li>
 <li>OO的精髓，是对对象的抽象，最能体现这一点的就是接口。为什么我们讨论涉及模式都只针对具备了抽象能力的语言（比如C++\java\C#等），就是因为涉及模式所研究的实际上就是如何合理地去抽象。</li>
 <li><strong>声明类的关键字是class，声明接口的关键字是interface</strong></li>
 <li>接口没有构造方法</li>
@@ -2919,37 +2951,46 @@
 <li>定义一些方法，让不同的人实现</li>
 <li>方法都是public abstract</li>
 <li>属性都是public static final</li>
-<li>接口不能被实例化~，接口中没有构造方法</li>
+<li>接口不能被实例化，接口中没有构造方法</li>
 <li>一个implement可以实现多个接口</li>
 <li>必须重写接口中的方法</li>
 </ol>
-<h2 id="12n">12.N种内部类<a class="headerlink" href="#12n" title="Permanent link">&para;</a></h2>
-<ul>
+<h2 id="12">12.内部类<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/Java%E5%86%85%E9%83%A8%E7%B1%BB%EF%BC%88%E6%94%B9%E6%AD%A3%EF%BC%89.png" /></p>
+<ol>
 <li>内部类就是在一个类的内部再定义一个类，比如，A类中定义一个B类，那么B类对A类来说就称为内部类，而A类相对B类来说就是外部类了。</li>
-</ul>
-<p>内部类：</p>
-<ul>
-<li>
-<p>成员内部类</p>
-</li>
-<li>
-<p>静态内部类</p>
-</li>
-<li>局部内部类</li>
-<li>匿名内部类</li>
-</ul>
-<p>内部类的特点：</p>
-<ul>
-<li>编译之后可以生成单独的字节码文件</li>
-</ul>
+</ol>
+<p>内部类的种类：（1）成员内部类，（2）静态内部类，（3）局部内部类，（4）匿名内部类</p>
+<ol>
+<li>内部类的特点：编译之后可以生成单独的字节码文件</li>
+</ol>
 <blockquote>
 <p>除了外部类Body会生成一个.class文件外，内部类也会单独生成一个.class文件</p>
 <p>内部类Outer&amp;Inner.class，外部类Outer.class</p>
 </blockquote>
-<ul>
-<li>内部类可以直接访问外部类的私有成员，而不破坏封装</li>
-<li>可以为外部类提供必要的功能组件</li>
-</ul>
+<ol>
+<li>
+<p>内部类可以直接访问外部类的私有成员，而不破坏封装</p>
+</li>
+<li>
+<p>可以为外部类提供必要的功能组件</p>
+</li>
+<li>
+<p>内部类不能被public、private、static修饰；</p>
+</li>
+<li>
+<p>在外部类中不能创建内部类的实例；</p>
+</li>
+<li>
+<p>创建内部类的实例只能在包含他的方法中；</p>
+</li>
+<li>
+<p>内部类访问包含他的方法中的变量必须有final修饰；</p>
+</li>
+<li>
+<p>外部类不能访问局部内部类，只能在方法体中访问局部内部类，且访问必须在内部类定义之后。</p>
+</li>
+</ol>
 <blockquote>
 <p>例子1：成员内部类</p>
 </blockquote>
@@ -3018,6 +3059,7 @@
 <blockquote>
 <p>例子3：局部内部类</p>
 </blockquote>
+<p><strong>局部内部类是放在代码块或方法中的，不能有访问控制修饰符，且不能用static修饰</strong></p>
 <p>一个java文件可以有多个class类，但是只能有一个public class在最外层</p>
 <p>局部内部类可以在方法中定义</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">li.oop.demo10</span><span class="p">;</span>
@@ -3032,9 +3074,7 @@
 
 <span class="w">          </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
-
 <span class="w">    </span><span class="p">}</span>
-
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
@@ -3058,7 +3098,6 @@
 
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">};</span>
-
 
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
