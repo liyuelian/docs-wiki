@@ -10,20 +10,20 @@
         <meta name="author" content="liyuelian">
       
       
-        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/">
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day06-Spring%E7%AE%A1%E7%90%86Bean-IOC-04/">
       
       
-        <link rel="prev" href="../day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/">
+        <link rel="prev" href="../day05-Spring%E7%AE%A1%E7%90%86Bean-IOC-03/">
       
       
-        <link rel="next" href="../day03-Spring%E7%AE%A1%E7%90%86Bean-IOC-01/">
+        <link rel="next" href="../day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Spring基本介绍02 - liyuelian的博客</title>
+        <title>Spring管理Bean-IOC-04 - liyuelian的博客</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spring02" class="md-skip">
+        <a href="#springbean-ioc-04" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spring基本介绍02
+              Spring管理Bean-IOC-04
             
           </span>
         </div>
@@ -2333,113 +2333,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Spring基本介绍02
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
         Spring基本介绍02
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#5springxml" class="md-nav__link">
-    5.简单模拟Spring基于XML配置的程序
-  </a>
-  
-    <nav class="md-nav" aria-label="5.简单模拟Spring基于XML配置的程序">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
-    5.1需求说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    5.2思路分析
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53" class="md-nav__link">
-    5.3代码实现
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6spring" class="md-nav__link">
-    6.Spring原生容器底层结构梳理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    7.练习
-  </a>
-  
-    <nav class="md-nav" aria-label="7.练习">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#71beanid" class="md-nav__link">
-    7.1关于bean的id
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#722" class="md-nav__link">
-    7.2练习2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2491,11 +2389,133 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../day06-Spring%E7%AE%A1%E7%90%86Bean-IOC-04/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Spring管理Bean-IOC-04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Spring管理Bean-IOC-04
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3bean" class="md-nav__link">
+    3.基于注解配置bean
+  </a>
+  
+    <nav class="md-nav" aria-label="3.基于注解配置bean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1基本使用
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1基本使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    3.1.2快速入门
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    3.1.3注意事项和细节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-spring" class="md-nav__link">
+    3.2手动开发-简单的Spring基于注解配置的程序
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2手动开发-简单的Spring基于注解配置的程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1需求说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    3.2.2思路分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    3.2.3代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    3.2.4注意事项和细节说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2873,30 +2893,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#5springxml" class="md-nav__link">
-    5.简单模拟Spring基于XML配置的程序
+  <a href="#3bean" class="md-nav__link">
+    3.基于注解配置bean
   </a>
   
-    <nav class="md-nav" aria-label="5.简单模拟Spring基于XML配置的程序">
+    <nav class="md-nav" aria-label="3.基于注解配置bean">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
-    5.1需求说明
+  <a href="#31" class="md-nav__link">
+    3.1基本使用
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1基本使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    5.2思路分析
+  <a href="#312" class="md-nav__link">
+    3.1.2快速入门
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#53" class="md-nav__link">
-    5.3代码实现
+  <a href="#313" class="md-nav__link">
+    3.1.3注意事项和细节
   </a>
   
 </li>
@@ -2905,33 +2933,45 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6spring" class="md-nav__link">
-    6.Spring原生容器底层结构梳理
+        
+          <li class="md-nav__item">
+  <a href="#32-spring" class="md-nav__link">
+    3.2手动开发-简单的Spring基于注解配置的程序
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    7.练习
-  </a>
-  
-    <nav class="md-nav" aria-label="7.练习">
+    <nav class="md-nav" aria-label="3.2手动开发-简单的Spring基于注解配置的程序">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71beanid" class="md-nav__link">
-    7.1关于bean的id
+  <a href="#321" class="md-nav__link">
+    3.2.1需求说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#722" class="md-nav__link">
-    7.2练习2
+  <a href="#322" class="md-nav__link">
+    3.2.2思路分析
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    3.2.3代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    3.2.4注意事项和细节说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2962,271 +3002,437 @@
 
 
 
-<h1 id="spring02">Spring基本介绍02<a class="headerlink" href="#spring02" title="Permanent link">&para;</a></h1>
-<h2 id="5springxml">5.简单模拟Spring基于XML配置的程序<a class="headerlink" href="#5springxml" title="Permanent link">&para;</a></h2>
-<h3 id="51">5.1需求说明<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<h1 id="springbean-ioc-04">Spring管理Bean-IOC-04<a class="headerlink" href="#springbean-ioc-04" title="Permanent link">&para;</a></h1>
+<h2 id="3bean">3.基于注解配置bean<a class="headerlink" href="#3bean" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1基本使用<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<h4 id="311">3.1.1说明<a class="headerlink" href="#311" title="Permanent link">&para;</a></h4>
+<p>基本说明：基于注解的方式配置bean，主要是项目开发中的组件，比如Controller，Service和Dao</p>
+<p>组件的注解形式有：</p>
+<ol>
+<li><code>@Component</code> 表示当前注解标识的是一个组件</li>
+<li><code>@Controller</code> 表示当前注解标识的是一个控制器，通常用于Servlet</li>
+<li><code>@Service</code> 表示当前注解标识的是一个处理业务逻辑的类，通常用于Service类</li>
+<li><code>@Repository</code> 表示当前注解标识的是一个持久化层的类，通常用于Dao类</li>
+</ol>
+<h4 id="312">3.1.2快速入门<a class="headerlink" href="#312" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>应用案例：使用注解的方式来配置Controller /Service/ Repository/ Component</p>
+</blockquote>
+<p>代码实现：</p>
+<p>1.使用注解方式，需要引入spring-aop.jar包，该jar包位于spring/lib下</p>
+<p>2.创建 UserAction.java、UserService.java、UserDao.java、MyComponent.java</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119165839094.png" alt="image-20230119165839094" style="zoom:67%;" /></p>
+<p>UserDao：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 使用 @Repository 表示该类是一个Repository，一个持久化层的类/对象</span>
+<span class="cm"> */</span>
+<span class="nd">@Repository</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserDao</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>UserService：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * @Service 标识该类是一个Service类/对象</span>
+<span class="cm"> */</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserService</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>UserAction：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * @Controller 标识该类是一个控制器Controller，通常该类是一个Servlet</span>
+<span class="cm"> */</span>
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserAction</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>MyComponent：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * @Component 用于标识该类是一个组件，是一个通用的注解</span>
+<span class="cm"> */</span>
+
+<span class="nd">@Component</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyComponent</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>上面我们在类中添加了注解，但是还没有在配置文件中指定容器要扫描哪个包下的注解类</p>
+<p>3.配置beans04.xml：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--配置容器要扫描的包：</span>
+<span class="cm">    1.component-scan 表示对指定的包下的类进行扫描，并创建对象到容器</span>
+<span class="cm">    2.base-package 指定要扫描的包</span>
+<span class="cm">    3.下面整个配置的含义是：当spring容器创建/初始化时，会扫描 com.li.component 包下</span>
+<span class="cm">      的所有含有四种注解（Controller/Service/Repository/Component）的类，</span>
+<span class="cm">      并将其实例化，生成对象，放入到ioc容器</span>
+<span class="cm">--&gt;</span>
+<span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>注意引入context命名空间</p>
+</blockquote>
+<p>4.测试</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//通过注解来配置Bean</span>
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBeanByAnnotation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans04.xml&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在<code>System.out.println("ok");</code>旁打上断点，点击debug。</p>
+<p>查看ioc对象&rarr;beanFactory&rarr;singletoObjects&rarr;table的属性。因为table属性有很多null值，为了显示方便，这里配置了IDEA不显示null值</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119172330944.png" alt="image-20230119172330944" style="zoom:60%;" /></p>
+<p>如下，spring容器中成功创建了四个对象，并且在默认情况下，按照注解方式进行扫描创建的对象，它对应的id就是它的类名（首字母小写）</p>
+<blockquote>
+<p>其他的对象是系统自带的</p>
+</blockquote>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119172804431.png" alt="image-20230119172804431" style="zoom:67%;" /></p>
+<p>查看类型id（key）</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119172903347.png" alt="image-20230119172903347" style="zoom:70%;" /></p>
+<p>因为配置的这四个对象是单例对象，因此可以直接通过类的类型来获取：</p>
+<blockquote>
+<p>因为spring在创建时赋予了默认id，也可以通过id来获取</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">//通过注解来配置Bean</span>
+<span class="nd">@Test</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBeanByAnnotation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans04.xml&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">UserDao</span><span class="w"> </span><span class="n">userDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">UserDao</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">UserService</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">UserAction</span><span class="w"> </span><span class="n">userAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">UserAction</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MyComponent</span><span class="w"> </span><span class="n">myComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">MyComponent</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userDao=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userDao</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userService=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userService</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userAction=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userAction</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;myComponent=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myComponent</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119173810459.png" alt="image-20230119173810459" style="zoom:67%;" /></p>
+<h4 id="313">3.1.3注意事项和细节<a class="headerlink" href="#313" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>自己写一个简单的Spring容器，通过读取beans.xml，获取第一个Javabean：Monster的对象，给该对象属性赋值，放入到容器中，并输出该对象信息</p>
+<p>基于注解配置bean，需要导入spring-aop.jar包</p>
 </li>
 <li>
-<p>也就是说，不使用spring原生框架，我们自己简单模拟实现，目的是了解Spring容器的简单机制</p>
+<p>必须在Spring配置文件中指定“自动扫描的包”，IOC容器才能够检测到当前项目中哪些类被标识了注解</p>
 </li>
 </ol>
-<h3 id="52">5.2思路分析<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115184402488.png" alt="image-20230115184402488" style="zoom:67%;" /></p>
-<h3 id="53">5.3代码实现<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
-<p>引入dom4j.jar包</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115185128891.png" alt="image-20230115185128891" style="zoom: 80%;" /></p>
-<p>MyApplicationContext.java：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.myapplicationcontext</span><span class="p">;</span>
+<p>（1）在配置时注意导入context名称空间</p>
+<p>（2）指定扫描的包时，可以使用通配符，如：<code>com.li.component.*</code>表示扫描com.li.component包下的类，             包括com.li.component包下的子包（递归扫描）</p>
+<ol>
+<li>Spring的IOC容器不能检测一个使用了@Controller注解的类到底是不是一个真正的控制器。注解的名称只是用于程序员自己识别当前标识的是什么组件。其他的注解@Service、@Reposity 也是一样。</li>
+</ol>
+<p>也就是说，Spring的容器只要检测到注解就会生成对象，但是这个注解的含义spring不会识别，只是给程序员方便区分的</p>
+<blockquote>
+<p>如果你只在spring容器上用，@Controller、@Service、@Reposity基本是等价的；如果你用在springmvc上面，它们是有区别的：<a href="https://zhuanlan.zhihu.com/p/454638478">彻底弄懂@Controller 、@Service、@Component</a></p>
+</blockquote>
+<ol>
+<li>配置只扫描满足要求的类：</li>
+</ol>
+<p>如下面的resource-pattern="User*.class"，表示扫描指定包下以User开头的类</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="w"> </span>
+<span class="w">                        </span><span class="na">resource-pattern=</span><span class="s">&quot;User*.class&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>一般来说，想要扫描某个类只需要写上注解，不想扫描的类就不会写注解，因此上面这种写法不常使用</p>
+</blockquote>
+<ol>
+<li>配置排除扫描的类：</li>
+</ol>
+<p>如果我们希望排除某个包/子包下的某种类型的注解，可以通过exclude-filter来指定</p>
+<p>（1）context:exclude-filter 指定要排除哪些类</p>
+<p>（2）type 指定排除方式（annotation 表示通过注解来排除）</p>
+<p>（3）expression 指定要排除的注解的全路径</p>
+<p>下面的配置表示，在扫描com.li.component包下注解的类时，排除以@Service注解的类</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<span class="cm">&lt;!-- 排除哪些类, 以 annotaion注解为例(通过注解来排除) --&gt;</span>
+<span class="nt">&lt;context:exclude-filter</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;annotation&quot;</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;org.springframework.stereotype.Service&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/context&gt;</span>
+</code></pre></div>
+<ol>
+<li>自定义规则指定扫描哪些注解类：</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--如果我们希望通过自己的规则，来扫描包/子包下的某些注解类，可以通过include-filter</span>
+<span class="cm">    1. use-default-filters=&quot;false&quot;: 表示不使用默认的过滤/扫描机制</span>
+<span class="cm">    2. context:include-filter: 表示只是扫描指定的注解的类</span>
+<span class="cm">    3. type=&quot;annotation&quot; 表示按照注解方式来扫描</span>
+<span class="cm">    4. expression=&quot;org.springframework.stereotype.Controller&quot; 指定要扫描的注解的全类路径</span>
+<span class="cm"> --&gt;</span>
+<span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="w"> </span><span class="na">use-default-filters=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;context:include-filter</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;annotation&quot;</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;org.springframework.stereotype.Service&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;context:include-filter</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;annotation&quot;</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;org.springframework.stereotype.Controller&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/context:component-scan&gt;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>在默认情况下，注解标识的类创建对象后，在容器中它默认对应的id就是它的类名（首字母小写）</p>
+</li>
+<li>
+<p>也可以使用注解的value属性指定 id 值，并且 value 可以省略：</p>
+</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119185023801.png" alt="image-20230119185023801" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230119202735732.png" alt="image-20230119202735732" style="zoom:67%;" /></p>
+<h3 id="32-spring">3.2手动开发-简单的Spring基于注解配置的程序<a class="headerlink" href="#32-spring" title="Permanent link">&para;</a></h3>
+<h4 id="321">3.2.1需求说明<a class="headerlink" href="#321" title="Permanent link">&para;</a></h4>
+<p>自己写一个简单的Spring容器，通过读取类的注解（@Component、@Controller、@Service、@Repository），将对象注入到IOC容器。即不使用Spring原生框架，我们自己使用IO+Annotation+反射+集合实现，加深对Spring注解方式开发的理解。</p>
+<h4 id="322">3.2.2思路分析<a class="headerlink" href="#322" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/%E5%AE%9E%E7%8E%B0Spring%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AEBean%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%902.png" /></p>
+<h4 id="323">3.2.3代码实现<a class="headerlink" href="#323" title="Permanent link">&para;</a></h4>
+<p><strong>步骤一：搭建基本结构并获取扫描包</strong></p>
+<p>1.ComponentScan注解（模拟原生的spring注解）</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.annotation</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.bean.Monster</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.dom4j.Document</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.dom4j.Element</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.dom4j.io.SAXReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.ElementType</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.Retention</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.RetentionPolicy</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.Target</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Method</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 模仿spring原生注解，自定义一个注解</span>
+<span class="cm"> * 1. @Target(ElementType.TYPE) 指定ComponentScan注解可以修饰TYPE元素</span>
+<span class="cm"> * 2. @Retention(RetentionPolicy.RUNTIME) 指定ComponentScan注解 的保留范围</span>
+<span class="cm"> * 3. String value() default &quot;&quot;;  表示 ComponentScan 可以传入一个value值</span>
+<span class="cm"> */</span>
+<span class="nd">@Target</span><span class="p">(</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">)</span>
+<span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">ComponentScan</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">value</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>2.MySpringConfig配置类（模拟Spring的xml配置文件）</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.annotation</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 这是一个配置类，作用类似我们原生spring的容器配置文件beans.xml</span>
+<span class="cm"> */</span>
+<span class="nd">@ComponentScan</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.li.component&quot;</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MySpringConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>3.MySpringApplicationContext（模拟原生的ioc容器）</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.annotation</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.annotation.Annotation</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ConcurrentHashMap</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
-<span class="cm"> * 1. 这个程序用于实现Spring的一个简单容器机制</span>
-<span class="cm"> * 2. 后面还会详细的实现</span>
-<span class="cm"> * 3. 这里我们主要实现的是如何将beans.xml文件进行解析，并生成对象，放入容器中</span>
-<span class="cm"> * 4. 然后提供一个getBean(id) 返回对应的对象</span>
+<span class="cm"> * MySpringApplicationContext 类的作用类似Spring原生的ioc容器</span>
 <span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyApplicationContext</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">singletonObjects</span>
-<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MySpringApplicationContext</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Class</span><span class="w"> </span><span class="n">configClass</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//ioc中存放的就是通过反射创建的对象（基于注解方式）</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
 <span class="w">    </span><span class="c1">//构造器</span>
-<span class="w">    </span><span class="c1">//接收一个容器的配置文件，如 beans.xml，默认路径在src下</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyApplicationContext</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">iocBeanXMLFile</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//1.得到配置文件的类加载路径</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getResource</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">).</span><span class="na">getPath</span><span class="p">();</span>
-
-<span class="w">        </span><span class="c1">//2.创建 saxReader</span>
-<span class="w">        </span><span class="n">SAXReader</span><span class="w"> </span><span class="n">saxReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SAXReader</span><span class="p">();</span>
-
-<span class="w">        </span><span class="c1">//3.得到document对象</span>
-<span class="w">        </span><span class="n">Document</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saxReader</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">iocBeanXMLFile</span><span class="p">));</span>
-
-<span class="w">        </span><span class="c1">//4.得到rootDocument</span>
-<span class="w">        </span><span class="n">Element</span><span class="w"> </span><span class="n">rootElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="na">getRootElement</span><span class="p">();</span>
-
-<span class="w">        </span><span class="c1">//5.得到第一个bean-monster01</span>
-<span class="w">        </span><span class="n">Element</span><span class="w"> </span><span class="n">bean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Element</span><span class="p">)</span><span class="w"> </span><span class="n">rootElement</span><span class="p">.</span><span class="na">elements</span><span class="p">(</span><span class="s">&quot;bean&quot;</span><span class="p">).</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">//6.获取到第一个bean的相关属性(真实的情况下会把属性保存到beanDefinitionMap中)</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bean</span><span class="p">.</span><span class="na">attributeValue</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span><span class="c1">//bean的id</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">classFullPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bean</span><span class="p">.</span><span class="na">attributeValue</span><span class="p">(</span><span class="s">&quot;class&quot;</span><span class="p">);</span><span class="c1">//类的全路径</span>
-<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Element</span><span class="o">&gt;</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bean</span><span class="p">.</span><span class="na">elements</span><span class="p">(</span><span class="s">&quot;property&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="c1">//原本是遍历，这里为了简化，就直接获取</span>
-<span class="w">        </span><span class="c1">//property的value值</span>
-<span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">monsterId</span><span class="w"> </span><span class="o">=</span>
-<span class="w">                </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">property</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">attributeValue</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">));</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">property</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">attributeValue</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">skill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">property</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="na">attributeValue</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">//7.反射创建对象</span>
-<span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">aClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="n">classFullPath</span><span class="p">);</span>
-<span class="w">        </span><span class="c1">//这里的 o对象就是Monster对象</span>
-<span class="w">        </span><span class="n">Monster</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Monster</span><span class="p">)</span><span class="w"> </span><span class="n">aClass</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
-<span class="w">        </span><span class="c1">//给对象赋值-这里为了简化，直接赋值（真实情况下会使用反射）</span>
-<span class="w">        </span><span class="n">o</span><span class="p">.</span><span class="na">setMonsterId</span><span class="p">(</span><span class="n">monsterId</span><span class="p">);</span>
-<span class="w">        </span><span class="n">o</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-<span class="w">        </span><span class="n">o</span><span class="p">.</span><span class="na">setSkill</span><span class="p">(</span><span class="n">skill</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">//8.将创建好的对象放到singletonObjects单例对象池中</span>
-<span class="w">        </span><span class="n">singletonObjects</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getBean</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">singletonObjects</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MySpringApplicationContext</span><span class="p">(</span><span class="n">Class</span><span class="w"> </span><span class="n">configClass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">configClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configClass</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">//获取要扫描的包</span>
+<span class="w">        </span><span class="c1">//1.先得到MySpringConfig配置类的注解 @ComponentScan(value = &quot;com.li.component&quot;)</span>
+<span class="w">        </span><span class="n">ComponentScan</span><span class="w"> </span><span class="n">componentScan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ComponentScan</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">configClass</span><span class="p">.</span><span class="na">getDeclaredAnnotation</span><span class="p">(</span><span class="n">ComponentScan</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">//2.通过 componentScan的 value=&gt;得到要扫描的包路径</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">componentScan</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Test.java用于测试：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.myapplicationcontext</span><span class="p">;</span>
+<p><strong>步骤二：获取扫描包下所有.class文件</strong></p>
+<p>4.如下，我们现在已经获取了要扫描的包路径，接下来就是通过反射创建对象。但是反射需要的是class文件，因此我们真正需要读取的是out目录下，编译过的类.class文件</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230120172705354.png" alt="image-20230120172705354" style="zoom:67%;" /></p>
+<p><strong>步骤三：获取全类名反射对象，并放入容器中</strong></p>
+<p>MySpringApplicationContext完整代码：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.annotation</span><span class="p">;</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.util.StringUtils</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.bean.Monster</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URL</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.ConcurrentHashMap</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * MySpringApplicationContext 类的作用类似Spring原生的ioc容器</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MySpringApplicationContext</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Class</span><span class="w"> </span><span class="n">configClass</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//ioc中存放的就是通过反射创建的对象（基于注解方式）</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">//构造器</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MySpringApplicationContext</span><span class="p">(</span><span class="n">Class</span><span class="w"> </span><span class="n">configClass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">configClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configClass</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">//##步骤一：获取要扫描的包</span>
+
+<span class="w">        </span><span class="c1">//1.先得到MySpringConfig配置类的注解 @ComponentScan(value = &quot;com.li.component&quot;)</span>
+<span class="w">        </span><span class="n">ComponentScan</span><span class="w"> </span><span class="n">componentScan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ComponentScan</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">configClass</span><span class="p">.</span><span class="na">getDeclaredAnnotation</span><span class="p">(</span><span class="n">ComponentScan</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">//2.通过 componentScan的 value=&gt;得到要扫描的包路径</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">componentScan</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="c1">//com.li.component</span>
+
+<span class="w">        </span><span class="c1">//##步骤二：得到要扫描的包下的所有资源（类.class）</span>
+
+<span class="w">        </span><span class="c1">//1.得到类的加载器</span>
+<span class="w">        </span><span class="n">ClassLoader</span><span class="w"> </span><span class="n">classLoader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MySpringApplicationContext</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getClassLoader</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">//2.通过类的加载器获取到要扫描的包的资源 url=&gt;类似一个路径</span>
+<span class="w">        </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">);</span><span class="c1">//将原先路径的.替换成/ ==&gt; com/li/component</span>
+<span class="w">        </span><span class="n">URL</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classLoader</span><span class="p">.</span><span class="na">getResource</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">//resource=file:/D:/IDEA-workspace/spring/out/production/spring/com/li/component</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;resource=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resource</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">//3.将要加载的资源（.class）路径下的文件进行遍历</span>
+<span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">resource</span><span class="p">.</span><span class="na">getFile</span><span class="p">());</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">File</span><span class="o">[]</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="na">listFiles</span><span class="p">();</span><span class="c1">//将当前目录下的所有文件放到files数组中（这里没有实现递归）</span>
+
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">File</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">files</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-----------&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;AbsolutePath=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getAbsolutePath</span><span class="p">());</span>
+<span class="w">                </span><span class="c1">//获取文件的绝对路径 fileAbsolutePath</span>
+<span class="w">                </span><span class="c1">//如：D:\IDEA-workspace\spring\out\production\spring\com\li\component\MyComponent.class</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">fileAbsolutePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getAbsolutePath</span><span class="p">();</span>
+
+<span class="w">                </span><span class="c1">//这里我们只处理.class文件</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fileAbsolutePath</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;.class&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">                    </span><span class="c1">//##步骤三：获取全类名反射对象，并放入容器中</span>
+
+<span class="w">                    </span><span class="c1">//将其转变为 com.li.component.MyComponent.class 形式</span>
+<span class="w">                    </span><span class="c1">//1.先获取到类名</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fileAbsolutePath</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span>
+<span class="w">                            </span><span class="n">fileAbsolutePath</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="s">&quot;\\&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">fileAbsolutePath</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;.class&quot;</span><span class="p">));</span>
+<span class="w">                    </span><span class="c1">//System.out.println(&quot;className=&quot; + className);</span>
+
+<span class="w">                    </span><span class="c1">//2.获取类的完整路径（全类名）</span>
+<span class="w">                    </span><span class="c1">// path.replace(&quot;/&quot;, &quot;.&quot;) =&gt; com.li.component</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">classFullName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">className</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;classFullName=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">classFullName</span><span class="p">);</span>
+
+<span class="w">                    </span><span class="c1">//3.判断该class文件是否要注入到容器中（该类是不是有注解）</span>
+<span class="w">                    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="cm">/*</span>
+<span class="cm">                        得到该类的Class对象：</span>
+<span class="cm">                        （1）Class.forName(className) 可以反射加载类</span>
+<span class="cm">                        （2）classLoader.loadClass(className)也可以反射类的Class</span>
+<span class="cm">                        主要区别是：（1）的方式会调用该类的静态方法，（2）的方法不会</span>
+<span class="cm">                         */</span>
+<span class="w">                        </span><span class="c1">//因为这里只是要判断该类有没有注解，因此使用比较轻量级的方式</span>
+<span class="w">                        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">aClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classLoader</span><span class="p">.</span><span class="na">loadClass</span><span class="p">(</span><span class="n">classFullName</span><span class="p">);</span>
+<span class="w">                        </span><span class="c1">//判断该类是否有特定注解</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">aClass</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">Component</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">                                </span><span class="n">aClass</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">Controller</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">                                </span><span class="n">aClass</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">Service</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">                                </span><span class="n">aClass</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">Repository</span><span class="p">.</span><span class="na">class</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="c1">//反射对象并放入到容器中</span>
+<span class="w">                            </span><span class="c1">//使用完整反射方法Class.forName</span>
+<span class="w">                            </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="n">classFullName</span><span class="p">);</span>
+<span class="w">                            </span><span class="n">Object</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+<span class="w">                            </span><span class="c1">//放入到容器中</span>
+<span class="w">                            </span><span class="c1">//默认情况下key为类名（首字符小写）</span>
+<span class="w">                            </span><span class="c1">//StringUtils.uncapitalize()：将字符串首字母小写</span>
+<span class="w">                            </span><span class="n">ioc</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">uncapitalize</span><span class="p">(</span><span class="n">className</span><span class="p">),</span><span class="w"> </span><span class="n">instance</span><span class="p">);</span>
+<span class="w">                        </span><span class="p">}</span>
+
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">                    </span><span class="p">}</span>
+
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//编写方法，返回容器对象</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getBean</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>5.进行测试：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.annotation</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.component.MyComponent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.component.UserAction</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.component.UserDao</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.component.UserService</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
 <span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Test</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">MyApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">Monster</span><span class="w"> </span><span class="n">monster01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Monster</span><span class="p">)</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;monster01&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monster01=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monsterId=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">.</span><span class="na">getMonsterId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="s">&quot; name=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="s">&quot; skill=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">.</span><span class="na">getSkill</span><span class="p">());</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MySpringApplicationContextTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MySpringApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MySpringApplicationContext</span><span class="p">(</span><span class="n">MySpringConfig</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">UserAction</span><span class="w"> </span><span class="n">userAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UserAction</span><span class="p">)</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;userAction&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userAction=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userAction</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">MyComponent</span><span class="w"> </span><span class="n">myComponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">MyComponent</span><span class="p">)</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;myComponent&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;myComponent=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myComponent</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">UserDao</span><span class="w"> </span><span class="n">userDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UserDao</span><span class="p">)</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;userDao&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userDao=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userDao</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UserService</span><span class="p">)</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;userService&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userService=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userService</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
+
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115193702842.png" alt="image-20230115193702842" style="zoom:67%;" /></p>
-<h2 id="6spring">6.Spring原生容器底层结构梳理<a class="headerlink" href="#6spring" title="Permanent link">&para;</a></h2>
-<p>我们之前在Spring基本介绍01--4.5Spring容器的结构/机制有一些基础的分析，现在来梳理一下：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/Spring%E5%AE%B9%E5%99%A8%E7%A4%BA%E6%84%8F%E5%9B%BE.png" style="zoom: 20%;" /></p>
-<h2 id="7">7.练习<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
-<h3 id="71beanid">7.1关于bean的id<a class="headerlink" href="#71beanid" title="Permanent link">&para;</a></h3>
-<p>如下，在beans.xml中，我们注入2个Monster对象，但是不指定bean的id</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.bean.Monster&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;monsterId&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;牛魔王&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;skill&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;芭蕉扇&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/bean&gt;</span>
-
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.bean.Monster&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;monsterId&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;200&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;红孩儿&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;skill&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;三昧真火&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/bean&gt;</span>
-</code></pre></div>
-<p><strong>问题1：运行会不会报错？</strong></p>
-<p><strong>答：不会报错，可以正常运行。</strong></p>
-<p><strong>问题2：如果不报错，你是否能找到分配的id并获取该对象？</strong></p>
-<p><strong>答：系统会默认分配id，分配id的规则是：全类名#0，全类名#1......全类名#n，这样的规则来分配id</strong></p>
-<p>我们可以通过debug的方式来查看：</p>
-<p>beanFactory.beanDefinitionMap.table:</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115205901982.png" alt="image-20230115205901982" style="zoom:67%;" /></p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.homework</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.bean.Monster</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Homework01</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nd">@Test</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getMonster</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span>
-<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans.xml&quot;</span><span class="p">);</span>
-
-<span class="w">        </span><span class="n">Monster</span><span class="w"> </span><span class="n">monster01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;com.li.bean.Monster#0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Monster</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monster01=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monsterId=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster01</span><span class="p">.</span><span class="na">getMonsterId</span><span class="p">());</span>
-
-<span class="w">        </span><span class="n">Monster</span><span class="w"> </span><span class="n">monster02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;com.li.bean.Monster#1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Monster</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monster02=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster02</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;monsterId=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monster02</span><span class="p">.</span><span class="na">getMonsterId</span><span class="p">());</span>
-
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok~~&quot;</span><span class="p">);</span>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230120190856445.png" alt="image-20230120190856445" style="zoom:67%;" /></p>
+<h4 id="324">3.2.4注意事项和细节说明<a class="headerlink" href="#324" title="Permanent link">&para;</a></h4>
+<p>上述代码默认将反射类的类名首字符小写后，放入到ioc容器中。但是在原生spring中我们可以在注解的value中指定对象key值。</p>
+<p>因此上述代码的逻辑可以优化为：进行反射之前，先判断注解有没有指定value值，如果有，将其作为反射的对象的key，放入到ioc容器中。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//这里以Component注解为例，其他注解的逻辑一致</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">aClass</span><span class="p">.</span><span class="na">isAnnotationPresent</span><span class="p">(</span><span class="n">Component</span><span class="p">.</span><span class="na">class</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//获取该注解</span>
+<span class="w">    </span><span class="n">Component</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aClass</span><span class="p">.</span><span class="na">getDeclaredAnnotation</span><span class="p">(</span><span class="n">Component</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//获取该注解的value值</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">component</span><span class="p">.</span><span class="na">value</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="s">&quot;&quot;</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115205336892.png" alt="image-20230115205336892" style="zoom:65%;" /></p>
-<blockquote>
-<p>在实际开发中不会省略bean的id</p>
-</blockquote>
-<h3 id="722">7.2练习2<a class="headerlink" href="#722" title="Permanent link">&para;</a></h3>
-<p>创建一个Car类（属性：id，name，price），具体要求如下：</p>
-<ol>
-<li>创建ioc容器文件（即配置文件），并配置一个Car对象（bean）</li>
-<li>通过java程序到ioc容器获取该bean对象，并输出</li>
-</ol>
-<p>Car：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.bean</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setId</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPrice</span><span class="p">(</span><span class="n">Double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Car{&quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="s">&quot;id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="s">&quot;, name=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="s">&quot;, price=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>beans2.xml：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;beans</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
-<span class="w">       </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-<span class="w">       </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="nt">&gt;</span>
-
-<span class="w">    </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.bean.Car&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;car01&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;10001&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;宝马&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;price&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1230000&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/bean&gt;</span>
-<span class="nt">&lt;/beans&gt;</span>
-</code></pre></div>
-<p>Homework02：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.homework</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.bean.Car</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Homework02</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nd">@Test</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getCart</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span>
-<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans2.xml&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;car01&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Car</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230115212120113.png" alt="image-20230115212120113" style="zoom:67%;" /></p>
 
 
 
@@ -3253,7 +3459,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Spring基本介绍01" rel="prev">
+          <a href="../day05-Spring%E7%AE%A1%E7%90%86Bean-IOC-03/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Spring管理Bean-IOC-03" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -3262,20 +3468,20 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                Spring基本介绍01
+                Spring管理Bean-IOC-03
               </div>
             </div>
           </a>
         
         
           
-          <a href="../day03-Spring%E7%AE%A1%E7%90%86Bean-IOC-01/" class="md-footer__link md-footer__link--next" aria-label="下一页: Spring管理Bean-IOC" rel="next">
+          <a href="../day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/" class="md-footer__link md-footer__link--next" aria-label="下一页: Spring管理Bean-IOC-05" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                Spring管理Bean-IOC
+                Spring管理Bean-IOC-05
               </div>
             </div>
             <div class="md-footer__button md-icon">
