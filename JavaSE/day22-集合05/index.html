@@ -2389,6 +2389,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2495,6 +2497,20 @@
     <li class="md-nav__item">
       <a href="../../Spring/day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/" class="md-nav__link">
         Spring管理Bean-IOC-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day08-AOP-01/" class="md-nav__link">
+        AOP
       </a>
     </li>
   
@@ -2945,7 +2961,7 @@
 </ol>
 <p><strong>思路：不同对象的哈希值一般会不一样，导致在添加对象时可能会在table数组的不同位置添加，因此想要比较对象的属性值，就要重写hashCode方法，使具有相同属性的对象具有一样的hash值，这样才能在插入时比较对象的值；但不同的对象也可能具有相同的hash值，所以要重写equals方法来比较对象属性值</strong></p>
 <p>如下图：在add()方法最终调用的putVal（）方法中可以看出，如果插入的新元素的哈希值相同 且 值也相同 就不加入</p>
-<p><img alt="image-20220817173700933" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817173700933.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817173700933.png" alt="image-20220817173700933" style="zoom: 67%;" /></p>
 <blockquote>
 <p>例子：</p>
 </blockquote>
@@ -3014,7 +3030,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="image-20220817145110916" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817145110916.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817145110916.png" alt="image-20220817145110916" style="zoom:67%;" /></p>
 <p>快捷键：alt+insert选择equals（）and hashCode（）快速重写</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817144139231.png" alt="image-20220817144139231" style="zoom:67%;" /></p>
 <p>如果name和age的值相同，在使用equals时，返回true</p>
@@ -3026,7 +3042,7 @@
 <p>要求：</p>
 <ol>
 <li>创建3个Employee对象放入到HashSet中</li>
-<li>当name和birthday的值相同时，热卫视相同员工，不能添加到HashSet集合中</li>
+<li>当name和birthday的值相同时，认为是相同员工，不能添加到HashSet集合中</li>
 </ol>
 <p><strong>思路：和练习1思路一致，不同的是MyDate类也要重写equals（）和hashCode（）方法</strong></p>
 <blockquote>
@@ -3109,7 +3125,6 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-
 <span class="kd">class</span> <span class="nc">MyDate</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="p">;</span>
@@ -3168,7 +3183,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="image-20220817151236874" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817151236874.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817151236874.png" alt="image-20220817151236874" style="zoom:67%;" /></p>
 <h2 id="12linkedhashset">12.LinkedHashSet<a class="headerlink" href="#12linkedhashset" title="Permanent link">&para;</a></h2>
 <h3 id="121linkedhashset">12.1LinkedHashSet底层<a class="headerlink" href="#121linkedhashset" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3186,7 +3201,7 @@
 <span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newElement</span><span class="p">;</span><span class="c1">//将新节点设为尾节点</span>
 </code></pre></div>
 <p>4）这样，<strong>遍历LinkedHashSet也能确保插入顺序和遍历顺序一致</strong></p>
-<p><img alt="image-20220826230501367" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220826230501367.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220826230501367.png" alt="image-20220826230501367" style="zoom:67%;" /></p>
 <blockquote>
 <p>例子1：LinkedHashSet底层分析</p>
 </blockquote>
@@ -3229,25 +3244,25 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>如下图，LinkedHashSet不允许重复值，且插入顺序和取出顺序一致</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817162824487.png" alt="image-20220817162824487" style="zoom:80%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817162824487.png" alt="image-20220817162824487" style="zoom: 55%;" /></p>
 <p>在<code>Set set = new LinkedHashSet();</code>出打上断点调试：</p>
 <p>如下图：可以看到，LinkedHashSet底层是一个LinkedHashMap</p>
-<p><img alt="image-20220817162353027" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817162353027.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817162353027.png" alt="image-20220817162353027" style="zoom:67%;" /></p>
 <p>如下图所示：点击map展开，Step Over之后可以看到**第一次添加数据时，直接将数组table扩容到16（数组下标从零开始）**，存放的节点类型是LinkedHashMap$Entry</p>
 <p>数组是HashMap$Node[ ] </p>
 <p>存放的元素/数据是LinkedHashMap$Entry类型(LinkedHashMap的内部类Entry继承了HashMap的内部类Node)</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817163548224.png" alt="image-20220817163548224" style="zoom:80%;" /></p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817163414758.png" alt="image-20220817163414758" style="zoom:80%;" /></p>
-<p><img alt="image-20220817165732968" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817165732968.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817163548224.png" alt="image-20220817163548224" style="zoom: 67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817163414758.png" alt="image-20220817163414758" style="zoom: 67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817165732968.png" alt="image-20220817165732968" style="zoom:80%;" /></p>
 <p>如下图：继续添加数据，可以看到在索引为8 的位置添加了新的数据456，点开索引为0 的节点，可以看到这时原来节点的after指向了新的节点，并且新结点的before指向了原来的节点，形成了双向链表</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817170428965.png" alt="image-20220817170428965" style="zoom:80%;" /></p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817170406668.png" alt="image-20220817170406668" style="zoom:80%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817170428965.png" alt="image-20220817170428965" style="zoom: 67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817170406668.png" alt="image-20220817170406668" style="zoom: 67%;" /></p>
 <p>如下图所示：在add（）底层仍然是和HashSet调用了相同的方法，详情见10.3HashSet源码详解</p>
-<p><img alt="image-20220817171558864" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171558864.png" /></p>
-<p><img alt="image-20220817171651392" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171651392.png" /></p>
-<p><img alt="image-20220817171818571" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171818571.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171558864.png" alt="image-20220817171558864" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171651392.png" alt="image-20220817171651392" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817171818571.png" alt="image-20220817171818571" style="zoom:67%;" /></p>
 <p>以此类推，形成一条双向链表：</p>
-<p><img alt="image-20220817172328474" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817172328474.png" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220817172328474.png" alt="image-20220817172328474" style="zoom:80%;" /></p>
 <h3 id="121linkedhashset_1">12.1.LinkedHashSet练习<a class="headerlink" href="#121linkedhashset_1" title="Permanent link">&para;</a></h3>
 <p>有一个Car类，存在两个私有属性name和price</p>
 <p>要求：如果两个Car对象的name和price一样，就认为是相同元素，不能添加</p>
