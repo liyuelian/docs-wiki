@@ -10,20 +10,20 @@
         <meta name="author" content="liyuelian">
       
       
-        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/">
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/Spring/day09-AOP-02/">
       
       
-        <link rel="prev" href="../day06-Spring%E7%AE%A1%E7%90%86Bean-IOC-04/">
+        <link rel="prev" href="../day08-AOP-01/">
       
       
-        <link rel="next" href="../day08-AOP-01/">
+        <link rel="next" href="../day10-AOP-03/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Spring管理Bean-IOC-05 - liyuelian的博客</title>
+        <title>AOP-02 - liyuelian的博客</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#springbean-ioc-05" class="md-skip">
+        <a href="#aop-02" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spring管理Bean-IOC-05
+              AOP-02
             
           </span>
         </div>
@@ -2411,99 +2411,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Spring管理Bean-IOC-05
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/" class="md-nav__link">
         Spring管理Bean-IOC-05
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#3bean" class="md-nav__link">
-    3.基于注解配置bean
-  </a>
-  
-    <nav class="md-nav" aria-label="3.基于注解配置bean">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    3.3自动装配
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3自动装配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3311-autowired" class="md-nav__link">
-    3.3.1应用实例1-@AutoWired
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3322-resource" class="md-nav__link">
-    3.3.2应用实例2-@Resource
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333" class="md-nav__link">
-    3.3.3注意事项和细节
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
-    3.4泛型依赖注入
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2527,11 +2439,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../day09-AOP-02/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AOP-02
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AOP-02
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.问题提出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5aop" class="md-nav__link">
+    5.AOP的基本介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6aop" class="md-nav__link">
+    6.AOP编程快速入门
+  </a>
+  
+    <nav class="md-nav" aria-label="6.AOP编程快速入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1基本说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    6.2快速入门实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3细节说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    6.4练习
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2923,50 +2924,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#3bean" class="md-nav__link">
-    3.基于注解配置bean
+  <a href="#4" class="md-nav__link">
+    4.问题提出
   </a>
   
-    <nav class="md-nav" aria-label="3.基于注解配置bean">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5aop" class="md-nav__link">
+    5.AOP的基本介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6aop" class="md-nav__link">
+    6.AOP编程快速入门
+  </a>
+  
+    <nav class="md-nav" aria-label="6.AOP编程快速入门">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    3.3自动装配
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3自动装配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3311-autowired" class="md-nav__link">
-    3.3.1应用实例1-@AutoWired
+  <a href="#61" class="md-nav__link">
+    6.1基本说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3322-resource" class="md-nav__link">
-    3.3.2应用实例2-@Resource
+  <a href="#62" class="md-nav__link">
+    6.2快速入门实例
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#333" class="md-nav__link">
-    3.3.3注意事项和细节
+  <a href="#63" class="md-nav__link">
+    6.3细节说明
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#34" class="md-nav__link">
-    3.4泛型依赖注入
+  <a href="#64" class="md-nav__link">
+    6.4练习
   </a>
   
 </li>
@@ -2998,374 +3000,484 @@
 
 
 
-<h1 id="springbean-ioc-05">Spring管理Bean-IOC-05<a class="headerlink" href="#springbean-ioc-05" title="Permanent link">&para;</a></h1>
-<h2 id="3bean">3.基于注解配置bean<a class="headerlink" href="#3bean" title="Permanent link">&para;</a></h2>
-<h3 id="33">3.3自动装配<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
-<p><strong>基本说明：</strong></p>
-<ol>
-<li>
-<p>基于注解配置bean，也可以实现自动装配，使用的注解是：@AutoWired或者@Resource</p>
-</li>
-<li>
-<p>@AutoWired 的规则说明</p>
-</li>
-</ol>
-<p>（1）在IOC容器中查找待装配的组件的类型，如果有唯一的bean装配（按类型），则使用该bean装配</p>
-<p>（2）如果待装配的类型对应的bean在IOC容器中有多个，则使用待装配的属性的属性名作为id值进行查找，找到就装配，找不到就抛异常</p>
-<ol>
-<li>@Resource 的规则说明</li>
-</ol>
-<p>（1）@Resource 有两个属性比较重要，分别是name和type</p>
-<p>Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType的自动注入策略</p>
-<p>（2）如果@Resource没有指定name或者type，则先使用ByName注入策略，如果匹配不上，再使用byType策略，如果都不成功就会报错</p>
-<ol>
-<li>
-<p>不管是@AutoWired 还是 @Resource，都保证属性名是规范的写法就可以注入。</p>
-</li>
-<li>
-<p>除了有特殊要求，一般推荐使用@Resource</p>
-</li>
-</ol>
-<h4 id="3311-autowired">3.3.1应用实例1-@AutoWired<a class="headerlink" href="#3311-autowired" title="Permanent link">&para;</a></h4>
-<p>应用实例需求：</p>
-<ol>
-<li>以Action、Service、Dao几个组件来进行演示</li>
-<li>这里演示UserAction和UserService的两级自动组装</li>
-</ol>
-<p>UserService：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+<h1 id="aop-02">AOP-02<a class="headerlink" href="#aop-02" title="Permanent link">&para;</a></h1>
+<h2 id="4">4.问题提出<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>在上一篇的MyProxyProvider类中，我们的输出语句功能比较弱，在实际开发中，我们希望是以一个方法的形式，嵌入到真正执行的目标方法前，怎么办？</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230123225502663.png" alt="image-20230123225502663" style="zoom:50%;" /></p>
+<p><strong>1.使用土方法解决</strong></p>
+<p>需求分析：使用土方法解决前面的问题，后面使用spring的aop组件完成</p>
+<p>改进MyProxyProvider：</p>
+<p>主要是对前置/返回/异常/最终通知的代码进行封装，封装到不同的方法中进行调用。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.proxy3</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.InvocationHandler</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Method</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Proxy</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
-<span class="cm"> * @Service 标识该类是一个Service类/对象</span>
+<span class="cm"> * 返回一个动态代理对象，可以执行被代理的对象的方法</span>
 <span class="cm"> */</span>
-<span class="nd">@Service</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserService</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">hi</span><span class="p">(){</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;UserService hi()...&quot;</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyProxyProvider</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//定义要执行的目标对象，该对象需要实现 SmartAnimal接口</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SmartAnimal</span><span class="w"> </span><span class="n">target_animal</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">//构造器</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyProxyProvider</span><span class="p">(</span><span class="n">SmartAnimal</span><span class="w"> </span><span class="n">target_animal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">target_animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target_animal</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//定义一个方法，在目标对象执行前执行</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">(</span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;before-方法执行开始-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="s">&quot;-参数 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">args</span><span class="p">));</span><span class="c1">//AOP的角度看，是一个横切关注点-前置通知</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//定义一个方法，在目标对象执行后行</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">after</span><span class="p">(</span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;after-方法执行正常结束-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;-结果 result = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="c1">//也是一个横切关注点-返回通知</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//定义方法返回代理对象，该代理对象可以执行目标对象</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">SmartAnimal</span><span class="w"> </span><span class="nf">getProxy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//(1)先得到类加载器对象</span>
+<span class="w">        </span><span class="n">ClassLoader</span><span class="w"> </span><span class="n">classLoader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target_animal</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getClassLoader</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//(2)得到要执行的目标对象的接口信息</span>
+<span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target_animal</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getInterfaces</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//(3)使用匿名内部类 创建 InvocationHandler对象</span>
+<span class="w">        </span><span class="n">InvocationHandler</span><span class="w"> </span><span class="n">invocationHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InvocationHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">proxy</span><span class="p">,</span><span class="w"> </span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Throwable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">                    </span><span class="n">before</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+
+<span class="w">                    </span><span class="c1">//使用反射真正调用方法</span>
+<span class="w">                    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">target_animal</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+
+<span class="w">                    </span><span class="n">after</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">//如果反射出现异常，就会进入到catch块</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;方法执行异常-日志-方法名&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;-异常类型=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span><span class="c1">//横切关注点-异常通知</span>
+<span class="w">                    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="c1">//无论是否出现异常，最终都会执行到 finally{}</span>
+<span class="w">                    </span><span class="c1">//也是一个横切关注点-最终通知</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;方法最终结束-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">//创建代理对象</span>
+<span class="w">        </span><span class="n">SmartAnimal</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">SmartAnimal</span><span class="p">)</span><span class="w"> </span><span class="n">Proxy</span><span class="p">.</span><span class="na">newProxyInstance</span><span class="p">(</span><span class="n">classLoader</span><span class="p">,</span><span class="w"> </span><span class="n">interfaces</span><span class="p">,</span><span class="w"> </span><span class="n">invocationHandler</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">proxy</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>UserAction：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
+<p><strong>2.对土方法进行解耦-开发简易的AOP类</strong></p>
+<p>上面的代码因为前后置等处理方法都写在同一个类中，造成代码耦合度高的问题。因此，更好的解决方法是新建一个类MyAOP，在该类中进行处理方法的编写，然后在MyProxyProvider类中调用该类的方法。</p>
+<p>MyAOP类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.proxy3</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Method</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
-<span class="cm"> * @Controller 标识该类是一个控制器Controller，通常该类是一个Servlet</span>
+<span class="cm"> * 自己写的一个极简AOP类</span>
 <span class="cm"> */</span>
-<span class="nd">@Controller</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserAction</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayOk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;UserAction 的 sayOk()&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">userService</span><span class="p">.</span><span class="na">hi</span><span class="p">();</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyAOP</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//定义一个方法，在目标对象执行前执行</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">(</span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MyAOP-方法执行开始-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="s">&quot;-参数 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">args</span><span class="p">));</span><span class="c1">//前置通知</span>
 <span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//定义一个方法，在目标对象执行后行</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">after</span><span class="p">(</span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MyAOP-方法执行正常结束-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span>
+<span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;-结果 result = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="c1">//返回通知</span>
+<span class="w">    </span><span class="p">}</span>
+
 <span class="p">}</span>
 </code></pre></div>
-<p>beans05.xml指定要扫描的包：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-<p>测试类：</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//通过注解来配置Bean</span>
-<span class="nd">@Test</span>
-<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setProByAutowired</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans05.xml&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">UserAction</span><span class="w"> </span><span class="n">userAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;userAction&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UserAction</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userAction=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userAction</span><span class="p">);</span>
-<span class="w">    </span><span class="n">userAction</span><span class="p">.</span><span class="na">sayOk</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>如下，当运行到<code>userAction.sayOk();</code>时抛出空指针异常：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230120210451954.png" alt="image-20230120210451954" style="zoom:60%;" /></p>
-<p>这是因为userAction中的属性userService指向null，即没有正确的装配UserService对象。</p>
-<p>添加@Autowired注解：</p>
+<p><strong>3.再次分析-提出Spring AOP</strong></p>
+<p>使用上面的办法仍存在一些问题：</p>
+<ol>
+<li>不够灵活：假设被代理对象有很多方法，而我们只想仅对其中一个方法进行处理，当前的代码还不能实现这个需求</li>
+<li>复用性差：假如有一个新的接口USBInterface，Phone类实现了这个接口，现在我们想要Phone类去调用之前MyAOP中的方法。但MyAOP类的方法是根据之前的SmartAnimal接口的方法写的，因此不能很好的适用于新的接口及其实现类</li>
+<li>硬编码：没有注解和反射的支撑</li>
+</ol>
+<h2 id="5aop">5.AOP的基本介绍<a class="headerlink" href="#5aop" title="Permanent link">&para;</a></h2>
+<p><strong>1.什么是AOP?</strong></p>
 <blockquote>
-<p>在IOC容器中查找待装配的组件的类型，如果有**唯一**的bean装配(按照类型组装)，则使用该bean装配</p>
+<p>官方文档：<a href="https://docs.spring.io/spring-framework/docs/5.0.6.RELEASE/spring-framework-reference/core.html#aop">核心技术 (spring.io)</a></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="nx">Controller</span>
-<span class="kr">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">UserAction</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//在IOC容器中查找待装配的组件的类型，如果有唯一的bean装配(按类型)，则使用该bean装配</span>
-<span class="w">    </span><span class="err">@</span><span class="nx">Autowired</span>
-<span class="w">    </span><span class="kr">private</span><span class="w"> </span><span class="nx">UserService</span><span class="w"> </span><span class="nx">userService</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kr">public</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="nx">sayOk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;UserAction 的 sayOk()&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">userService</span><span class="p">.</span><span class="nx">hi</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>运行结果如下，成功调用了userService.hi()方法，说明userService对象已经成功装配：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230120214336230.png" alt="image-20230120214336230" style="zoom:67%;" /></p>
-<hr />
-<p>现在我们在beans05.xml容器中再配置两个UserService对象</p>
-<blockquote>
-<p>spring允许同时使用xml配置文件和注解的方式配置bean</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="nt">/&gt;</span>
-
-<span class="cm">&lt;!--配置两个UserService对象--&gt;</span>
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.component.UserService&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;userService200&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.component.UserService&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;userService300&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-<p>此时在ioc容器中就有三个UserService对象：</p>
-<p>（1）对于自动扫描进去的UserService对象，它的id为它的类名（首字母小写）。</p>
-<p>（2）在xml文件中配置的两个UserService对象，它们的id为上面设置的id（userService200、userService300）</p>
-<p>现在我们重新运行测试方法：</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//通过注解来配置Bean</span>
-<span class="nd">@Test</span>
-<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setProByAutowired</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans05.xml&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">UserAction</span><span class="w"> </span><span class="n">userAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;userAction&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UserAction</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;userAction=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userAction</span><span class="p">);</span>
-<span class="w">    </span><span class="n">userAction</span><span class="p">.</span><span class="na">sayOk</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>问题一：运行会不会报错？</p>
-<p>问题二：@AutoWired注解的属性进行自动装配的时候，装配的是哪一个UserService对象？</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Autowired</span>
-<span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="p">;</span>
-</code></pre></div>
-<p>答案一：没有报错</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230120220340291.png" alt="image-20230120220340291" style="zoom:67%;" /></p>
-<p>答案二： 在@AutoWired注解中，如果待装配的类型对应的bean在IOC容器中有多个，则使用待装配属性的名称作为id值进行查找，找到就装配，找不到就抛异常。<strong>因此装配的是ioc容器中id与待装配属性的属性名一致的对象。</strong></p>
-<h4 id="3322-resource">3.3.2应用实例2-@Resource<a class="headerlink" href="#3322-resource" title="Permanent link">&para;</a></h4>
-<p>使用UserAction和UserService说明，我们在UserAction类的属性userService400添加@Resource注解，并给@Resource注解添加name属性值=“userService”</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.component</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">javax.annotation.Resource</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> * @Controller 标识该类是一个控制器Controller，通常该类是一个Servlet</span>
-<span class="cm"> */</span>
-<span class="nd">@Controller</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserAction</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="nd">@Resource</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;userService&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService400</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayOk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;UserAction 的 sayOk()&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">userService400</span><span class="p">.</span><span class="na">hi</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>同时，我们在配置文件beans05.xml文件中又配置了两个UserService对象：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.component&quot;</span><span class="nt">/&gt;</span>
-
-<span class="cm">&lt;!--配置两个UserService对象--&gt;</span>
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.component.UserService&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;userService200&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;bean</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;com.li.component.UserService&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;userService300&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-<p>也就是说，在beans05.xml文件对应的ioc容器中，此时一共有三个UserService对象：</p>
-<p>（1）@Resource注解中配置的名为userService的对象</p>
-<p>（2）在xml文件中配置的两个UserService对象，它们的id为上面设置的id（userService200、userService300）</p>
-<p>那么在UserAction类的userService400属性中，spring给此属性自动装配的是三个中的哪一个对象呢？</p>
-<p><strong>答：id名为“userService”的对象。因为Spring将@Resource注解的name属性解析为bean的名字。</strong> 至于UserAction类的属性是什么名字无所谓。</p>
-<hr />
-<p><strong>Spring将@Resource注解的type属性则解析为bean的类型。</strong></p>
-<p>现在我们将UserAction类中的注解改为type=UserService.class，表示按照UserService.class的类型来进行装配</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Resource</span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserService</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-<span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService400</span><span class="p">;</span>
-</code></pre></div>
-<p>这意味着在ioc容器中，只能有一个UserService类型的对象。如果配置了多个，就会报错：</p>
-<p><img alt="image-20230121195810659" src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121195810659.png" /></p>
-<hr />
-<p>问题：如果我们在@Resource注解的属性下什么都不写，会如何装配对象？</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Resource</span>
-<span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService400</span><span class="p">;</span>
-</code></pre></div>
-<p>分析如下：现在ioc容器中，还是有三个UserService对象：</p>
-<p>（1）@Resource注解中配置的对象（当没有指定name时，该对象对应的id就是“userService”）</p>
-<p>（2）xml文件中配置的两个UserService对象，它们的id为上面设置的id（userService200、userService300）</p>
-<p><strong>如果@Resource没有指定name或者type，则先使用ByName注入策略，如果匹配不上，再使用byType策略，如果都不成功就会报错。</strong></p>
-<p>这里首先使用ByName策略，即匹配userService400，匹配不上后又使用byType策略，显然这里有三个对象，不符合类型匹配。也就是说两种策略都匹配失败，因此结果是：运行出错。</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121202145059.png" alt="image-20230121202145059" style="zoom:80%;" /></p>
-<h4 id="333">3.3.3注意事项和细节<a class="headerlink" href="#333" title="Permanent link">&para;</a></h4>
+<p>AOP全称：aspect oriented programming，即面向切面编程。</p>
+<p>AOP 是一种编程思想，是面向对象编程（OOP）的一种补充。面向对象编程将程序抽象成各个层次的对象，而面向切面编程是将程序抽象成各个切面。</p>
+<p><strong>2.AOP和OOP的区别：</strong></p>
+<p>OOP 针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。</p>
+<p>而 AOP 则是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。</p>
+<p>这两种设计思想在目标上有着本质的差异：</p>
+<p>面向目标不同：简单来说 OOP 是面向名词领域，AOP 面向动词领域。</p>
+<p>思想结构不同：<strong>OOP 是纵向结构，AOP 是横向结构。</strong></p>
+<p>注重方面不同：OOP 注重业务逻辑单元的划分，AOP 偏重业务处理过程中的某个步骤或阶段。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230124201430007.png" alt="image-20230124201430007" style="zoom: 60%;" /></p>
+<p>aop通过动态代理+反射的方式，对被代理对象的方法进行调用。</p>
+<p>这个被代理对象的方法的调用过程，会拆分成几个横切关注点：</p>
 <ol>
+<li>方法调用前</li>
+<li>方法调用</li>
+<li>方法调用后</li>
+<li>异常位置（catch块）</li>
+<li>方法最终调用位置（finally块）</li>
+</ol>
+<p>如下，切面类C的不同方法f1……fn可以在不同类A,B......的方法m1,m2......执行的过程中，在方法的不同横切关注点任意切入/调用。</p>
+<p>即切面类的任意方法可以在任意类的任意方法执行的过程中，在该方法的不同横切关注点任意切入。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/%E9%9D%A2%E5%90%91AOP%E7%BC%96%E7%A8%8B.png" style="zoom: 50%;" /></p>
+<hr />
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/AOP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.png" style="zoom: 25%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230124220055481.png" alt="image-20230124220055481" style="zoom:67%;" /></p>
+<p><strong>3.AOP的实现方式</strong></p>
+<ol>
+<li>基于动态代理的方式[内置AOP实现]</li>
+<li>使用框架aspectj来实现</li>
+</ol>
+<h2 id="6aop">6.AOP编程快速入门<a class="headerlink" href="#6aop" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1基本说明<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>这里使用框架aspectj来实现：</p>
+<ol>
+<li>引入核心的aspect包</li>
+<li>在切面类中声明通知方法</li>
+<li>前置通知：@Before</li>
+<li>返回通知：@AfterReturning</li>
+<li>异常通知：@AfterThrowing</li>
+<li>后置通知：@After</li>
 <li>
-<p>如待装配的类型对应的bean在IOC容器中有多个，则使用待装配的属性的属性名作为id值再进行查找，找到就装配，找不到就抛异常 [ByName策略]</p>
+<p>环绕通知：@Around</p>
 </li>
 <li>
-<p>可以使用@Autowired和@Qualifier两个注解配合，可以指定装配对象的id值（注意这个id的对象要在ioc容器中存在）</p>
+<p>五种通知和前面写的动态代理类方法的对应关系：</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="nd">@Autowired</span>
-<span class="nd">@Qualifier</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;userService200&quot;</span><span class="p">)</span>
-<span class="kd">private</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="n">userService</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="34">3.4泛型依赖注入<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
-<p>基本说明：</p>
-<ol>
-<li>为了更好地管理有继承和相互依赖关系的bean的自动装配，spring还提供基于泛型依赖的注入机制</li>
-<li>泛型依赖注入：子类之间的依赖关系由其父类泛型以及父类之间的依赖关系来确定，父类的泛型必须为同一类型。通俗一点来说：两个子类之间的依赖关系不需要在子类中去声明，而是在父类中进行了声明，而依赖的纽带就是 泛型类型，必须是相同的父类泛型类型才具有依赖关系。</li>
-<li>在继承关系复杂的情况下，泛型依赖注入就会有很大的优越性</li>
-</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230124220656090.png" alt="image-20230124220656090" style="zoom:67%;" /></p>
+<h3 id="62">6.2快速入门实例<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<p>使用aop编程的方式，来实现手写的动态代理案例的效果。以上一篇的3.1为例子：</p>
 <blockquote>
-<p>应用实例</p>
+<p>需求说明：有一个SmartAnimal接口，可以完成简单的加减法，要求在执行getSum()和getSub()时，输出执行前、执行过程、执行后的日志输出，请思考如何实现</p>
 </blockquote>
-<p>现有多个类，关系如下：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121205403499.png" alt="image-20230121205403499" style="zoom: 80%;" /></p>
-<p>如上图，如果我们想要在BookService类中使用BookDao属性对象，或者要在PhoneService类中使用PhoneDao对象，传统方法是将 PhoneDao /BookDao自动装配到 BookService/PhoneSerive 中。</p>
-<p>但是，当这种继承关系多起来时，即要自动装配的属性多起来时，这种配置方式就显得比较麻烦。因此我们可以使用 spring 提供的泛型依赖注入。</p>
-<p>下面模拟图中的类：</p>
-<p>Javabean-Phone：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
+<p>1.导入AOP编程需要的包</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230124221446843.png" alt="image-20230124221446843" style="zoom:77%;" /></p>
+<p>2.代码实现</p>
+<p>2.1SmartAnimal接口：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.aspectj</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
 <span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Phone</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SmartAnimal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//求和</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="nf">getSum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//求差</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="nf">getSub</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Javabean-Book：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
+<p>2.2SmartDog实现类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.aspectj</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
 <span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Book</span><span class="w"> </span><span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>自定义泛型类BaseDao：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> * 自定义泛型类</span>
-<span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>BookDao继承BaseDao，指定泛型Book，并添加@Repository注解</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="nd">@Repository</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BookDao</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseDao</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">//使用component注解，当spring容器启动时，将SmartDog注入容器</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmartDog</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SmartAnimal</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;BookDao save()&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">getSum</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;方法内部打印 result = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>PhoneDao同样继承BaseDao，指定泛型Phone，并添加@Repository注解</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Repository</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="nd">@Repository</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PhoneDao</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseDao</span><span class="o">&lt;</span><span class="n">Phone</span><span class="o">&gt;</span><span class="p">{</span>
 <span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;PhoneDao save()&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">getSub</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;方法内部打印 result = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>自定义泛型类BaseService：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
+<p>2.3SmartAnimalAspect切面类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.aspectj</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.JoinPoint</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.Signature</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.annotation.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * @author 李</span>
 <span class="cm"> * @version 1.0</span>
-<span class="cm"> * 自定义泛型类</span>
+<span class="cm"> * 切面类，类似之前写的 MyProxyProvider，但是功能比它强大得多</span>
 <span class="cm"> */</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BaseService</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nd">@Autowired</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BaseDao</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">baseDao</span><span class="p">;</span>
+<span class="nd">@Aspect</span><span class="w"> </span><span class="c1">//表示一个切面类[底层自动注入切面编程的支撑(动态代理+反射+动态绑定)]</span>
+<span class="nd">@Component</span><span class="w">  </span><span class="c1">//注入切面类到ioc容器</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmartAnimalAspect</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">baseDao</span><span class="p">.</span><span class="na">save</span><span class="p">();</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * 前置通知</span>
+<span class="cm">     * 1.@Before表示前置通知，即在我们的目标对象执行方法前执行</span>
+<span class="cm">     * 2.value = &quot;execution(public float com.li.aop.aspectj.SmartDog.getSum(float, float))&quot;</span>
+<span class="cm">     * 指定切入到哪个类的哪个方法 形式为：execution(访问修饰符 返回类型 全类名.方法名(形参列表))</span>
+<span class="cm">     * 3.f1方法就是一个切入方法，方法名随意</span>
+<span class="cm">     * 4.JoinPoint joinPoint 在底层执行时，由AspectJ切面框架，给切入方法传入joinPoint连接点对象</span>
+<span class="cm">     * 通过切面方法，可以获取你想要的信息</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param joinPoint</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(public float com.li.aop.aspectj.SmartDog.getSum(float, float))&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="n">JoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//通过连接点对象joinPoint 拿到方法签名</span>
+<span class="w">        </span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getSignature</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;切面类f1()-方法执行开始-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="s">&quot;-参数 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getArgs</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//返回通知：把 f2方法切入到目标对象方法正常执行完毕后的位置</span>
+<span class="w">    </span><span class="nd">@AfterReturning</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(public float com.li.aop.aspectj.SmartDog.getSum(float, float))&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">JoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getSignature</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;切面类f2()-方法执行正常结束-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//异常通知：把 f3方法切入到目标对象方法出现异常后的catch块位置</span>
+<span class="w">    </span><span class="nd">@AfterThrowing</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(public float com.li.aop.aspectj.SmartDog.getSum(float, float))&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="n">JoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getSignature</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;切面类f3()-方法执行异常-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//最终通知：把 f4方法切入到目标对象方法执行后的位置，无论有无出现异常都会执行</span>
+<span class="w">    </span><span class="nd">@After</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(public float com.li.aop.aspectj.SmartDog.getSum(float, float))&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f4</span><span class="p">(</span><span class="n">JoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getSignature</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;切面类f4()-方法最终执行完毕-日志-方法名-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>2.4配置容器文件beans07.xml：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;beans</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
+<span class="w">       </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">       </span><span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
+<span class="w">       </span><span class="na">xmlns:aop=</span><span class="s">&quot;http://www.springframework.org/schema/aop&quot;</span>
+<span class="w">       </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans</span>
+<span class="s">       http://www.springframework.org/schema/beans/spring-beans.xsd</span>
+<span class="s">       http://www.springframework.org/schema/context</span>
+<span class="s">       https://www.springframework.org/schema/context/spring-context.xsd</span>
+<span class="s">       http://www.springframework.org/schema/aop</span>
+<span class="s">       https://www.springframework.org/schema/aop/spring-aop.xsd&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!--配置自动扫描的包--&gt;</span>
+<span class="w">    </span><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.aop.aspectj&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!--一定要开启基于注解的 AOP 功能--&gt;</span>
+<span class="w">    </span><span class="nt">&lt;aop:aspectj-autoproxy/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></div>
+<p>2.5测试类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.aspectj</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 测试类</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AopAspectjTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">smartDogTestByAspectj</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">//得到Spring容器</span>
+<span class="w">        </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans07.xml&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">//通过接口类型来获得注入的SmartDog对象（实际上是代理对象proxy）</span>
+<span class="w">        </span><span class="n">SmartAnimal</span><span class="w"> </span><span class="n">smartAnimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">SmartAnimal</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">//class com.sun.proxy.$Proxy15</span>
+<span class="w">        </span><span class="c1">//System.out.println(&quot;smartAnimal的运行类型=&quot; + smartAnimal.getClass());</span>
+
+<span class="w">        </span><span class="n">smartAnimal</span><span class="p">.</span><span class="na">getSum</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>BookService继承BaseService，指定泛型Book，并添加@Service注解</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="nd">@Service</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BookService</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseService</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//并没有写属性</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>PhoneService也继承BaseService，指定泛型Phone，并添加注解@Service</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.depeinjection</span><span class="p">;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Service</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @author 李</span>
-<span class="cm"> * @version 1.0</span>
-<span class="cm"> */</span>
-<span class="nd">@Service</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PhoneService</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseService</span><span class="o">&lt;</span><span class="n">Phone</span><span class="o">&gt;</span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//并没有写属性</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>在配置文件beans06.xml中配置要扫描的包：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.depeinjection&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
-<p>这意味着在com.li.depeinjection包下，添加了四种注解的类将会被进行扫描，在这里就是PhoneService类、BookService类、PhoneDao类、BookDao类</p>
+<p>测试结果：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230124231954462.png" alt="image-20230124231954462" style="zoom:67%;" /></p>
+<h3 id="63">6.3细节说明<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>关于切面类方法命名可以自己规范一下</p>
+</li>
+<li>
+<p>切入表达式的更多配置，比如使用模糊配置</p>
+</li>
+</ol>
 <blockquote>
-<p>@Controller /@Service/ @Repository/ @Component</p>
+<p>形式为：execution(访问修饰符 返回类型 全类名.方法名(形参列表))</p>
 </blockquote>
-<p>现在我们来进行测试：</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//通过泛型依赖来配置Bean</span>
-<span class="nd">@Test</span>
-<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setProByDependencyInjection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans06.xml&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(* com.li.aop.aspect.SmartDog.*(..))&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>下面表示所有访问权限，所有包下所有类的所有方法（前提是基于动态代理的类），都会被执行前置通知方法</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(* *.*(..))&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>
+<p>spring容器开启了基于注解的AOP功能<code>&lt;aop:aspectj-autoproxy/&gt;</code>，获取注入的对象则需要以接口的类型来获取，因为你注入的对象.getClass()已经是代理类型了！</p>
+</li>
+<li>
+<p>spring容器开启了基于注解的AOP功能，也可以通过id来获取注入的对象，但也要转成接口类型来获取。</p>
+</li>
+</ol>
+<h3 id="64">6.4练习<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<ol>
+<li>有一个接口USBInterface，该接口有一个方法work</li>
+<li>写出实现子类Phone和Camera</li>
+<li>写一个切面类，在该切面类中写一个方法（可输出日志信息）等作为前置通知，在Phone和Camera对象执行work方法前调用</li>
+<li>其他通知，如返回通知，异常通知，后置通知，也可以加入</li>
+</ol>
+<p>（1）UsbInterface接口：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.hw</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UsbInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>在语句<code>System.out.println("ok");</code>旁打上断点，点击debug，可以看到在ioc容器中已经有四个对象：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121214024027.png" alt="image-20230121214024027" style="zoom:67%;" /></p>
-<p>打开ioc&rarr;beanFactory&rarr;singletonObjects&rarr;table属性，展开phoneService对象，可以看到该对象已经自动装载了PhoneDao类型的对象！！</p>
-<p>这意味着我们通过泛型依赖注入，可以自动装配需要的对象，不必像之前一样一个个地为属性添加注解。</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121214240496.png" alt="image-20230121214240496" style="zoom:67%;" /></p>
-<p>现在我们获取phoneService对象，调用该对象的save()方法：</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//通过泛型依赖来配置Bean</span>
-<span class="nd">@Test</span>
-<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setProByDependencyInjection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans06.xml&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">PhoneService</span><span class="w"> </span><span class="n">phoneService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;phoneService&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PhoneService</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<span class="w">    </span><span class="n">phoneService</span><span class="p">.</span><span class="na">save</span><span class="p">();</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
+<p>（2）Phone实现类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.hw</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Component</span><span class="w"> </span><span class="c1">//将Phone对象当做组件注入到容器中</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Phone</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UsbInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;手机开始工作，参数是=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>因为PhoneService类中没有实现save方法，因此在运行的时候会调用父类BaseService的save()方法，而BaseService的save()方法中又调用了baseDao属性的save()方法.</p>
-<p>我们在上图可以知道baseDao的实际对象是PhoneDao类型，根据动态绑定，最终调用了PhoneDao类中的save()方法：</p>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230121215308331.png" alt="image-20230121215308331" style="zoom:67%;" /></p>
+<p>（3）Camera实现类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.hw</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Camera</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UsbInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;相机开始工作，参数是=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（4）配置容器文件：</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--配置自动扫描的包--&gt;</span>
+<span class="nt">&lt;context:component-scan</span><span class="w"> </span><span class="na">base-package=</span><span class="s">&quot;com.li.aop.hw&quot;</span><span class="nt">/&gt;</span>
+
+<span class="cm">&lt;!--开启基于注解的aop功能--&gt;</span>
+<span class="nt">&lt;aop:aspectj-autoproxy/&gt;</span>
+</code></pre></div>
+<p>（5）MyAspect切面类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.hw</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.JoinPoint</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.annotation.Aspect</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.aspectj.lang.annotation.Before</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 切面类</span>
+<span class="cm"> */</span>
+
+<span class="nd">@Component</span>
+<span class="nd">@Aspect</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyAspect</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//前置通知</span>
+<span class="w">    </span><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;execution(public void com.li.aop.hw.*.work(String))&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">beforeRunning</span><span class="p">(</span><span class="n">JoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">methodName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getSignature</span><span class="p">().</span><span class="na">getName</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MyAspect前置通知-目标方法-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">methodName</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="s">&quot; 参数-&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">joinPoint</span><span class="p">.</span><span class="na">getArgs</span><span class="p">()));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//其他通知逻辑相同,略</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>（6）测试类：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.aop.hw</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.ApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.support.ClassPathXmlApplicationContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.testng.annotations.Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UsbTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">UsbAspectTest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ApplicationContext</span><span class="w"> </span><span class="n">ioc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClassPathXmlApplicationContext</span><span class="p">(</span><span class="s">&quot;beans08.xml&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">//获取的实际都是代理对象</span>
+<span class="w">        </span><span class="n">UsbInterface</span><span class="w"> </span><span class="n">phoneProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;phone&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UsbInterface</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">        </span><span class="n">UsbInterface</span><span class="w"> </span><span class="n">cameraProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ioc</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="s">&quot;camera&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">UsbInterface</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">        </span><span class="n">phoneProxy</span><span class="p">.</span><span class="na">work</span><span class="p">(</span><span class="s">&quot;三星&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;============&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">cameraProxy</span><span class="p">.</span><span class="na">work</span><span class="p">(</span><span class="s">&quot;莱卡&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>测试结果：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230125210719575.png" alt="image-20230125210719575" style="zoom:67%;" /></p>
+<p><strong>需要注意的是</strong>，如果测试类中使用接口类型获取bean，是因为当前ioc容器中只有一个代理对象。即只有一个类实现了SmartAnimal接口，因此这里只会有一个代理类。</p>
+<p>如果有多个类实现接口，就不能使用接口类型获取bean。单例对象id默认分配的id是：id=类名（首字母小写）。或者通过自定义id来获取实现类的代理对象。</p>
 
 
 
@@ -3392,7 +3504,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../day06-Spring%E7%AE%A1%E7%90%86Bean-IOC-04/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Spring管理Bean-IOC-04" rel="prev">
+          <a href="../day08-AOP-01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: AOP" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -3401,20 +3513,20 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                Spring管理Bean-IOC-04
+                AOP
               </div>
             </div>
           </a>
         
         
           
-          <a href="../day08-AOP-01/" class="md-footer__link md-footer__link--next" aria-label="下一页: AOP" rel="next">
+          <a href="../day10-AOP-03/" class="md-footer__link md-footer__link--next" aria-label="下一页: AOP-03" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                AOP
+                AOP-03
               </div>
             </div>
             <div class="md-footer__button md-icon">
