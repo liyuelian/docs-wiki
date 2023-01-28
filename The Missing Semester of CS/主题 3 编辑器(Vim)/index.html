@@ -2309,6 +2309,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2471,6 +2473,20 @@
     <li class="md-nav__item">
       <a href="../../Spring/day11-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-01/" class="md-nav__link">
         实现Spring底层机制-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day12-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-02/" class="md-nav__link">
+        实现Spring底层机制-02
       </a>
     </li>
   
@@ -3197,7 +3213,7 @@
 <h1 id="3-vim">主题 3 编辑器(Vim)<a class="headerlink" href="#3-vim" title="Permanent link">&para;</a></h1>
 <p><a href="https://missing-semester-cn.github.io/2020/editors/">编辑器 (Vim) · the missing semester of your cs education (missing-semester-cn.github.io)</a></p>
 <p>代码编辑器和和其他的编辑器（比如用来写文章的编辑器）有一些不同。</p>
-<p>这是因为写程序和写文章不同。当你写程序时，会花大量时间来阅读你写的东西，或者来移动光标，做一些小小的修改；而不是像写文章的时候，从上到下一气呵成。因此，对于不同的用途，我们会使用不同的编辑器，这是很合理的。</p>
+<p>这是因为写程序和写文章不同。当你写程序时，会花大量时间来阅读你写的东西，或者来移动光标，做一些小小的修改；而不是像写文章的时候，从上到下一气呵成。因此，对于不同的用途，我们会使用不同的编辑器。</p>
 <h2 id="1">1.该学哪个编辑器?<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p><a href="https://insights.stackoverflow.com/survey/2019/#development-environments-and-tools">Stack Overflow 的调查</a>显示，VS Code是目前最流行的代码编辑器。而 <a href="https://www.vim.org/">Vim</a> 则是最流行的基于命令行的编辑器。就算最终你没有打算长期使用Vim，我们仍然认为学习Vim背后的思想很有价值。</p>
 <p>另外，许多工具也觉得vim哲学很棒，从而提供了Vim模式。例如当前最热门的VS Code，支持Vim键位绑定，该插件已经被下载了数百万次。</p>
@@ -3210,22 +3226,21 @@
 <p>在编程的时候，你会把大量时间花在阅读/编辑而不是在写代码上。所以，Vim 是一个**多模态**编辑器：它对于插入文字和操纵文字有不同的模式。Vim 是可编程的（可以使用 Vimscript 或者像 Python 一样的其他程序语言），Vim 的接口本身也是一个程序语言：键入操作（以及其助记名） 是命令，这些命令也是可组合的。Vim 避免了使用鼠标，因为那样太慢了；Vim 甚至避免用上下左右键因为那样需要太多的手指移动。</p>
 <p>这样的设计哲学使得 Vim 成为了一个能跟上你思维速度的编辑器。</p>
 <h2 id="3">3.编辑模式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>正常模式</strong>：Normal，在文件中四处移动光标进行修改</li>
-<li><strong>插入模式</strong>：Insert，插入文本</li>
-<li><strong>替换模式</strong>：replace，替换文本</li>
-<li><strong>可视化模式</strong>（一般，行，块）：Visual，Visual Line，Visual Block，选中文本块</li>
-<li>
+<p><strong>正常模式</strong>：Normal，在文件中四处移动光标进行修改</p>
+<p><strong>插入模式</strong>：Insert，插入文本</p>
+<p><strong>替换模式</strong>：replace，替换文本</p>
+<p><strong>可视化模式</strong>（一般，行，块）：Visual，Visual Line，Visual Block，选中文本块</p>
 <p><strong>命令行模式</strong>：Command Line，用于执行命令</p>
-</li>
-<li>
-<p>Normal-正常模式 &amp; Insert-插入模式</p>
-</li>
+<hr />
+<ul>
+<li>Normal-正常模式 &amp; Insert-插入模式</li>
 </ul>
-<p>当你开始使用Vim时，它会在<code>Normal</code>模式下启动。在这个模式下，各种键位组合拥有在这个模式下的特定意义。其中就有一些按键组合来切换到其他的模式。而切换后这些键位组合和意义也相应改变。</p>
-<p>你的大部分时间都会在<code>Insert</code>和<code>Normal</code>模式下，在Normal模式下按下<code>i</code>键就可以进入Insert模式。而在Insert模式下按下<code>Esc</code>就可以回到Normal模式。</p>
+<p>当你开始使用Vim时，它会在<code>Normal</code>模式下启动。</p>
+<p>在这个模式下，各种键位组合拥有在这个模式下的特定意义。其中就有一些按键组合来切换到其他的模式。而切换后这些键位组合和意义也相应改变。</p>
+<p>但你的大部分时间都会在<code>Insert</code>和<code>Normal</code>模式下，在Normal模式下按下<code>i</code>键就可以进入Insert模式。而在Insert模式下按下<code>Esc</code>就可以回到Normal模式。</p>
 <blockquote>
-<p>这里注意一下我们表示按键的方式，这个表示方式将会用于笔记以及Vim给你的提示中：当仅仅是代表<code>i</code>键这样一个按键本身时，那么就会直接写<code>i</code>。但是对于如Ctrl+v这种按键组合，就有可能以这么几种形式来体现：</p>
+<p>这里注意一下我们表示按键的方式，这个表示方式将会用于笔记以及Vim给你的提示中：</p>
+<p>当仅仅是代表<code>i</code>键这样一个按键本身时，那么就会直接写<code>i</code>。但是对于如Ctrl+v这种按键组合，就有可能以这么几种形式来体现：</p>
 <p>第一种是一个脱字符号后跟着控制用字符：<code>^v</code>（这里控制用字符指v，也就是组合键中的另一个键），另一种写法可能是你最熟悉的：<code>Ctrl-v</code>，而有的地方我们可能会写成：<code>&lt;c-v&gt;</code></p>
 </blockquote>
 <p>Vim有好几种模式，而Normal模式是用来移动光标、阅读东西，以及在文件间切换的。而Insert模式是用来输入的，因此在Insert模式下，你的按键大多会直接进入buffer（缓冲区），而在Normal模式下则不然，它们不会进入buffer，而是用来进行了一些浏览和编辑操作。</p>
@@ -3240,7 +3255,6 @@
 <li>可视化模式（一般，行，块）</li>
 </ul>
 <p>可视化模式有Visual 模式，Visual Line模式，以及一个Visual Block模式。</p>
-<hr />
 <ul>
 <li>各种模式的切换</li>
 </ul>
@@ -3254,16 +3268,63 @@
 <ul>
 <li>如何打开Vim程序</li>
 </ul>
-<p>Vim是一个基于命令行的编辑器，我们要打开Vim，只需要在命令行中键入<code>vim</code>。vim也可以接收参数，当我们想用它直接编辑特定的文件时，可以在vim 后面加上文件的路径+文件名。</p>
+<p>Vim是一个基于命令行的编辑器，我们要打开Vim，只需要在命令行中键入<code>vim</code>。</p>
+<p>vim也可以接收参数，当我们想用它直接编辑特定的文件时，可以在vim 后面加上文件的路径+文件名。</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>vim<span class="o">]</span>$<span class="w"> </span>ls
 poem.md
 <span class="o">[</span>lighthouse@VM-8-17-centos<span class="w"> </span>vim<span class="o">]</span>$<span class="w"> </span>vim<span class="w"> </span>poem.md<span class="w"> </span>
 </code></pre></div>
 <h3 id="41">4.1插入文本<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>当我们使用vim打开文本时，它以Normal模式启动。在normal模式下按下<code>i</code>键，将会进入Insert模式，屏幕左下角将会提示<code>--INSERT--</code>。而在插入模式下按下<code>&lt;esc&gt;</code>键，可以返回正常模式。</p>
+<blockquote>
+<p>左下角总会显示你所在的模式，但Nomal模式下是空白的。</p>
+</blockquote>
 <h3 id="42">4.2缓存，标签页，窗口<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>Vim 会维护一系列打开的文件，称为“缓存”(buffer)。一个 Vim 会话包含一系列标签页(tab)，每个标签页包含 一系列窗口（分隔面板，window）。每个窗口显示一个缓存。</p>
+<p>跟网页浏览器等其他你熟悉的程序不一样的是， 缓存和窗口不是一一对应的关系；窗口只是视角。一个缓存可以在**多个**窗口打开，甚至在同一 个标签页内的多个窗口打开。这个功能其实很好用，比如在查看同一个文件的不同部分的时候。</p>
+<p>Vim 默认打开一个标签页，这个标签也包含一个窗口。</p>
 <h3 id="43">4.3命令行<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>在normal模式按下<code>:</code>将会进入命令行模式。这时你的光标将会跳到屏幕左下方的命令行。这个模式有很多功能，包括打开，保存，关闭文件，退出vim。</p>
+<p>在命令行模式下：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:q</code> /<code>:quit</code></td>
+<td>退出（关闭窗口）</td>
+</tr>
+<tr>
+<td><code>:w</code> / <code>:wirite</code></td>
+<td>保存文件</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td><code>:ls</code></td>
+<td>显示打开的缓存</td>
+</tr>
+<tr>
+<td><code>:e {文件名}</code></td>
+<td>打开对应文件</td>
+</tr>
+<tr>
+<td><code>:help &lt;特定键/特定命令&gt;</code></td>
+<td>打开帮助文档</td>
+</tr>
+</tbody>
+</table>
+<p>注意，这里的特定命令和特定键不同，如 <code>:help :w</code> 表示获取命令 <code>:w</code> 的说明，而 <code>:help w</code> 表示在normal模式下w键的说明。</p>
 <h2 id="5vim">5.Vim的接口其实是一种编程语言<a class="headerlink" href="#5vim" title="Permanent link">&para;</a></h2>
+<p>Vim 最重要的设计思想是 Vim 的界面本身是一个程序语言。键入操作（以及他们的助记名） 本身是命令，这些命令可以组合使用。这使得移动和编辑更加高效，特别是一旦形成肌肉记忆后。</p>
 <h3 id="51">5.1移动<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>17:20</p>
 <h3 id="52">5.2选择<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <h3 id="53">5.3编辑<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <h3 id="54">5.4计数<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>

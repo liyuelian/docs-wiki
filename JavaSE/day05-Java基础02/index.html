@@ -2405,6 +2405,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
@@ -2567,6 +2569,20 @@
     <li class="md-nav__item">
       <a href="../../Spring/day11-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-01/" class="md-nav__link">
         实现Spring底层机制-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day12-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-02/" class="md-nav__link">
+        实现Spring底层机制-02
       </a>
     </li>
   
@@ -3150,7 +3166,7 @@
 <p>常量：使用大写字母和下划线：MAX_VALUE</p>
 </li>
 <li>
-<p>类名：首字母==大==写和驼峰原则：Man，GodMan</p>
+<p>类名：首字母大写和驼峰原则：Man，GodMan</p>
 </li>
 <li>
 <p>方法名：首字母小写和驼峰原则：run（），runRun（）</p>
@@ -3356,40 +3372,36 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>运算符的优先级：</strong></p>
-<p>从高到低
-一级：——》小括号() 访问符.
-二级：——》单目运算符：正号、负号、自增++、自减­­- -、非!
-三级：——》算术运算符：乘、除、取模%
-四级：——》算术运算符：加、减
-五级：——》位运算符&lt;&lt;、 &gt;&gt; 、&gt;&gt;&gt;
-六级：——》关系运算符：&gt;、 &lt;、 &gt;=、&lt;= 、instanceof
-七级：——》关系运算符：==、!=
-八级：——》与 &amp;
-九级：——》异或^
-十级：——》或 |
-十一级：——》短路与 &amp;&amp;
-十二级：——》短路或 ||
-十三级：——》三目运算符 ? :
-十四级：——》赋值运算符：=、+=、-=、*=、 =、%=</p>
+<p>从高到低：
+一级：小括号() 访问符.
+二级：单目运算符：正号、负号、自增++、自减­­- -、非!
+三级：算术运算符：乘、除、取模%
+四级：算术运算符：加、减
+五级：位运算符&lt;&lt;、 &gt;&gt; 、&gt;&gt;&gt;
+六级：关系运算符：&gt;、 &lt;、 &gt;=、&lt;= 、instanceof
+七级：关系运算符：==、!=
+八级：与 &amp;
+九级：异或^
+十级：或 |
+十一级：短路与 &amp;&amp;
+十二级：短路或 ||
+十三级：三目运算符 ? :
+十四级：赋值运算符：=、+=、-=、*=、 =、%=</p>
 <p><strong>注：不确定运算符优先级，最好使用括号运算符控制运算顺序</strong></p>
 <h2 id="8">8.包机制<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <p>为了更好地组织类，Java提供了包机制，用于区别类名的命名空间。包的本质就是文件夹。</p>
 <p>包语句的语法格式为：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">pkg1</span><span class="o">[</span><span class="p">.</span><span class="na">pkg2</span><span class="o">[</span><span class="p">.</span><span class="na">pkg3</span><span class="p">...</span><span class="o">]]</span><span class="p">;</span>
 </code></pre></div>
-<ul>
-<li><mark>一般利用公司域名倒置作为包名</mark>；</li>
-</ul>
 <blockquote>
-<p>com.baidu.www</p>
+<p>一般利用公司域名倒置作为包名</p>
+<p>如：com.baidu.www</p>
 </blockquote>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220724174745503.png" alt="image-20220724174745503" style="zoom: 67%;" /></p>
-<ul>
-<li>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包。使用”import“语句可完成此功能。</li>
-</ul>
+<p>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包。使用”import“语句可完成此功能。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">package1</span><span class="o">[</span><span class="p">.</span><span class="na">package2</span><span class="p">...</span><span class="o">]</span><span class="p">.(</span><span class="n">classname</span><span class="o">|*</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220724175700907.png" alt="image-20220724175700907" style="zoom: 80%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20220724175700907.png" alt="image-20220724175700907" style="zoom: 67%;" /></p>
 <blockquote>
 <p>可以搜索阿里巴巴开发手册</p>
 </blockquote>
