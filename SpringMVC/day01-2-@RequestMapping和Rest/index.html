@@ -10,20 +10,20 @@
         <meta name="author" content="liyuelian">
       
       
-        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/SpringMVC/day01-2-%40RequestMapping/">
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/SpringMVC/day01-2-%40RequestMapping%E5%92%8CRest/">
       
       
         <link rel="prev" href="../day01-1-SpringMVC%E4%BB%8B%E7%BB%8D/">
       
       
-        <link rel="next" href="../day02-REST%E5%92%8CSpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/">
+        <link rel="next" href="../day02-SpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>@RequestMapping - liyuelian的博客</title>
+        <title>@RequestMapping和Rest - liyuelian的博客</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requestmapping" class="md-skip">
+        <a href="#requestmappingrest" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              @RequestMapping
+              @RequestMapping和Rest
             
           </span>
         </div>
@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-01/" class="md-tabs__link">
         Git
       </a>
     </li>
@@ -443,6 +443,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
@@ -463,8 +465,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/Git%E5%85%A5%E9%97%A8/" class="md-nav__link">
-        Git入门
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-01/" class="md-nav__link">
+        Git入门-01
       </a>
     </li>
   
@@ -477,7 +479,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A001/" class="md-nav__link">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-02/" class="md-nav__link">
+        Git入门-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0-01/" class="md-nav__link">
         Git原理学习01
       </a>
     </li>
@@ -491,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A002.md/" class="md-nav__link">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0-02.md/" class="md-nav__link">
         Git原理学习02-远程篇
       </a>
     </li>
@@ -2604,6 +2620,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="true">
@@ -2648,12 +2666,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          @RequestMapping
+          @RequestMapping和Rest
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        @RequestMapping
+        @RequestMapping和Rest
       </a>
       
         
@@ -2672,66 +2690,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.基本使用
+  <a href="#1requestmapping" class="md-nav__link">
+    1.@RequestMapping
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2requestmapping" class="md-nav__link">
-    2.@RequestMapping其他使用方式
-  </a>
-  
-    <nav class="md-nav" aria-label="2.@RequestMapping其他使用方式">
+    <nav class="md-nav" aria-label="1.@RequestMapping">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1修饰方法和类
+  <a href="#11" class="md-nav__link">
+    1.1基本使用
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    2.2指定请求方式
+  <a href="#12requestmapping" class="md-nav__link">
+    1.2@RequestMapping其他使用方式
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2@RequestMapping其他使用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    1.2.1修饰方法和类
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23paramsheaders" class="md-nav__link">
-    2.3指定params和headers，支持简单表达式
+  <a href="#122" class="md-nav__link">
+    1.2.2指定请求方式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#24ant" class="md-nav__link">
-    2.4支持Ant 风格资源地址
+  <a href="#123paramsheaders" class="md-nav__link">
+    1.2.3指定params和headers，支持简单表达式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#25pathvariableurl" class="md-nav__link">
-    2.5可配合@PathVariable映射URL绑定的占位符
+  <a href="#124ant" class="md-nav__link">
+    1.2.4支持Ant 风格资源地址
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#26" class="md-nav__link">
-    2.6注意事项和使用细节
+  <a href="#125pathvariableurl" class="md-nav__link">
+    1.2.5可配合@PathVariable映射URL绑定的占位符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#27" class="md-nav__link">
-    2.7练习
+  <a href="#126" class="md-nav__link">
+    1.2.6注意事项和使用细节
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127" class="md-nav__link">
+    1.2.7练习
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13postman" class="md-nav__link">
+    1.3Postman接口测试工具
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3Postman接口测试工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131postman" class="md-nav__link">
+    1.3.1Postman介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132postman" class="md-nav__link">
+    1.3.2Postman快速入门
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133postmancontroller" class="md-nav__link">
+    1.3.3Postman完成Controller层测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2741,31 +2806,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3postman" class="md-nav__link">
-    3.Postman接口测试工具
+  <a href="#2rest-url" class="md-nav__link">
+    2.REST-优雅的url请求风格
   </a>
   
-    <nav class="md-nav" aria-label="3.Postman接口测试工具">
+    <nav class="md-nav" aria-label="2.REST-优雅的url请求风格">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31postman" class="md-nav__link">
-    3.1Postman介绍
+  <a href="#21rest" class="md-nav__link">
+    2.1REST基本介绍
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32postman" class="md-nav__link">
-    3.2Postman快速入门
+  <a href="#22resturl-crud" class="md-nav__link">
+    2.2Rest风格的url-完成crud操作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2Rest风格的url-完成crud操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    2.2.1需求说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33postmancontroller" class="md-nav__link">
-    3.3Postman完成Controller层测试
+  <a href="#222" class="md-nav__link">
+    2.2.2代码实现
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    2.2.3注意事项和使用细节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2789,8 +2874,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../day02-REST%E5%92%8CSpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/" class="md-nav__link">
-        REST和SpringMVC映射请求数据
+      <a href="../day02-SpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        SpringMVC映射请求数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day03-%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        模型数据
       </a>
     </li>
   
@@ -3155,66 +3254,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.基本使用
+  <a href="#1requestmapping" class="md-nav__link">
+    1.@RequestMapping
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2requestmapping" class="md-nav__link">
-    2.@RequestMapping其他使用方式
-  </a>
-  
-    <nav class="md-nav" aria-label="2.@RequestMapping其他使用方式">
+    <nav class="md-nav" aria-label="1.@RequestMapping">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1修饰方法和类
+  <a href="#11" class="md-nav__link">
+    1.1基本使用
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    2.2指定请求方式
+  <a href="#12requestmapping" class="md-nav__link">
+    1.2@RequestMapping其他使用方式
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2@RequestMapping其他使用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    1.2.1修饰方法和类
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23paramsheaders" class="md-nav__link">
-    2.3指定params和headers，支持简单表达式
+  <a href="#122" class="md-nav__link">
+    1.2.2指定请求方式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#24ant" class="md-nav__link">
-    2.4支持Ant 风格资源地址
+  <a href="#123paramsheaders" class="md-nav__link">
+    1.2.3指定params和headers，支持简单表达式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#25pathvariableurl" class="md-nav__link">
-    2.5可配合@PathVariable映射URL绑定的占位符
+  <a href="#124ant" class="md-nav__link">
+    1.2.4支持Ant 风格资源地址
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#26" class="md-nav__link">
-    2.6注意事项和使用细节
+  <a href="#125pathvariableurl" class="md-nav__link">
+    1.2.5可配合@PathVariable映射URL绑定的占位符
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#27" class="md-nav__link">
-    2.7练习
+  <a href="#126" class="md-nav__link">
+    1.2.6注意事项和使用细节
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127" class="md-nav__link">
+    1.2.7练习
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13postman" class="md-nav__link">
+    1.3Postman接口测试工具
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3Postman接口测试工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131postman" class="md-nav__link">
+    1.3.1Postman介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132postman" class="md-nav__link">
+    1.3.2Postman快速入门
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133postmancontroller" class="md-nav__link">
+    1.3.3Postman完成Controller层测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3224,31 +3370,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3postman" class="md-nav__link">
-    3.Postman接口测试工具
+  <a href="#2rest-url" class="md-nav__link">
+    2.REST-优雅的url请求风格
   </a>
   
-    <nav class="md-nav" aria-label="3.Postman接口测试工具">
+    <nav class="md-nav" aria-label="2.REST-优雅的url请求风格">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31postman" class="md-nav__link">
-    3.1Postman介绍
+  <a href="#21rest" class="md-nav__link">
+    2.1REST基本介绍
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32postman" class="md-nav__link">
-    3.2Postman快速入门
+  <a href="#22resturl-crud" class="md-nav__link">
+    2.2Rest风格的url-完成crud操作
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2Rest风格的url-完成crud操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    2.2.1需求说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33postmancontroller" class="md-nav__link">
-    3.3Postman完成Controller层测试
+  <a href="#222" class="md-nav__link">
+    2.2.2代码实现
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    2.2.3注意事项和使用细节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3279,12 +3445,13 @@
 
 
 
-<h1 id="requestmapping">@RequestMapping<a class="headerlink" href="#requestmapping" title="Permanent link">&para;</a></h1>
-<h2 id="1">1.基本使用<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h1 id="requestmappingrest">@RequestMapping和Rest<a class="headerlink" href="#requestmappingrest" title="Permanent link">&para;</a></h1>
+<h2 id="1requestmapping">1.@RequestMapping<a class="headerlink" href="#1requestmapping" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1基本使用<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>@RequestMapping注解可以指定 控制器（处理器） 的某个方法的请求url</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230202212828452.png" alt="image-20230202212828452" style="zoom:67%;" /></p>
-<h2 id="2requestmapping">2.@RequestMapping其他使用方式<a class="headerlink" href="#2requestmapping" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1修饰方法和类<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<h3 id="12requestmapping">1.2@RequestMapping其他使用方式<a class="headerlink" href="#12requestmapping" title="Permanent link">&para;</a></h3>
+<h4 id="121">1.2.1修饰方法和类<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
 <p>@RequestMapping注解可以修饰方法，还可以修饰类。</p>
 <p>当同时修饰类和方法时，请求的url就是组合形式：<code>/类请求值/方法请求值</code></p>
 <blockquote>
@@ -3350,7 +3517,7 @@
 </code></pre></div>
 <p>在浏览器中访问 <code>http://localhost:8080/springmvc/request.jsp</code>，点击提交按钮，结果如下：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203191741074.png" alt="image-20230203191741074" style="zoom: 50%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203191828499.png" alt="image-20230203191828499" style="zoom:50%;" /></p>
-<h3 id="22">2.2指定请求方式<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<h4 id="122">1.2.2指定请求方式<a class="headerlink" href="#122" title="Permanent link">&para;</a></h4>
 <ol>
 <li>@RequestMapping 可以指定请求的方式（post/get/put/delete...），请求方式要和指定方式一致，否则报错：</li>
 </ol>
@@ -3358,7 +3525,7 @@
 <ol>
 <li>SpringMVC 控制器默认支持get 和 post两种请求方式，即如果没有指定 method，可以接收 get 和 post请求</li>
 </ol>
-<h3 id="23paramsheaders">2.3指定params和headers，支持简单表达式<a class="headerlink" href="#23paramsheaders" title="Permanent link">&para;</a></h3>
+<h4 id="123paramsheaders">1.2.3指定params和headers，支持简单表达式<a class="headerlink" href="#123paramsheaders" title="Permanent link">&para;</a></h4>
 <ol>
 <li><code>param1</code>：表示请求必须包含名为 param1 的请求参数</li>
 <li><code>!param1</code>：表示请求不能包含名为 param1 的请求参数</li>
@@ -3410,7 +3577,7 @@
 <p>（6）修改request.jsp，修改发送的值为200.</p>
 <p>（7）redeployTomcat，重新范文request.jsp，点击超链接，这里可以看到出现异常，因为发送的值和方法指定的值不一样。</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203204520955.png" alt="image-20230203204520955" style="zoom:67%;" /></p>
-<h3 id="24ant">2.4支持Ant 风格资源地址<a class="headerlink" href="#24ant" title="Permanent link">&para;</a></h3>
+<h4 id="124ant">1.2.4支持Ant 风格资源地址<a class="headerlink" href="#124ant" title="Permanent link">&para;</a></h4>
 <ol>
 <li><code>?</code>：匹配文件名中的一个字符</li>
 <li><code>*</code>：匹配文件名中的任意字符，长度任意</li>
@@ -3461,7 +3628,7 @@
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203211052829.png" alt="image-20230203211052829" style="zoom: 50%;" /></p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203211132423.png" alt="image-20230203211132423" style="zoom: 50%;" /></p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203211202176.png" alt="image-20230203211202176" style="zoom: 50%;" /></p>
-<h3 id="25pathvariableurl">2.5可配合@PathVariable映射URL绑定的占位符<a class="headerlink" href="#25pathvariableurl" title="Permanent link">&para;</a></h3>
+<h4 id="125pathvariableurl">1.2.5可配合@PathVariable映射URL绑定的占位符<a class="headerlink" href="#125pathvariableurl" title="Permanent link">&para;</a></h4>
 <ol>
 <li>@RequestMapping 还可以配合 @PathVariable（路径变量） 映射 URL 绑定的占位符</li>
 <li>这样就不需要在url地址栏上带参数名了，更加简洁明了</li>
@@ -3496,7 +3663,7 @@
 <p>（2）success.jsp不变</p>
 <p>（3）redeployTomcat，访问 <code>http://localhost:8080/springmvc/request.jsp</code>，点击超链接，成功访问到success.jsp，后台输出如下：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203213818006.png" alt="image-20230203213818006" style="zoom:70%;" /></p>
-<h3 id="26">2.6注意事项和使用细节<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<h4 id="126">1.2.6注意事项和使用细节<a class="headerlink" href="#126" title="Permanent link">&para;</a></h4>
 <ol>
 <li>映射的URL不能重复，否则报错：</li>
 </ol>
@@ -3529,7 +3696,7 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
 <span class="p">}</span>
 </code></pre></div>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203220142357.png" alt="image-20230203220142357" style="zoom:67%;" /></p>
-<h3 id="27">2.7练习<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
+<h4 id="127">1.2.7练习<a class="headerlink" href="#127" title="Permanent link">&para;</a></h4>
 <p>编写一个表单，以Post方式提交表单信息，后端编写ComputerHandler，可以接收到表单信息</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203220422270.png" alt="image-20230203220422270" style="zoom: 50%;" /></p>
 <p>computer.jsp：</p>
@@ -3576,8 +3743,8 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203221946716.png" alt="image-20230203221946716" style="zoom: 50%;" /></p>
 <p>后台输出：</p>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230203222022381.png" alt="image-20230203222022381" style="zoom:67%;" /></p>
-<h2 id="3postman">3.Postman接口测试工具<a class="headerlink" href="#3postman" title="Permanent link">&para;</a></h2>
-<h3 id="31postman">3.1Postman介绍<a class="headerlink" href="#31postman" title="Permanent link">&para;</a></h3>
+<h3 id="13postman">1.3Postman接口测试工具<a class="headerlink" href="#13postman" title="Permanent link">&para;</a></h3>
+<h4 id="131postman">1.3.1Postman介绍<a class="headerlink" href="#131postman" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Postman是什么？</li>
 <li>Postman是一款功能超级强大的用于发送HTTP请求的测试工具</li>
@@ -3607,7 +3774,7 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
 </li>
 </ol>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230204183814920.png" alt="image-20230204183814920" style="zoom:80%;" /></p>
-<h3 id="32postman">3.2Postman快速入门<a class="headerlink" href="#32postman" title="Permanent link">&para;</a></h3>
+<h4 id="132postman">1.3.2Postman快速入门<a class="headerlink" href="#132postman" title="Permanent link">&para;</a></h4>
 <p>快速入门需求说明：使用 Postman向 <code>http://www.baidu.com</code> 发出 get请求，得到返回的 html格式数据</p>
 <blockquote>
 <p>快速入门-实现步骤</p>
@@ -3640,7 +3807,7 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
 <ol>
 <li>点击Send按钮，即可向目标url发送请求，获取返回数据</li>
 </ol>
-<h3 id="33postmancontroller">3.3Postman完成Controller层测试<a class="headerlink" href="#33postmancontroller" title="Permanent link">&para;</a></h3>
+<h4 id="133postmancontroller">1.3.3Postman完成Controller层测试<a class="headerlink" href="#133postmancontroller" title="Permanent link">&para;</a></h4>
 <p><strong>（1）测试用例1</strong></p>
 <p>使用Postman，完成对之前编写的UserHandler方法的请求测试</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/user&quot;</span><span class="p">)</span>
@@ -3712,6 +3879,253 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
 <blockquote>
 <p>关于Postman的其他使用，在讲解框架和项目时，再具体演示</p>
 </blockquote>
+<h2 id="2rest-url">2.REST-优雅的url请求风格<a class="headerlink" href="#2rest-url" title="Permanent link">&para;</a></h2>
+<h3 id="21rest">2.1REST基本介绍<a class="headerlink" href="#21rest" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><a href="https://blog.csdn.net/Huang405267467/article/details/124158131">REST风格详细介绍</a></p>
+</blockquote>
+<ol>
+<li>
+<p>REST：即 Representational State Transfer，表述性状态传递。它结构清晰，同时可以隐藏行为。</p>
+</li>
+<li>
+<p>通过一个url来直观展示传统风格与REST风格的区别：</p>
+</li>
+<li>
+<p>传统风格：
+     当我们在浏览器上访问一些资源时，可以看到有些网页的url为</p>
+<p><code>http://localhost/students/selectById?id=1</code> （该地址表示查找id为1的students对象）</p>
+<p><code>http://localhost/students/saveStudent</code>（该地址表示保存students信息）</p>
+</li>
+<li>
+<p>REST风格：
+     <code>http://localhosts/student/1</code></p>
+<p><code>http://localhosts/student</code></p>
+</li>
+</ol>
+<p>通过这两种风格的对比，我们可以看到REST风格的一部分优点：</p>
+<p>（1）可以隐藏资源访问行为（如隐藏了selectById等），这样就无法通过地址得知对资源进行了哪种操作</p>
+<p>（2）可以明显的看到其书写简化了，不仅书写简化了，在开发时代码也可以简化。</p>
+<ol>
+<li>
+<p>HTTP 协议里，四个表示操作方式的动词：GET，POST，PUT，DELETE。它们分别对应四种基本操作：GET用来获取资源，POST用来新建资源，PUT用来更新资源，DELETE用来删除资源。</p>
+</li>
+<li>
+<p>传统的url通过参数说明 crud的类型，而rest则是通过 get/post/put/delete 来说明 crud的类型</p>
+</li>
+<li>
+<p><strong>REST的核心过滤器</strong></p>
+</li>
+<li>当前的浏览器只支持 post/get 请求，因此为了得到 put/delete 的请求方式，需要使用 Spring 提供的<code>HiddenHttpMethodFilter</code> 过滤器进行转换。</li>
+<li>HiddenHttpMethodFilter ：浏览器form表单只支持GET 和 POST请求，而DELETE、PUT 等method并不支持，Spring 添加了一个过滤器，可以将这些请求转换为标准的http方法，使得支持这四种请求方式。</li>
+<li>需要特别注意：<strong>HiddenHttpMethodFilter 只能对 post请求方式进行转换</strong></li>
+<li>这个过滤器需要在web.xml中配置</li>
+</ol>
+<h3 id="22resturl-crud">2.2Rest风格的url-完成crud操作<a class="headerlink" href="#22resturl-crud" title="Permanent link">&para;</a></h3>
+<h4 id="221">2.2.1需求说明<a class="headerlink" href="#221" title="Permanent link">&para;</a></h4>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230204205731358.png" alt="image-20230204205731358" style="zoom:77%;" /></p>
+<h4 id="222">2.2.2代码实现<a class="headerlink" href="#222" title="Permanent link">&para;</a></h4>
+<ol>
+<li>修改web.xml添加 HiddenHttpMethodFilter过滤器，它的作用是将post请求转换为指定的delete或put请求</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--配置HiddenHttpMethodFilter过滤器</span>
+<span class="cm">    1.它的作用是将以post方式提交的delete请求和put请求进行转换</span>
+<span class="cm">    2.配置url-pattern为/*，表示所有请求都经过hiddenHttpMethodFilter过滤</span>
+<span class="cm">    --&gt;</span>
+<span class="nt">&lt;filter&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filter-name&gt;</span>hiddenHttpMethodFilter<span class="nt">&lt;/filter-name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filter-class&gt;</span>org.springframework.web.filter.HiddenHttpMethodFilter<span class="nt">&lt;/filter-class&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;filter-mapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;filter-name&gt;</span>hiddenHttpMethodFilter<span class="nt">&lt;/filter-name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span>
+</code></pre></div>
+<ol>
+<li>在SpringDispatcherServlet-servlet.xml添加两个常规的配置</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--加入两个常规的配置--&gt;</span>
+<span class="cm">&lt;!--支持SpringMVC的高级功能，比如：JSR303校验，映射动态请求--&gt;</span>
+<span class="nt">&lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;</span>
+<span class="cm">&lt;!--将SpringMVC不能处理的请求，交给tomcat处理，比如css，js--&gt;</span>
+<span class="nt">&lt;mvc:default-servlet-handler/&gt;</span>
+</code></pre></div>
+<p>注意：mvc:annotion添加的是后缀为mvc的命名空间：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230205162517025.png" alt="image-20230205162517025" style="zoom:67%;" /></p>
+<ol>
+<li>创建rest.jsp</li>
+</ol>
+<blockquote>
+<p><a href="https://blog.csdn.net/JOEYYJ/article/details/121513921">Idea中导入jquery无法生效的解决方法</a></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html;charset=UTF-8&quot;</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="k">%&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="w">    </span><span class="nt">&lt;title&gt;</span>rest<span class="nt">&lt;/title&gt;</span>
+<span class="w">    </span><span class="nt">&lt;script</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;script/jquery-3.6.0.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="w">    </span><span class="nt">&lt;script</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span>$(function<span class="w"> </span>()<span class="w"> </span>{
+<span class="w">            </span>$(&quot;#deleteBook&quot;).click(function<span class="w"> </span>()<span class="w"> </span>{
+<span class="w">                </span>//将当前的超链接的href的值，赋给hiddenForm表单的action属性
+<span class="w">                </span>$(&quot;#hiddenForm&quot;).attr(&quot;action&quot;,<span class="w"> </span>this.href);
+<span class="w">                </span>$(&quot;:hidden&quot;).val(&quot;DELETE&quot;);//给hidden的_method参数赋值为delete
+<span class="w">                </span>$(&quot;#hiddenForm&quot;).submit();//提交表单
+<span class="w">                </span>return<span class="w"> </span>false;//改变超链接行为，不再提交
+<span class="w">            </span>})
+
+<span class="w">            </span>//与上同理，不一样的是这里原本就是表单post请求
+<span class="w">            </span>$(&quot;#updateBook&quot;).click(function<span class="w"> </span>()<span class="w"> </span>{
+<span class="w">                </span>//带上目标请求格式,HiddenHttpMethodFilter会自动将post请求转成你指定的格式
+<span class="w">                </span>$(&quot;:hidden&quot;).val(&quot;PUT&quot;);//给hidden的_method参数赋值为put
+<span class="w">            </span>})
+<span class="w">        </span>})
+<span class="w">    </span><span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Rest风格的crud操作案例<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;hr/&gt;</span>
+
+<span class="nt">&lt;h3&gt;</span>rest风格的url<span class="w"> </span>查询书籍[get]<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;user/book/200&quot;</span><span class="nt">&gt;</span>点击查询书籍<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;hr/&gt;</span>
+
+<span class="nt">&lt;h3&gt;</span>rest风格的url<span class="w"> </span>添加书籍[post]<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;form</span><span class="w"> </span><span class="na">action=</span><span class="s">&quot;user/book&quot;</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span>name:<span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;bookName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">/&gt;&lt;br/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;添加书籍&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;hr/&gt;</span>
+
+<span class="nt">&lt;h3&gt;</span>rest风格的url<span class="w"> </span>删除书籍[delete]<span class="nt">&lt;/h3&gt;</span>
+<span class="k">&lt;%-</span><span class="o">-</span><span class="n">说明</span><span class="err">：</span>
+<span class="mf">1.</span><span class="n">在默认情况下</span><span class="err">，</span><span class="n">超链接是get请求</span>
+<span class="mf">2.</span><span class="n">要将get请求转成SpringMVC可以识别的delete</span><span class="err">，</span><span class="n">就要考虑HiddenHttpMethodFilter机制</span><span class="err">：</span>
+<span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">DEFAULT_METHOD_PARAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_method&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="o">-------------------------------------</span>
+<span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ALLOWED_METHODS</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="n">Collections</span><span class="p">.</span><span class="na">unmodifiableList</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">HttpMethod</span><span class="p">.</span><span class="na">PUT</span><span class="p">.</span><span class="na">name</span><span class="p">(),</span>
+<span class="w">          </span><span class="n">HttpMethod</span><span class="p">.</span><span class="na">DELETE</span><span class="p">.</span><span class="na">name</span><span class="p">(),</span><span class="w"> </span><span class="n">HttpMethod</span><span class="p">.</span><span class="na">PATCH</span><span class="p">.</span><span class="na">name</span><span class="p">()));</span>
+<span class="w">   </span><span class="o">-------------------------------------</span>
+<span class="w">   </span><span class="c1">//获取请求的方式，如果是post方式，就进行处理</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;POST&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">getMethod</span><span class="p">())</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="n">WebUtils</span><span class="p">.</span><span class="na">ERROR_EXCEPTION_ATTRIBUTE</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">String</span><span class="w"> </span><span class="n">paramValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">methodParam</span><span class="p">);</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">StringUtils</span><span class="p">.</span><span class="na">hasLength</span><span class="p">(</span><span class="n">paramValue</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paramValue</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">ENGLISH</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ALLOWED_METHODS</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">method</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="c1">//若指定method在ALLOWED_METHODS中存在</span>
+<span class="w">               </span><span class="c1">//进行包装，转换为springmvc可以解析的请求</span>
+<span class="w">                </span><span class="n">requestToUse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpMethodRequestWrapper</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="o">--------------------------------------</span>
+<span class="mf">3.</span><span class="n">从上述代码可以看到</span><span class="err">，</span><span class="n">HiddenHttpMethodFilter</span><span class="w"> </span><span class="n">过滤器可以对以</span>
+<span class="w">    </span><span class="n">Post方式提交的delete</span><span class="err">，</span><span class="n">put</span><span class="err">，</span><span class="n">patch转换成springmvc识别的RequestMethod</span><span class="p">.</span><span class="na">DElETE</span><span class="err">，</span><span class="n">RequestMethod</span><span class="p">.</span><span class="na">PUT</span><span class="p">...</span>
+<span class="mf">4.</span><span class="n">但是当前的超链接为</span><span class="w"> </span><span class="n">get请求</span><span class="err">，</span><span class="n">怎么将get请求转换成</span><span class="w"> </span><span class="n">post的请求方式呢</span><span class="err">？</span>
+<span class="mf">5.</span><span class="n">我们可以使用jquery来进行处理</span><span class="err">，</span><span class="n">让用户点击超链接的时候</span><span class="err">，</span><span class="n">走一个表单的请求</span>
+<span class="o">--</span><span class="k">%&gt;</span>
+<span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;user/book/600&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;deleteBook&quot;</span><span class="nt">&gt;</span>删除指定id的书籍<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;form</span><span class="w"> </span><span class="na">action=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;hiddenForm&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;hidden&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;_method&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;hr/&gt;</span>
+
+<span class="nt">&lt;h3&gt;</span>rest风格的url<span class="w"> </span>修改书籍[put]<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;form</span><span class="w"> </span><span class="na">action=</span><span class="s">&quot;user/book/666&quot;</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;updateBook&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;hidden&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;_method&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;修改书籍&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>BookHandle.java</p>
+</li>
+<li>
+<p>下面的代码中可以看到，许多方法的REST风格匹配的url是一样的，但是由于它们的请求方式不同，所以匹配到的方法不同。这也是rest风格的优点：不仅简化了url，而且隐藏了行为。</p>
+</li>
+<li>所以实际上SpringMVC的Controller层的url是可以相同的，会另外根据请求方式的不同来匹配方法</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.web.rest</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.*</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 用于处理rest风格的请求-crud</span>
+<span class="cm"> */</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/user&quot;</span><span class="p">)</span>
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">bookHandler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//查询[get]</span>
+<span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/book/{id}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RequestMethod</span><span class="p">.</span><span class="na">GET</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getBook</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;查询书籍 id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//添加[post]</span>
+<span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/book&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">bookName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//注意参数名字要和表单提交的参数名称一致</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;添加书籍 bookName=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bookName</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//删除[delete]</span>
+<span class="w">    </span><span class="nd">@DeleteMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/book/{id}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">delBook</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;删除书籍 id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">//return &quot;success&quot;;//这样写，返回会报错：HTTP Status 405 - JSPs only permit GET POST or HEAD</span>
+<span class="w">        </span><span class="c1">//redirect:/user/success 重定向，会被解析成 /web工程路径/user/success,然后返回给浏览器解析</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;redirect:/user/success&quot;</span><span class="p">;</span><span class="c1">//重定向到一个没有指定method的 Handler方法</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//如果请求是 /user/success,就转发到success.jsp</span>
+<span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/success&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">successGeneral</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">;</span><span class="c1">//该方法转发到success.jsp页面</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@PutMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/book/{id}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">updateBook</span><span class="p">(</span><span class="nd">@PathVariable</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;修改书籍 id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;redirect:/user/success&quot;</span><span class="p">;</span><span class="c1">//同理</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>success.jsp</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html;charset=UTF-8&quot;</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="k">%&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="w">    </span><span class="nt">&lt;title&gt;</span>操作成功<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>恭喜，操作成功！<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<ol>
+<li>测试，redeployTomcat，访问：<code>http://localhost:8080/springmvc/rest.jsp</code>，在分别点击四种提交方式，前端页面和后台输出如下：</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230205202322764.png" alt="image-20230205202322764" style="zoom:67%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230205203330172.png" alt="image-20230205203330172" style="zoom:67%;" /></p>
+<h4 id="223">2.2.3注意事项和使用细节<a class="headerlink" href="#223" title="Permanent link">&para;</a></h4>
+<ol>
+<li>HiddenHttpMethodFilter在将 post请求转成 delete/put请求时，是按照 <code>_method</code> 参数名来读取的</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230205203712186.png" alt="image-20230205203712186" style="zoom:60%;" /></p>
+<ol>
+<li>如果web项目是运行在 Tomcat8及以上，会发现被过滤成 DELETE和 PUT请求后，到达控制器Controller时能顺利执行，但是返回（forward）会报HTTP 405 提示：HTTP Status 405 - JSPs only permit GET POST or HEAD。意为JSP只允许GET POST 或 HEAD</li>
+</ol>
+<p>（1）解决方式1：使用Tomcat7</p>
+<p>（2）解决方式2：将请求转发（forward）改为重定向（redirect），重定向到一个Handler，由Handler转发到页面。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230205204252465.png" alt="image-20230205204252465" style="zoom:60%;" /></p>
+<ol>
+<li>页面测试时，如果出现点击修改书籍，仍然走的是删除url，可能是浏览器缓存等原因，换成Chrome即可。如果再不行，使用js修改表单的hidden的_method的值</li>
+</ol>
 
 
 
@@ -3754,13 +4168,13 @@ to <span class="nb">{</span>POST [/user/buy]<span class="nb">}</span>: There is 
         
         
           
-          <a href="../day02-REST%E5%92%8CSpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/" class="md-footer__link md-footer__link--next" aria-label="下一页: REST和SpringMVC映射请求数据" rel="next">
+          <a href="../day02-SpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/" class="md-footer__link md-footer__link--next" aria-label="下一页: SpringMVC映射请求数据" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                REST和SpringMVC映射请求数据
+                SpringMVC映射请求数据
               </div>
             </div>
             <div class="md-footer__button md-icon">
