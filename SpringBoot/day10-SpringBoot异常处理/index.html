@@ -1,0 +1,4771 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="liyuelian">
+      
+      
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/SpringBoot/day10-SpringBoot%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+      
+      
+        <link rel="prev" href="../day09-%E6%8B%A6%E6%88%AA%E5%99%A8%26%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+      
+      
+        <link rel="next" href="../day11-2-%E5%86%85%E7%BD%AETomcat%E9%85%8D%E7%BD%AE%E5%92%8C%E5%88%87%E6%8D%A2/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+    
+    
+      
+        <title>SpringBoot异常处理 - liyuelian的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#springboot" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="liyuelian的博客" class="md-header__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            liyuelian的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SpringBoot异常处理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      welcome
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-01/" class="md-tabs__link">
+        Git
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-tabs__link">
+        JavaSE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-tabs__link">
+        JavaWeb
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../MyBatis/day01-MyBatis%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%85%A5%E9%97%A8/" class="md-tabs__link">
+        MyBatis
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-tabs__link">
+        MySQL
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-tabs__link">
+        Spring
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../day01-1-SpringBoot%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link md-tabs__link--active">
+        SpringBoot
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../SpringMVC/day01-1-SpringMVC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        SpringMVC
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../The%20Missing%20Semester%20of%20CS/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-tabs__link">
+        The Missing Semester of CS
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-tabs__link">
+        前端技术栈
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-tabs__link">
+        杂记
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="liyuelian的博客" class="md-nav__button md-logo" aria-label="liyuelian的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    liyuelian的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/liyuelian/docs-wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs-wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-01/" class="md-nav__link">
+        Git入门-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%85%A5%E9%97%A8-02/" class="md-nav__link">
+        Git入门-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0-01/" class="md-nav__link">
+        Git原理学习01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0-02.md/" class="md-nav__link">
+        Git原理学习02-远程篇
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        Github基本使用
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day01-%E5%89%8D%E8%A8%80/" class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day02-Java%E5%85%A5%E9%97%A801/" class="md-nav__link">
+        JAVA入门01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day03-Java%E5%85%A5%E9%97%A802/" class="md-nav__link">
+        Java入门02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day04-Java%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        Java基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day05-Java%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        Java基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day06-Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="md-nav__link">
+        Java流程控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day07-Java%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        Java方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day08-Java%E6%95%B0%E7%BB%8401/" class="md-nav__link">
+        Java数组01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day09-Java%E6%95%B0%E7%BB%8402/" class="md-nav__link">
+        Java数组02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day10-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101/" class="md-nav__link">
+        面向对象01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day11-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102/" class="md-nav__link">
+        面向对象02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day12-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103/" class="md-nav__link">
+        面向对象03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day13-%E5%B8%B8%E7%94%A8%E7%B1%BB01/" class="md-nav__link">
+        Java常用类01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day14-%E5%B8%B8%E7%94%A8%E7%B1%BB02/" class="md-nav__link">
+        Java常用类02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day15-%E5%B8%B8%E7%94%A8%E7%B1%BB03/" class="md-nav__link">
+        Java常用类03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day16-%E5%B8%B8%E7%94%A8%E7%B1%BB04/" class="md-nav__link">
+        Java常用类04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day17-%E5%B8%B8%E7%94%A8%E7%B1%BB05/" class="md-nav__link">
+        Java常用类05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day18-%E9%9B%86%E5%90%8801/" class="md-nav__link">
+        Java集合01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day19-%E9%9B%86%E5%90%8802/" class="md-nav__link">
+        Java集合02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day20-%E9%9B%86%E5%90%8803/" class="md-nav__link">
+        Java集合03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day21-%E9%9B%86%E5%90%8804/" class="md-nav__link">
+        Java集合04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day22-%E9%9B%86%E5%90%8805/" class="md-nav__link">
+        Java集合05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day23-%E9%9B%86%E5%90%8806/" class="md-nav__link">
+        Java集合06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day24-%E9%9B%86%E5%90%8807/" class="md-nav__link">
+        Java集合07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day25-%E9%9B%86%E5%90%8808/" class="md-nav__link">
+        Java集合08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day26-%E9%9B%86%E5%90%8809/" class="md-nav__link">
+        Java集合09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day27-%E9%9B%86%E5%90%8810/" class="md-nav__link">
+        Java集合10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day28-%E6%B3%9B%E5%9E%8B01/" class="md-nav__link">
+        Java泛型01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day29-%E6%B3%9B%E5%9E%8B02/" class="md-nav__link">
+        Java泛型02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day30-%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        Java注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day31-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8001/" class="md-nav__link">
+        线程基础01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day32-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8002/" class="md-nav__link">
+        线程基础02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day33-%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%8003/" class="md-nav__link">
+        线程基础03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day34-IO%E6%B5%8101/" class="md-nav__link">
+        JavaIO流01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day35-IO%E6%B5%8102/" class="md-nav__link">
+        JavaOI流02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day36-IO%E6%B5%8103/" class="md-nav__link">
+        JavaIO流03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day37-IO%E6%B5%8104/" class="md-nav__link">
+        JavaIO流04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day38-IO%E6%B5%8105/" class="md-nav__link">
+        JavaIO流05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day39-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B01/" class="md-nav__link">
+        Java网络编程01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day40-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/" class="md-nav__link">
+        Java网络编程02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day41-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B03/" class="md-nav__link">
+        Java网络编程03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day42-%E5%8F%8D%E5%B0%8401/" class="md-nav__link">
+        Java反射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day43-%E5%8F%8D%E5%B0%8402/" class="md-nav__link">
+        Java反射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day44-%E5%8F%8D%E5%B0%8403/" class="md-nav__link">
+        Java反射03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day45-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A001/" class="md-nav__link">
+        JDBC和连接池01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day46-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A002/" class="md-nav__link">
+        JDBC和连接池02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day47-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A003/" class="md-nav__link">
+        JDBC和连接池03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-2-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day48-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A004/" class="md-nav__link">
+        JDBC和连接池04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day49-JDBC%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%B1%A005/" class="md-nav__link">
+        JDBC和连接池05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day50-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F01/" class="md-nav__link">
+        正则表达式01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day51-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F02/" class="md-nav__link">
+        正则表达式02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day52-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F03/" class="md-nav__link">
+        正则表达式03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaSE/day53-%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/" class="md-nav__link">
+        马踏棋盘
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day01-HTML01/" class="md-nav__link">
+        day01-HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day02-HTML02/" class="md-nav__link">
+        day02 HTML02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day03-CSS/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day04-JavaScript01/" class="md-nav__link">
+        JavaScript01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day05-JavaScript02/" class="md-nav__link">
+        JavaScript02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day06-JavaScript03/" class="md-nav__link">
+        JavaScript03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day07-JavaScript04/" class="md-nav__link">
+        JavaScript04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day08-XML/" class="md-nav__link">
+        XML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day09-Tomcat01/" class="md-nav__link">
+        Tomcat01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day10-Tomcat02/" class="md-nav__link">
+        Tomcat02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day11-Servlet01/" class="md-nav__link">
+        ==Servlet01==
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day12-Servlet02/" class="md-nav__link">
+        Servlet02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day13-Servlet03/" class="md-nav__link">
+        Servlet03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day14-HTTP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        HTTP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day15-Servlet04/" class="md-nav__link">
+        Servlet04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day16-Servlet05/" class="md-nav__link">
+        Servlet05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day17-Servlet06/" class="md-nav__link">
+        Servlet06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day18-web%E5%B7%A5%E7%A8%8B%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        web工程路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day19-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        WEB开发会话技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day20-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        WEB开发会话技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day21-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF03/" class="md-nav__link">
+        WEB开发会话技术03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day22-web%E5%BC%80%E5%8F%91%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF04/" class="md-nav__link">
+        WEB开发会话技术04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day23-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF01/" class="md-nav__link">
+        服务器端渲染技术01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day24-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%8A%80%E6%9C%AF02/" class="md-nav__link">
+        服务器端渲染技术02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day25-%E7%9B%91%E5%90%AC%E5%99%A8Listener/" class="md-nav__link">
+        Listener监听器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day26-%E8%BF%87%E6%BB%A4%E5%99%A8Filter01/" class="md-nav__link">
+        Filter过滤器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day27-%E8%BF%87%E6%BB%A4%E5%99%A8Filter02/" class="md-nav__link">
+        Filter过滤器02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day28-JQuery01/" class="md-nav__link">
+        jQuery01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day29-JQuery02/" class="md-nav__link">
+        JQuery02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day30-JQuery03/" class="md-nav__link">
+        JQuery03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day31-JQuery04/" class="md-nav__link">
+        JQuery04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day32-JQuery05/" class="md-nav__link">
+        jQuery05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day33-JSON%26Ajax01/" class="md-nav__link">
+        JSON&Ajax01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day34-JSON%26Ajax02/" class="md-nav__link">
+        JSON&Ajax02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day35-JSON%26Ajax03/" class="md-nav__link">
+        JSON&Ajax03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day36-ThreadLocal/" class="md-nav__link">
+        ThreadLocal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../JavaWeb/day37-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        文件上传下载
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          MyBatis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MyBatis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MyBatis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day01-MyBatis%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        MyBatis介绍与入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day02-%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0Mybatis%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-01/" class="md-nav__link">
+        自己实现Mybatis底层机制-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day03-%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0Mybatis%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-02/" class="md-nav__link">
+        自己实现Mybatis底层机制-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day04-%E5%8E%9F%E7%94%9F%E7%9A%84API%26%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        原生的API&注解方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day05-MyBatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%92%8CSQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        MyBatis配置文件和SQL映射文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day06-%E5%8A%A8%E6%80%81SQL%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        动态SQL语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day07-MyBatis%E7%9A%84%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84/" class="md-nav__link">
+        MyBatis的关联映射01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day08-MyBatis%E7%9A%84%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%8402/" class="md-nav__link">
+        MyBatis的关联映射02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MyBatis/day09-MyBatis%E7%BC%93%E5%AD%98/" class="md-nav__link">
+        MyBatis缓存
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MySQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day01-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        数据库的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day02-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/" class="md-nav__link">
+        MySQL基础知识01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day03-MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/" class="md-nav__link">
+        MySQL基础知识02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day04-MySQL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        MySQL常用函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day05-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        多表查询
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day06-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A202/" class="md-nav__link">
+        多表查询02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-1MySQL%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        MySQL约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day07-2MySQL%E7%B4%A2%E5%BC%95/" class="md-nav__link">
+        MySQL索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day08-%E4%BA%8B%E5%8A%A1/" class="md-nav__link">
+        MySQL事务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-1%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E/" class="md-nav__link">
+        存储引擎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day09-2%E8%A7%86%E5%9B%BE%E5%92%8C%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90/" class="md-nav__link">
+        视图和用户权限
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day10-%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        习题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MySQL/day11-Mysql%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        MySql存储结构
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Spring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Spring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Spring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day01-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D01/" class="md-nav__link">
+        Spring基本介绍01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day02-Spring%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D02/" class="md-nav__link">
+        Spring基本介绍02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day03-Spring%E7%AE%A1%E7%90%86Bean-IOC-01/" class="md-nav__link">
+        Spring管理Bean-IOC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day04-Spring%E7%AE%A1%E7%90%86Bean-IOC-02/" class="md-nav__link">
+        Spring管理Bean-IOC-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day05-Spring%E7%AE%A1%E7%90%86Bean-IOC-03/" class="md-nav__link">
+        Spring管理Bean-IOC-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day06-Spring%E7%AE%A1%E7%90%86Bean-IOC-04/" class="md-nav__link">
+        Spring管理Bean-IOC-04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day07-Spring%E7%AE%A1%E7%90%86Bean-IOC-05/" class="md-nav__link">
+        Spring管理Bean-IOC-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day08-AOP-01/" class="md-nav__link">
+        AOP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day09-AOP-02/" class="md-nav__link">
+        AOP-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day10-AOP-03/" class="md-nav__link">
+        AOP-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day11-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-01/" class="md-nav__link">
+        实现Spring底层机制-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day12-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-02/" class="md-nav__link">
+        实现Spring底层机制-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day13-%E5%AE%9E%E7%8E%B0Spring%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6-03/" class="md-nav__link">
+        实现Spring底层机制-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day14-JdbcTemplate/" class="md-nav__link">
+        JdbcTemplate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day15-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1-01/" class="md-nav__link">
+        声明式事务-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spring/day16-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1-02/" class="md-nav__link">
+        声明式事务-02
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="true">
+          SpringBoot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SpringBoot" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          SpringBoot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day01-1-SpringBoot%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        SpringBoot基本介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day01-2-%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%92%8C%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        依赖管理和自动配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day01-SpringBoot%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        SpringBoot基本介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day02-%E5%AE%B9%E5%99%A8%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        容器功能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day03-%E5%88%86%E6%9E%90SpringBoot%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        分析SpringBoot底层机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day04-%E5%AE%9E%E7%8E%B0SpringBoot%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        实现SpringBoot底层机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day05-1-Lombok%E5%92%8CSpring-Initializer/" class="md-nav__link">
+        Lombok、Spring-Initializer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day05-2-YAML/" class="md-nav__link">
+        yaml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day06-1-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE%26Rest%E9%A3%8E%E6%A0%BC/" class="md-nav__link">
+        SpringBoot之静态资源访问&REST风格请求
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day06-2-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        SpringBoot接收参数相关注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day06-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE%26Rest%E9%A3%8E%E6%A0%BC/" class="md-nav__link">
+        SpringBoot之静态资源访问&REST风格请求
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day07-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3/" class="md-nav__link">
+        SpringBoot接收参数相关注解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day08-1-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BD%AC%E6%8D%A2%E5%99%A8%26%E5%A4%84%E7%90%86JSON%26%E5%86%85%E5%AE%B9%E5%8D%8F%E5%95%86/" class="md-nav__link">
+        自定义转换器&处理JSON&内容协商
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day08-2-Thymeleaf/" class="md-nav__link">
+        服务器渲染技术-Thymeleaf
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day08-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BD%AC%E6%8D%A2%E5%99%A8%26%E5%A4%84%E7%90%86JSON%26%E5%86%85%E5%AE%B9%E5%8D%8F%E5%95%86/" class="md-nav__link">
+        自定义转换器&处理JSON&内容协商
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day09-%E6%8B%A6%E6%88%AA%E5%99%A8%26%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="md-nav__link">
+        拦截器&文件上传
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SpringBoot异常处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SpringBoot异常处理
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.基本介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.默认错误视图解析器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3vs" class="md-nav__link">
+    3.拦截器VS过滤器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.自定义异常页面
+  </a>
+  
+    <nav class="md-nav" aria-label="4.自定义异常页面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1自定义异常页面说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2应用实例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.全局异常处理
+  </a>
+  
+    <nav class="md-nav" aria-label="5.全局异常处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1全局异常说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-" class="md-nav__link">
+    5.2全局异常-应用实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3拓展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.自定义异常的处理
+  </a>
+  
+    <nav class="md-nav" aria-label="6.自定义异常的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1自定义异常说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-" class="md-nav__link">
+    6.2自定义异常-应用实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3注意事项和使用细节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day11-2-%E5%86%85%E7%BD%AETomcat%E9%85%8D%E7%BD%AE%E5%92%8C%E5%88%87%E6%8D%A2/" class="md-nav__link">
+        SpringBoot内置Tomcat的配置和切换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day11-%E6%B3%A8%E5%85%A5Servlet%26Filter%26Listener/" class="md-nav__link">
+        SpringBoot中注入Servlet&Filter&Listener
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day12-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        SpringBoot数据库操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day13-SpringBoot%E6%95%B4%E5%90%88MyBatisplus/" class="md-nav__link">
+        SpringBoot整合MyBatis/plus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
+          SpringMVC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SpringMVC" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          SpringMVC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day01-1-SpringMVC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        SpringMVC介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day01-2-RequestMapping%E5%92%8CRest/" class="md-nav__link">
+        RequestMapping和Rest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day02-SpringMVC%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        SpringMVC映射请求数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day03-%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        模型数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day04-%E8%A7%86%E5%9B%BE%E5%92%8C%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" class="md-nav__link">
+        视图和视图解析器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day05-SpringMVC%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0-01/" class="md-nav__link">
+        SpringMVC底层机制简单实现-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day06-SpringMVC%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0-02/" class="md-nav__link">
+        SpringMVC底层机制简单实现-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day07-SpringMVC%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0-03/" class="md-nav__link">
+        SpringMVC底层机制简单实现-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day08-SpringMVC%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0-04/" class="md-nav__link">
+        SpringMVC底层机制简单实现-04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day09-%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E5%8C%96%26%E9%AA%8C%E8%AF%81%E4%BB%A5%E5%8F%8A%E5%9B%BD%E9%99%85%E5%8C%96/" class="md-nav__link">
+        数据格式化&验证以及国际化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day10-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E5%A4%84%E7%90%86/" class="md-nav__link">
+        中文乱码处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day11-JSON%E5%A4%84%E7%90%86%E5%92%8CHttpMessageConverter/" class="md-nav__link">
+        JOSN处理和HttpMessageConverter< T>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day12-SpringMVC%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="md-nav__link">
+        SpringMVC文件上传
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day13-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8B%A6%E6%88%AA%E5%99%A8/" class="md-nav__link">
+        自定义拦截器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day14-SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="md-nav__link">
+        SpringMVC异常处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringMVC/day15-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/" class="md-nav__link">
+        SpringMVC执行流程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10" tabindex="0" aria-expanded="false">
+          The Missing Semester of CS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="The Missing Semester of CS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          The Missing Semester of CS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%20of%20CS/%E4%B8%BB%E9%A2%98%201%20The%20Shell/" class="md-nav__link">
+        主题 1 The Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%20of%20CS/%E4%B8%BB%E9%A2%98%202%20Shell%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        主题 2 Shell工具和脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The%20Missing%20Semester%20of%20CS/%E4%B8%BB%E9%A2%98%203%20%E7%BC%96%E8%BE%91%E5%99%A8%28Vim%29/" class="md-nav__link">
+        主题 3 编辑器(Vim)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_11" tabindex="0" aria-expanded="false">
+          前端技术栈
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前端技术栈" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          前端技术栈
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day01-ES6%E6%96%B0%E7%89%B9%E6%80%A7/" class="md-nav__link">
+        ES6新特性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day02-Promise/" class="md-nav__link">
+        Promise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day03-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        模块化编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day04-Vue01/" class="md-nav__link">
+        Vue01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day05-Vue02/" class="md-nav__link">
+        Vue02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day06-Vue03/" class="md-nav__link">
+        Vue03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day07-Vue04/" class="md-nav__link">
+        Vue04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%A0%88/day08-Axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_12" tabindex="0" aria-expanded="false">
+          杂记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          杂记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/MkDocs%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/" class="md-nav__link">
+        MkDocs搭建静态站点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E8%AE%B0/hexo%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+        Hexo博客搭建记录
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.基本介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.默认错误视图解析器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3vs" class="md-nav__link">
+    3.拦截器VS过滤器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.自定义异常页面
+  </a>
+  
+    <nav class="md-nav" aria-label="4.自定义异常页面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1自定义异常页面说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2应用实例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.全局异常处理
+  </a>
+  
+    <nav class="md-nav" aria-label="5.全局异常处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1全局异常说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-" class="md-nav__link">
+    5.2全局异常-应用实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3拓展
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.自定义异常的处理
+  </a>
+  
+    <nav class="md-nav" aria-label="6.自定义异常的处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1自定义异常说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-" class="md-nav__link">
+    6.2自定义异常-应用实例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3注意事项和使用细节
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+
+<h1 id="springboot">SpringBoot异常处理<a class="headerlink" href="#springboot" title="Permanent link">&para;</a></h1>
+<h2 id="1">1.基本介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>默认情况下，SpringBoot提供<code>/error</code>处理所有错误的映射，也就是说当出现错误时，SpringBoot底层会请求转发到<code>/error</code>这个映射路径所关联的页面或者控制器方法。<strong>（默认异常处理机制）</strong></p>
+<p>要验证这个点，我们只需要设置一个拦截器，当每次请求时都在preHandle()中打印请求URI。在浏览器访问不存在的路径映射时：</p>
+<ul>
+<li>浏览器：SpringBoot会响应一个"whitelabel"的错误视图，并以HTML格式呈现</li>
+</ul>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322161603841.png" alt="image-20230322161603841" style="zoom: 50%;" /></p>
+<ul>
+<li>服务器：后台输出请求的URI为</li>
+</ul>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322162917888.png" alt="image-20230322162917888" style="zoom:67%;" /></p>
+<ul>
+<li>整个过程：当浏览器访问不存在的路径映射时，就产生了错误。这时 SpringBoot（底层由默认错误视图解析器 DefaultErrorViewResolver **请求转发**到 <code>/error</code>路径关联的页面，该路径若没有被排除，也会经过拦截器处理）会立即去请求 <code>/error</code> 映射关联的资源（默认为"whitelabel" 错误视图），然后返回给浏览器，我们就看到了这个错误视图。</li>
+</ul>
+<h2 id="2">2.默认错误视图解析器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>在SpringBoot发现浏览器请求的路径不存在后，底层发生了一系列的操作：</p>
+<p>（1）当浏览器访问不存在的路径映射时，就产生了错误</p>
+<p>（2）底层由 DefaultErrorViewResolver （默认错误视图解析器）先去遍历项目中设置的所有静态资源路径，尝试从这些静态资源路径中找到<code>/error/404.html</code>文件</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322193146584.png" alt="image-20230322193146584" style="zoom:60%;" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1">//第一次执行resolve()方法：</span>
+<span class="c1">//这里的viewName就是状态码</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolve</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">viewName</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">errorViewName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;error/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">viewName</span><span class="p">;</span><span class="c1">//第一次：errorViewName=error/404</span>
+<span class="w">   </span><span class="n">TemplateAvailabilityProvider</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">templateAvailabilityProviders</span><span class="p">.</span><span class="na">getProvider</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">applicationContext</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">provider</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelAndView</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">resolveResource</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span><span class="c1">//进入resolveResource()方法</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>遍历项目中设置的所有静态资源路径，尝试从这些静态资源路径中找到<code>/error/404.html</code>文件</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//第一次执行resolveResource()方法</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolveResource</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">viewName</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">//resources.getStaticLocations()就是项目中的静态资源路径，根据你的设置而变化</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">resources</span><span class="p">.</span><span class="na">getStaticLocations</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">applicationContext</span><span class="p">.</span><span class="na">getResource</span><span class="p">(</span><span class="n">location</span><span class="p">);</span>
+<span class="w">         </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resource</span><span class="p">.</span><span class="na">createRelative</span><span class="p">(</span><span class="n">viewName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.html&quot;</span><span class="p">);</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resource</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">             </span><span class="c1">//如果找到了，就返回这个视图</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelAndView</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HtmlResourceView</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（3）如果找不到，退而求其次，再遍历项目中设置的所有静态资源路径，尝试从这些静态资源路径中找到<code>/error/4xx.html</code>文件</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolveErrorView</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpStatus</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//再一次调用resolve()方法</span>
+<span class="w">   </span><span class="n">ModelAndView</span><span class="w"> </span><span class="n">modelAndView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="na">value</span><span class="p">()),</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">modelAndView</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">SERIES_VIEWS</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="na">series</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">modelAndView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resolve</span><span class="p">(</span><span class="n">SERIES_VIEWS</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="na">series</span><span class="p">()),</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">modelAndView</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">//第二次执行resolve()方法：</span>
+<span class="c1">//这里的viewName就是状态码</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolve</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">viewName</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">errorViewName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;error/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">viewName</span><span class="p">;</span><span class="c1">//第二次：errorViewName=/error/4xx</span>
+<span class="w">   </span><span class="n">TemplateAvailabilityProvider</span><span class="w"> </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">templateAvailabilityProviders</span><span class="p">.</span><span class="na">getProvider</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">applicationContext</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">provider</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelAndView</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">resolveResource</span><span class="p">(</span><span class="n">errorViewName</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span><span class="c1">//进入resolveResource()方法</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>遍历项目中设置的所有静态资源路径，尝试从这些静态资源路径中找到<code>/error/4xx.html</code>文件</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//第二次执行resolveResource()方法</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolveResource</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">viewName</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//遍历项目中设置的所有静态资源路径</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">resources</span><span class="p">.</span><span class="na">getStaticLocations</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">applicationContext</span><span class="p">.</span><span class="na">getResource</span><span class="p">(</span><span class="n">location</span><span class="p">);</span>
+<span class="w">         </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resource</span><span class="p">.</span><span class="na">createRelative</span><span class="p">(</span><span class="n">viewName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.html&quot;</span><span class="p">);</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resource</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">             </span><span class="c1">//如果找到了就返回</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelAndView</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HtmlResourceView</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>示例：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322171113119.png" alt="image-20230322171113119" style="zoom:55%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322171215459.png" alt="image-20230322171215459" style="zoom:55%;" /></p>
+<p>（4）以上两轮都找不到匹配的视图，就执行下面的方法（位于AbstractErrorController.java）：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">protected</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">resolveErrorView</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">HttpStatus</span><span class="w"> </span><span class="n">status</span><span class="p">,</span>
+<span class="w">      </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ErrorViewResolver</span><span class="w"> </span><span class="n">resolver</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">errorViewResolvers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">ModelAndView</span><span class="w"> </span><span class="n">modelAndView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resolver</span><span class="p">.</span><span class="na">resolveErrorView</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">modelAndView</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">modelAndView</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果以上方法仍然返回null，然后去BasicErrorController.java里执行如下方法：</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">produces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaType</span><span class="p">.</span><span class="na">TEXT_HTML_VALUE</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="nf">errorHtml</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">HttpStatus</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getStatus</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="w">   </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span>
+<span class="w">         </span><span class="p">.</span><span class="na">unmodifiableMap</span><span class="p">(</span><span class="n">getErrorAttributes</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">getErrorAttributeOptions</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">MediaType</span><span class="p">.</span><span class="na">TEXT_HTML</span><span class="p">)));</span>
+<span class="w">   </span><span class="n">response</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="na">value</span><span class="p">());</span>
+<span class="w">   </span><span class="n">ModelAndView</span><span class="w"> </span><span class="n">modelAndView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resolveErrorView</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//modelAndView为null，产生一个默认的新的视图，并返回</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">modelAndView</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">modelAndView</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelAndView</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322172239527.png" alt="image-20230322172239527" style="zoom:67%;" /></p>
+<p>（5）此时浏览器接收到的视图就是这个默认的视图</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322172410912.png" alt="image-20230322172410912" style="zoom:55%;" /></p>
+<h2 id="3vs">3.拦截器VS过滤器<a class="headerlink" href="#3vs" title="Permanent link">&para;</a></h2>
+<ol>
+<li>使用范围不同</li>
+</ol>
+<p>（1）过滤器实现的是javax.servlet.Filter接口，而这个接口是在Servlet规范中定义的，也就是说过滤器Filter的使用依赖于Tomcat等容器，Filter只能在web程序中使用</p>
+<p>（2）拦截器是一个Spring组件，由Spring容器管理，并不依赖Tomcat等容器，是可以单独使用的。它不仅能应用在web程序中，也能用于Application等程序中。</p>
+<ol>
+<li>两者的触发时机也不同</li>
+</ol>
+<p>（1）过滤器Filter在请求进入容器后，在进入Servlet之前进行预处理。请求结束则是在servlet处理完以后。</p>
+<p>（2）拦截器Interceptor是在请求进入Servlet之后（即DispatcherServlet，前端控制器），在进入Controller之前进行预处理的，Controller中渲染了对应的视图之后请求结束。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322173641992.png" alt="image-20230322173641992" style="zoom:60%;" /></p>
+<ol>
+<li><strong>过滤器不会处理请求转发，拦截器会处理请求转发（前提是拦截器没有放行此请求）</strong>。原因是过滤器处理的是容器接收过来的外部请求，而请求转发是服务器内部，Servlet之间的处理。但拦截器是Spring的一个组件，依然会去处理请求转发，除非请求转发的路径被拦截器放行了。</li>
+</ol>
+<blockquote>
+<p>例子演示1--过滤器与拦截器的执行顺序</p>
+</blockquote>
+<p>我们分别在SpringBoot项目中配置一个过滤器和拦截器，测试它们的执行顺序</p>
+<p>（1）创建过滤器</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.filter</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Component</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Component</span>
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">FilterConfig</span><span class="w"> </span><span class="n">filterConfig</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyFilter的init()被调用...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doFilter</span><span class="p">(</span><span class="n">ServletRequest</span><span class="w"> </span><span class="n">servletRequest</span><span class="p">,</span><span class="w"> </span><span class="n">ServletResponse</span><span class="w"> </span><span class="n">servletResponse</span><span class="p">,</span><span class="w"> </span><span class="n">FilterChain</span><span class="w"> </span><span class="n">filterChain</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyFilter的doFilter()被调用...&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">filterChain</span><span class="p">.</span><span class="na">doFilter</span><span class="p">(</span><span class="n">servletRequest</span><span class="p">,</span><span class="w"> </span><span class="n">servletResponse</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyFilter的destroy()被调用...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（2）创建拦截器</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.interceptor</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.servlet.HandlerInterceptor</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.servlet.ModelAndView</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.HttpServletRequest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.HttpServletResponse</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyInterceptor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">HandlerInterceptor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">preHandle</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyInterceptor的preHandle()被执行...&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postHandle</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">,</span><span class="w"> </span><span class="n">ModelAndView</span><span class="w"> </span><span class="n">modelAndView</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyInterceptor的postHandle()被执行...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterCompletion</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">handler</span><span class="p">,</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;MyInterceptor的afterCompletion()被执行...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在配置类中注册拦截器，注入到spring容器中</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.config</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.li.thymeleaf.interceptor.MyInterceptor</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Configuration</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.servlet.config.annotation.InterceptorRegistry</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Configuration</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WebConfig</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">WebMvcConfigurer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addInterceptors</span><span class="p">(</span><span class="n">InterceptorRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//addInterceptor注册自定义拦截器</span>
+<span class="w">        </span><span class="c1">//addPathPatterns指定拦截器规则（拦截所有请求/**）</span>
+<span class="w">        </span><span class="n">registry</span><span class="p">.</span><span class="na">addInterceptor</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyInterceptor</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="na">addPathPatterns</span><span class="p">(</span><span class="s">&quot;/**&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（3）浏览器请求某一个资源，后台输出如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322175749679.png" alt="image-20230322175749679" style="zoom:67%;" /></p>
+<blockquote>
+<p>例子演示2--过滤器不会处理请求转发，拦截器会处理请求转发</p>
+</blockquote>
+<p>我们在浏览器请求一个不存在的资源如<code>http://localhost:8080/xxx</code>，后台输出如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322181445614.png" alt="image-20230322181445614" style="zoom:67%;" /></p>
+<p>这是因为SpringBoot底层处理了<code>/error</code>，进行了请求转发（默认错误视图解析器请求转发到 <code>/error</code>路径关联的页面）。而过滤器不会处理请求转发，因此可以看到途中只有拦截器被调用了两次。过滤器只在外部请求资源<code>/xxx</code>的时候被调用了一次。</p>
+<h2 id="4">4.自定义异常页面<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1自定义异常页面说明<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.spring.io/spring-boot/docs/3.0.4/reference/htmlsingle/#web.reactive.webflux.error-handling">Spring Boot Reference Documentation</a></p>
+<p>如果要显示给定状态代码的自定义 HTML 错误页，可以将文件添加到目录中。 错误页面可以是静态 HTML（即，添加到任何静态资源目录下），也可以是使用模板构建的。 文件名应为确切的状态代码或系列掩码。<code>/error</code></p>
+<p>例如，要映射到静态 HTML 文件，目录结构如下所示：<code>404</code></p>
+<div class="highlight"><pre><span></span><code>src/
+<span class="w"> </span>+-<span class="w"> </span>main/
+<span class="w">     </span>+-<span class="w"> </span>java/
+<span class="w">     </span><span class="p">|</span><span class="w">   </span>+<span class="w"> </span>&lt;<span class="nb">source</span><span class="w"> </span>code&gt;
+<span class="w">     </span>+-<span class="w"> </span>resources/
+<span class="w">         </span>+-<span class="w"> </span>public/
+<span class="w">             </span>+-<span class="w"> </span>error/
+<span class="w">             </span><span class="p">|</span><span class="w">   </span>+-<span class="w"> </span><span class="m">404</span>.html
+<span class="w">             </span>+-<span class="w"> </span>&lt;other<span class="w"> </span>public<span class="w"> </span>assets&gt;
+</code></pre></div>
+<p>要使用 Mustache 模板映射所有错误，目录结构如下所示：<code>5xx</code></p>
+<div class="highlight"><pre><span></span><code>src/
+<span class="w"> </span>+-<span class="w"> </span>main/
+<span class="w">     </span>+-<span class="w"> </span>java/
+<span class="w">     </span><span class="p">|</span><span class="w">   </span>+<span class="w"> </span>&lt;<span class="nb">source</span><span class="w"> </span>code&gt;
+<span class="w">     </span>+-<span class="w"> </span>resources/
+<span class="w">         </span>+-<span class="w"> </span>templates/
+<span class="w">             </span>+-<span class="w"> </span>error/
+<span class="w">             </span><span class="p">|</span><span class="w">   </span>+-<span class="w"> </span>5xx.mustache
+<span class="w">             </span>+-<span class="w"> </span>&lt;other<span class="w"> </span>templates&gt;
+</code></pre></div>
+<ol>
+<li><strong>如果发生了404错误，优先匹配 404.html，如果没有，则匹配 4xx.html，再没有则使用默认方式显示错误</strong></li>
+<li><strong>500.html 和 5xx.html 是一样的逻辑</strong></li>
+</ol>
+<h3 id="42">4.2应用实例<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>需求：自定义404.html、500.html、4xx.html、5xx.html，当发生相应错误时，显示自定义的页面信息。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322184316442.png" alt="image-20230322184316442" style="zoom:67%;" /></p>
+<p>（1）4xx.html，使用thymeleaf标签取出状态码和错误信息，其他页面同理</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>4xx<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;#cedafe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>4xx.html :)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    状态码：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${status}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    错误信息：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${error}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>（2）5xx.html</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>5xx<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;#cedafe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>5xx.html :(<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    状态码：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${status}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    错误信息：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${error}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>（3）404.html</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>404<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;#cedafe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>404 Not Found~~<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    状态码：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${status}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    错误信息：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${error}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>（4）500.html</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>500<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;#cedafe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>500 服务器内部发生错误 :(<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    状态码：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${status}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    错误信息：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${error}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>（5）模拟500和405错误</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.controller</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.stereotype.Controller</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.PostMapping</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Controller</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyErrorController</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//模拟一个服务器内部错误500</span>
+<span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;/abc&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">abc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;manage&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//如果get方式请求此路径，会产生405的客户端错误</span>
+<span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/xyz&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">xyz</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;manage&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（6）浏览器访问不存在的资源时，显示的是404.html。因为发生错误时首先会在静态资源目录中按照：404.html&rarr;4xx.html的顺序寻找视图。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322190651578.png" alt="image-20230322190651578" style="zoom:67%;" /></p>
+<p>（7）服务器内部错误-500错误：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322192005789.png" alt="image-20230322192005789" style="zoom: 55%;" /></p>
+<p>（8）如果出现出现的是4开头的错误，就会返回4xx.html</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322192030282.png" alt="image-20230322192030282" style="zoom:55%;" /></p>
+<h2 id="5">5.全局异常处理<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1全局异常说明<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>在 Java 程序发生异常时，可以通过全局异常来捕获处理异常。</p>
+<p>在 SpringBoot 中通过 @ControllerAdvice（修饰的类即为全局异常处理器）加上@ExceptionHandler（修饰方法）处理全局异常，它的底层由 ExceptionHandlerExceptionResolver 类支撑。</p>
+<ul>
+<li>默认异常处理机制，是通过不同的状态码（status），确定要返回的页面</li>
+<li>而全局异常的处理，则是根据 Java异常种类，来显式指定返回的错误页面</li>
+<li><strong>全局异常处理优先级 &gt; 默认异常处理优先级</strong></li>
+</ul>
+<h3 id="52-">5.2全局异常-应用实例<a class="headerlink" href="#52-" title="Permanent link">&para;</a></h3>
+<p>需求：演示全局异常使用，当发生类似 ArithmeticException、NullPointException 时，不使用默认异常机制（通过状态码）匹配的 xxx.html，而是通过全局异常机制显式指定的错误页面。</p>
+<p>（1）创建全局异常处理器 GlobalExceptionHandler.java</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.exception</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">lombok.extern.slf4j.Slf4j</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.ui.Model</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.ControllerAdvice</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.ExceptionHandler</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@ControllerAdvice</span><span class="w"> </span><span class="c1">//标识一个全局异常处理器/对象，标识的类将会被注入到spring容器中</span>
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GlobalExceptionHandler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * 编写方法，处理指定异常（这里要处理的异常由你指定）</span>
+<span class="cm">     * @param e     表示发生异常后传递的异常对象</span>
+<span class="cm">     * @param model 将异常信息放入model，传递给下一个页面</span>
+<span class="cm">     * @return</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@ExceptionHandler</span><span class="p">({</span><span class="n">ArithmeticException</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">NullPointerException</span><span class="p">.</span><span class="na">class</span><span class="p">})</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleException</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">Model</span><span class="w"> </span><span class="n">model</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;异常信息={}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">//model的数据会自动放入request域中</span>
+<span class="w">        </span><span class="n">model</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;msg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;/error/global&quot;</span><span class="p">;</span><span class="c1">//指定转发到global.html</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（2）global.html</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&quot;http://www.thymeleaf.org&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>全局异常<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;#cedafe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align: center&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>发生了全局异常/错误 :(<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    错误信息：<span class="p">&lt;</span><span class="nt">h1</span> <span class="na">th:text</span><span class="o">=</span><span class="s">&quot;${msg}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>（3）模拟一个500错误</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322201755011.png" alt="image-20230322201755011" style="zoom:67%;" /></p>
+<p>（4）浏览器访问，可以看到显示的是global.html而不是500.html，因为全局异常处理的优先级高于默认异常处理</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322201845096.png" alt="image-20230322201845096" style="zoom:60%;" /></p>
+<h3 id="53">5.3拓展<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p>全局异常的两个注解是通过 ExceptionHandlerExceptionResolver 类来支撑的，该类有一个重要方法：doResolveHandlerMethodException()</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322211516908.png" alt="image-20230322211516908" style="zoom:67%;" /></p>
+<p>执行上述方法时，会获取异常发生的方法以及发生的异常。并在返回的模型和视图类也会带有这两个数据，我们可以根据这两个信息进行日志输出，在异常发生时可以迅速定位处理异常：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322212318719.png" alt="image-20230322212318719" style="zoom:67%;" /></p>
+<p>日志输出：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322212424110.png" alt="image-20230322212424110" style="zoom:67%;" /></p>
+<h2 id="6">6.自定义异常的处理<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1自定义异常说明<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>如果SpringBoot提供的异常不能满足开发需求，我们也可以自定义异常。</p>
+</li>
+<li>
+<p>自定义异常处理（若采用默认的处理机制） = 自定义异常类 + @ResponseStatus</p>
+</li>
+</ol>
+<p>@ResponseStatus 底层是 <code>ResponseStatusExceptionResolve</code>，底层调用 <code>response.sendError(statusCode,resolvedReason);</code></p>
+<ol>
+<li>自定义异常的处理方式：</li>
+<li>当抛出自定义异常时，仍然会根据状态码，去匹配使用 xxx.html 显示（默认的异常处理机制）。</li>
+<li>或者将自定义异常类，放在你创建的全局异常处理器中进行处理（全局异常处理机制）</li>
+</ol>
+<h3 id="62-">6.2自定义异常-应用实例<a class="headerlink" href="#62-" title="Permanent link">&para;</a></h3>
+<p>需求：自定义一个异常类 AccessException，当用户访问某个无权访问的路径时，抛出该异常，显示自定义异常的状态码。</p>
+<p>（1）自定义异常类：AccessException.java</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.exception</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.http.HttpStatus</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.web.bind.annotation.ResponseStatus</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 自定义的异常类</span>
+<span class="cm"> * （1）如果继承Exception，属于编译异常</span>
+<span class="cm"> * （2）如果继承RuntimeException，属于运行异常（一般来说都是继承RuntimeException）</span>
+<span class="cm"> * （3）@ResponseStatus(value = HttpStatus.FORBIDDEN)</span>
+<span class="cm"> *      指定发生此异常时，通过http协议返回的的状态码（403-Forbidden）</span>
+<span class="cm"> */</span>
+<span class="nd">@ResponseStatus</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpStatus</span><span class="p">.</span><span class="na">FORBIDDEN</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AccessException</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">RuntimeException</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">AccessException</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//提供一个构造器，可以指定信息</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">AccessException</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（2）在Controller中模拟发生异常</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//模拟发生 AccessException</span>
+<span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;/errTest&quot;</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="s">&quot;tom&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccessException</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;manage&quot;</span><span class="p">;</span><span class="c1">//视图地址</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>（3）4xx.html（略）</p>
+<p>（4）浏览器访问<code>localhost:8080/errTest?name=jack</code>，返回的页面如下：</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322215629460.png" alt="image-20230322215629460" style="zoom:55%;" /></p>
+<p>因为返回的状态码为403，根据默认的异常处理机制，这里会寻找4xx.html页面返回给浏览器。如果是全局异常处理机制的话就会走全局异常处理的流程。</p>
+<h3 id="63">6.3注意事项和使用细节<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>如果把自定义异常类放在全局异常处理器，<strong>因为全局异常处理优先级高</strong>，因此会走全局异常的处理机制。</p>
+<p>比如在上一个例子中，添加如下代码：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.thymeleaf.exception</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">...</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> * 全局异常处理器</span>
+<span class="cm"> */</span>
+<span class="nd">@ControllerAdvice</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GlobalExceptionHandler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@ExceptionHandler</span><span class="p">({</span><span class="n">AccessException</span><span class="p">.</span><span class="na">class</span><span class="p">})</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">handleException</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">Model</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="n">HandlerMethod</span><span class="w"> </span><span class="n">handlerMethod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;出现异常的方法={}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">handlerMethod</span><span class="p">.</span><span class="na">getMethod</span><span class="p">());</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;异常信息={}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">//model的数据会自动放入request域中</span>
+<span class="w">        </span><span class="n">model</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="s">&quot;msg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;/error/global&quot;</span><span class="p">;</span><span class="c1">//指定转发到global.html</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>浏览器访问<code>localhost:8080/errTest?name=jack</code>，返回的页面如下：（global.html）</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230322220956500.png" alt="image-20230322220956500" style="zoom:67%;" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../day09-%E6%8B%A6%E6%88%AA%E5%99%A8%26%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 拦截器&amp;文件上传" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                拦截器&文件上传
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../day11-2-%E5%86%85%E7%BD%AETomcat%E9%85%8D%E7%BD%AE%E5%92%8C%E5%88%87%E6%8D%A2/" class="md-footer__link md-footer__link--next" aria-label="下一页: SpringBoot内置Tomcat的配置和切换" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                SpringBoot内置Tomcat的配置和切换
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/liyuelian" target="_blank" rel="noopener noreferrer">liyuelian</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/liyuelian/docs-wiki/" target="_blank" rel="noopener" title="GitHub | Li-Yue-Lian" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>
