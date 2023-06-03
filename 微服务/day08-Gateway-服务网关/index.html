@@ -10,13 +10,13 @@
         <meta name="author" content="liyuelian">
       
       
-        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/%E5%BE%AE%E6%9C%8D%E5%8A%A1/day07-2-Gateway-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/">
+        <link rel="canonical" href="https://liyuelian.github.io/docs-wiki/%E5%BE%AE%E6%9C%8D%E5%8A%A1/day08-Gateway-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/">
       
       
-        <link rel="prev" href="../day06-Ribbon-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+        <link rel="prev" href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">
       
       
-        <link rel="next" href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/">
+        <link rel="next" href="../day09-Sleuth%2BZipkin-%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
@@ -398,7 +398,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../day01-SpringCloud%26SpringCloud%20Alibaba%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link md-tabs__link--active">
+      <a href="../day01-SpringCloud%26Cloud%20Alibaba%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-tabs__link md-tabs__link--active">
         微服务
       </a>
     </li>
@@ -3904,6 +3904,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_13" tabindex="0" aria-expanded="true">
@@ -3924,7 +3926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../day01-SpringCloud%26SpringCloud%20Alibaba%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../day01-SpringCloud%26Cloud%20Alibaba%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         SpringCloud&SpringCloud Alibaba基本介绍
       </a>
     </li>
@@ -3996,6 +3998,20 @@
     <li class="md-nav__item">
       <a href="../day06-Ribbon-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" class="md-nav__link">
         SpringCloud Ribbon-负载均衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" class="md-nav__link">
+        SpringCloud OpenFeign-服务调用
       </a>
     </li>
   
@@ -4099,7 +4115,7 @@
         
           <li class="md-nav__item">
   <a href="#21gateway" class="md-nav__link">
-    2.1Gateway核心组件
+    2.1Gateway核心组件（路由、断言、过滤）
   </a>
   
 </li>
@@ -4146,6 +4162,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    3.1.3测试
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4153,7 +4176,7 @@
         
           <li class="md-nav__item">
   <a href="#32gateway" class="md-nav__link">
-    3.2二说Gateway路由配置
+    3.2Gateway路由配置方式
   </a>
   
 </li>
@@ -4162,6 +4185,170 @@
   <a href="#33" class="md-nav__link">
     3.3动态路由
   </a>
+  
+    <nav class="md-nav" aria-label="3.3动态路由">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    3.3.1需求分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    3.3.2代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    3.3.3注意事项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34predicate" class="md-nav__link">
+    3.4Predicate/断言
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4Predicate/断言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342factories" class="md-nav__link">
+    3.4.2内置断言Factories
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.2内置断言Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1after-factory" class="md-nav__link">
+    1.After 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2before-factory" class="md-nav__link">
+    2.Before 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3between-factory" class="md-nav__link">
+    3.Between 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4cookie-factory" class="md-nav__link">
+    4.Cookie 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5header-factory" class="md-nav__link">
+    5.Header  路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6host-factory" class="md-nav__link">
+    6.Host 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7method-factory" class="md-nav__link">
+    7.Method 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8path-factory" class="md-nav__link">
+    8.Path 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9query-factory" class="md-nav__link">
+    9.Query 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10remoteaddr-factory" class="md-nav__link">
+    10.RemoteAddr 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11weightfactory" class="md-nav__link">
+    11.Weight路由断言Factory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35filter" class="md-nav__link">
+    3.5Filter/过滤器
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5Filter/过滤器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351gatewayfilter" class="md-nav__link">
+    3.5.1网关过滤器GatewayFilter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352globalfilter" class="md-nav__link">
+    3.5.2全局过滤器GlobalFilter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4185,8 +4372,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" class="md-nav__link">
-        SpringCloud OpenFeign-服务调用
+      <a href="../day09-Sleuth%2BZipkin-%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/" class="md-nav__link">
+        SpringCloud Sleuth+Zipkin-链路追踪
       </a>
     </li>
   
@@ -4354,7 +4541,7 @@
         
           <li class="md-nav__item">
   <a href="#21gateway" class="md-nav__link">
-    2.1Gateway核心组件
+    2.1Gateway核心组件（路由、断言、过滤）
   </a>
   
 </li>
@@ -4401,6 +4588,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    3.1.3测试
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4408,7 +4602,7 @@
         
           <li class="md-nav__item">
   <a href="#32gateway" class="md-nav__link">
-    3.2二说Gateway路由配置
+    3.2Gateway路由配置方式
   </a>
   
 </li>
@@ -4417,6 +4611,170 @@
   <a href="#33" class="md-nav__link">
     3.3动态路由
   </a>
+  
+    <nav class="md-nav" aria-label="3.3动态路由">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    3.3.1需求分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    3.3.2代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    3.3.3注意事项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34predicate" class="md-nav__link">
+    3.4Predicate/断言
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4Predicate/断言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342factories" class="md-nav__link">
+    3.4.2内置断言Factories
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.2内置断言Factories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1after-factory" class="md-nav__link">
+    1.After 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2before-factory" class="md-nav__link">
+    2.Before 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3between-factory" class="md-nav__link">
+    3.Between 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4cookie-factory" class="md-nav__link">
+    4.Cookie 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5header-factory" class="md-nav__link">
+    5.Header  路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6host-factory" class="md-nav__link">
+    6.Host 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7method-factory" class="md-nav__link">
+    7.Method 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8path-factory" class="md-nav__link">
+    8.Path 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9query-factory" class="md-nav__link">
+    9.Query 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10remoteaddr-factory" class="md-nav__link">
+    10.RemoteAddr 路由断言 Factory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11weightfactory" class="md-nav__link">
+    11.Weight路由断言Factory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35filter" class="md-nav__link">
+    3.5Filter/过滤器
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5Filter/过滤器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351gatewayfilter" class="md-nav__link">
+    3.5.1网关过滤器GatewayFilter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352globalfilter" class="md-nav__link">
+    3.5.2全局过滤器GlobalFilter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4490,7 +4848,7 @@
 <li>支持路径重写</li>
 </ul>
 <h2 id="2gateway">2.Gateway基本原理<a class="headerlink" href="#2gateway" title="Permanent link">&para;</a></h2>
-<h3 id="21gateway">2.1Gateway核心组件<a class="headerlink" href="#21gateway" title="Permanent link">&para;</a></h3>
+<h3 id="21gateway">2.1Gateway核心组件（路由、断言、过滤）<a class="headerlink" href="#21gateway" title="Permanent link">&para;</a></h3>
 <p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/2192446-20230411193538718-967236747.png" alt="image-20230411192608392" style="zoom:67%;" /></p>
 <ul>
 <li>Route（路由）</li>
@@ -4508,14 +4866,14 @@
 </ul>
 <p>一句话：使用过滤器，可以在请求被路由前或者之后对请求进行处理。可以理解为，在对Http请求断言匹配成功之后，可以通过网关的过滤机制，对Http请求处理</p>
 <p>简单举例：</p>
-<div class="highlight"><pre><span></span><code><span class="nl">filters</span><span class="p">:</span>
-<span class="w">  </span><span class="n">AddRequestParameter</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">blue</span><span class="w"> </span>
-<span class="w">  </span><span class="c1">//过滤器在匹配的请求头加上一对请求头,名称为color,值为 blue, 比如原来的 http 请求为</span>
-<span class="w">  </span><span class="c1">//http://localhost:10000/member/get/1 </span>
-<span class="w">  </span><span class="c1">//==过滤器处理后==&gt;http://localhost:10000/member/get/1?color=blue</span>
+<div class="highlight"><pre><span></span><code>filters:
+  AddRequestParameter=color,blue 
+  #过滤器在匹配的请求头加上一对请求头,名称为color,值为 blue, 比如原来的 http 请求为
+  #http://localhost:10000/member/get/1 
+  #--过滤器处理后-&gt;http://localhost:10000/member/get/1?color=blue
 </code></pre></div>
 <h3 id="22">2.2工作机制<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/2192446-20230411194113387-961020059.png" alt="Spring Cloud Gateway Diagram" style="zoom:67%;" /></p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/2192446-20230411194113387-961020059.png" alt="Spring Cloud Gateway Diagram" style="zoom: 80%;" /></p>
 <p>说明：</p>
 <ol>
 <li>客户端向 Spring Cloud Gateway 发出请求。然后在 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。</li>
@@ -4536,10 +4894,512 @@
 <li>网关本身也是一个微服务模块</li>
 </ul>
 <h4 id="312">3.1.2代码实现<a class="headerlink" href="#312" title="Permanent link">&para;</a></h4>
-<p>（1）参照之前的消费方member-service-consumer-80，创建e-commerce-gateway-20000</p>
-<p>（2）修改pom.xml</p>
-<h3 id="32gateway">3.2二说Gateway路由配置<a class="headerlink" href="#32gateway" title="Permanent link">&para;</a></h3>
+<p>（1）参照之前的消费方member-service-consumer-80，创建e-commerce-gateway-20000项目</p>
+<p>（2）修改项目的pom.xml文件</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--引入相关的依赖，版本都使用父项目声明的版本--&gt;</span>
+<span class="nt">&lt;dependencies&gt;</span>
+<span class="w">    </span><span class="cm">&lt;!--引入Gateway starter，网关场景启动器--&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-gateway<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!--引入EurekaClient场景启动器starter--&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.springframework.cloud<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!--不要引入springboot-starter-web和springboot-starter-actuator，</span>
+<span class="cm">    因为Gateway是网关服务，不需要web--&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!--lombok--&gt;</span>
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>com.li.springcloud<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>e_commerce_center_common-api<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div>
+<p>（3）配置项目的application.yml文件</p>
+<p>当有用户发送请求到网关Gateway，如 <a href="http://localhost:20000/member/get/1">http://localhost:20000/member/get/1</a>，前面 <a href="http://localhost:20000">http://localhost:20000</a> 是网关的ip地址，后面的 /member/get/** 是你配置的某一个路由地址的断言predicates，Gateway根据配置的uri（服务提供方的uri），将uri和对应path拼接，得到真正的服务提供方地址。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602120436378.png" alt="image-20230602120436378" style="zoom:60%;" /></p>
+<p>如果网关匹配不到对应的断言，则给客户端返回404</p>
+<div class="highlight"><pre><span></span><code>server:
+  port: 20000
+
+spring:
+  application:
+    name: e-commerce-gateway
+  cloud:
+    gateway:
+      routes: #配置路由，可以配置多个
+        - id: member_router01 #路由id，要求唯一
+          #gateway 最终访问的url=uri+path, uri可以是任意的地址如 http://www.baidu.com
+          #这里的uri是虽然固定的，在真正开发情况下，是到Eureka Server等去发现uri的
+          uri: http://localhost:10000 #服务提供方的接口
+          predicates: #断言，可以有多种形式
+            - Path=/member/get/**
+        - id: member_router02
+          uri: http://localhost:10000
+          predicates:
+            - Path=/member/save
+
+#配置EurekaClient
+eureka:
+  instance:
+    hostname: e-commerce-service
+  client:
+    register-with-eureka: true #将自己注册到EurekaServer
+    #表示从EurekaServer抓取注册信息
+    fetch-registry: true
+    service-url:
+      #表示将自己注册到哪个EurekaServer
+      defaultZone: http://eureka9001.com:9001/eureka
+</code></pre></div>
+<p>（4）配置主启动类</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.springcloud</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.SpringApplication</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.cloud.netflix.eureka.EnableEurekaClient</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableEurekaClient</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GateWayApplication20000</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">GateWayApplication20000</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="313">3.1.3测试<a class="headerlink" href="#313" title="Permanent link">&para;</a></h4>
+<ol>
+<li>顺序启动 e-commerce-eureka-server-9001，e-commerce-service-provider-10000，e-commerce-gateway-20000</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602122520548.png" alt="image-20230602122520548" style="zoom: 80%;" /></p>
+<ol>
+<li>通过浏览器（网关访问）访问 <a href="http://localhost:20000/member/get/1">http://localhost:20000/member/get/1</a>，访问成功，说明网关gateway正常运行。</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602122613529.png" alt="image-20230602122613529" style="zoom:67%;" /></p>
+<ol>
+<li>如果访问的uri不匹配，则返回404提示</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602122751803.png" alt="image-20230602122751803" style="zoom:67%;" /></p>
+<ol>
+<li>用postman进行测试</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602123452181.png" alt="image-20230602123452181" style="zoom:67%;" /></p>
+<h3 id="32gateway">3.2Gateway路由配置方式<a class="headerlink" href="#32gateway" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>通过application.yml文件配置（上述例子）</p>
+</li>
+<li>
+<p>通过编写配置类注入：</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GateWayRoutesConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Bean</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">RouteLocator</span><span class="w"> </span><span class="nf">myRouteLocatior03</span><span class="p">(</span><span class="n">RouteLocatorBuilder</span><span class="w"> </span><span class="n">routeLocatorBuilder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">RouteLocatorBuilder</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">routes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">routeLocatorBuilder</span><span class="p">.</span><span class="na">routes</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">//分别指定id，path，uri</span>
+<span class="w">        </span><span class="c1">// 其中第二个参数是一个函数式接口（lambda），接收类型是PredicateSpec, 返回类型 Route.AsyncBuilder</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">routes</span><span class="p">.</span><span class="na">route</span><span class="p">(</span>
+<span class="w">                </span><span class="s">&quot;member_router03&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">r</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">path</span><span class="p">(</span><span class="s">&quot;/member/get/**&quot;</span><span class="p">).</span><span class="na">uri</span><span class="p">(</span><span class="s">&quot;http://localhost:10000&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>两种方式选择一种即可，最好不要混用。</p>
+<blockquote>
+<p>关于lambda表达式的使用，例子：</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Function</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LambdaTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//第一种形式</span>
+<span class="w">        </span><span class="c1">//Dog dog = hi(&quot;小花&quot;, (String str) -&gt; {//这里其实就是实现apply接口</span>
+<span class="w">        </span><span class="c1">//    Cat cat = new Cat();</span>
+<span class="w">        </span><span class="c1">//    cat.setName(str);</span>
+<span class="w">        </span><span class="c1">//    return cat;</span>
+<span class="w">        </span><span class="c1">//});</span>
+
+<span class="w">        </span><span class="c1">//第二种形式，简写</span>
+<span class="w">        </span><span class="c1">//Dog dog = hi(&quot;小花&quot;, str -&gt; {//这里的str不指定类型也可以，因为hi方法已经指定了</span>
+<span class="w">        </span><span class="c1">//    Cat cat = new Cat();</span>
+<span class="w">        </span><span class="c1">//    cat.setName(str);</span>
+<span class="w">        </span><span class="c1">//    return cat;</span>
+<span class="w">        </span><span class="c1">//});</span>
+
+<span class="w">        </span><span class="c1">//第二种形式简写后：</span>
+<span class="w">        </span><span class="c1">//Dog dog = hi(&quot;小花&quot;, str -&gt; {</span>
+<span class="w">        </span><span class="c1">//    return new Cat(str);</span>
+<span class="w">        </span><span class="c1">//});</span>
+
+<span class="w">        </span><span class="c1">//对上面的lambda表达式再进行简写</span>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="s">&quot;小花&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Dog</span><span class="w"> </span><span class="nf">hi</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Cat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Cat</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fn</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="w">        </span><span class="n">dog</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;~修改为小狗名&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dog</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Cat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Dog{&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="s">&quot;name=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602134820634.png" alt="image-20230602134820634" style="zoom: 80%;" /></p>
 <h3 id="33">3.3动态路由<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<h4 id="331">3.3.1需求分析<a class="headerlink" href="#331" title="Permanent link">&para;</a></h4>
+<p>上面的例子中，配置的服务提供方的uri是写死的，实际上，gateway可以实现动态路由，自动切换到不同的服务接口。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602140230693.png" alt="image-20230602140230693" style="zoom: 67%;" /></p>
+<h4 id="332">3.3.2代码实现<a class="headerlink" href="#332" title="Permanent link">&para;</a></h4>
+<ol>
+<li>修改网关微服务的application.yml文件配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>spring:
+  application:
+    name: e-commerce-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #启用DiscoveryClient服务发现
+      routes: #配置路由，可以配置多个
+        - id: member_router01 #路由id，要求唯一
+          #gateway 最终访问的url=uri+path, uri可以是任意的地址如 http://www.baidu.com
+          #这里的uri是虽然固定的，在真正开发情况下，是到Eureka Server等去发现uri的
+          #uri: http://localhost:10000 #服务提供方的接口
+          # lb是协议名，member-service-provider 是服务提供方在注册中心的名称，要求小写
+          # 默认情况下负载均衡算法为 轮询
+          uri: lb://member-service-provider
+          predicates: #断言，可以有多种形式
+            - Path=/member/get/**
+        - id: member_router02
+          #uri: http://localhost:10000
+          uri: lb://member-service-provider
+          predicates:
+            - Path=/member/save
+</code></pre></div>
+<ol>
+<li>重新顺序启动 e-commerce-eureka-server-9001，e-commerce-service-provider-10000，e-commerce-service-provider-10002，e-commerce-gateway-20000</li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602141916788.png" alt="image-20230602141916788" style="zoom:67%;" /></p>
+<ol>
+<li>通过浏览器（网关访问）多次访问 <a href="http://localhost:20000/member/get/5">http://localhost:20000/member/get/5</a></li>
+</ol>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602141753440.png" alt="image-20230602141753440" style="zoom:67%;" /> <img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/image-20230602141830374.png" alt="image-20230602141830374" style="zoom:67%;" /></p>
+<p>访问成功，说明网关gateway正常运行，并且负载均衡算法默认为轮询。</p>
+<h4 id="333">3.3.3注意事项<a class="headerlink" href="#333" title="Permanent link">&para;</a></h4>
+<p>配置好动态路由之后，Gateway会根据注册中心上的微服务名，为请求创建动态路由，实现动态路由功能，使用的lb协议支持负载均衡-轮询算法。</p>
+<p>也可以使用javaconfig方式，配置注入自定义负载均衡算法：</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RibbonRule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Bean</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IRule</span><span class="w"> </span><span class="nf">myRibbonRule</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RandomRule</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ribbon常见负载算法：</p>
+<table>
+<thead>
+<tr>
+<th>策略名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BestAvailableRule</td>
+<td>选择一个最小并发请求的server。逐个考察server，如果server被tripped（跳闸）了，则忽略，再选择其中ActiveRequestsCount最小的Server</td>
+</tr>
+<tr>
+<td>AvailabilityFilteringRule</td>
+<td>过滤掉那些因为一直连接失败的被标记为circuit tripped的后端server，并过滤掉那些高并发的后端server（active connections超过配置的阈值）</td>
+</tr>
+<tr>
+<td>WeightedResponseTimeRule</td>
+<td>根据响应时间分配一个weight，响应时间越长，weight越小，被选中的可能性越低</td>
+</tr>
+<tr>
+<td>RetryRule</td>
+<td>对选定的负载均衡策略机上重试机制。在一个配置时间段内当选择Server不成功，则一直尝试使用subRule的方式选择一个可用的server</td>
+</tr>
+<tr>
+<td>RoundRobbinRule</td>
+<td>轮询index，选择index对应位置的server</td>
+</tr>
+<tr>
+<td>RandomRule</td>
+<td>随机选择一个server，在index上随机，选择index对应位置的server</td>
+</tr>
+<tr>
+<td>ZoneAvoidanceRule</td>
+<td>复合判断server所在区域的性能和server的可用性，来选择server</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34predicate">3.4Predicate/断言<a class="headerlink" href="#34predicate" title="Permanent link">&para;</a></h3>
+<h4 id="341">3.4.1介绍<a class="headerlink" href="#341" title="Permanent link">&para;</a></h4>
+<p><a href="https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-request-predicates-factories">gateway-request-predicates-factories</a></p>
+<p>Predicate就是一组匹配规则，当请求匹配成功，就执行对应的Route，匹配失败则放弃处理/转发。</p>
+<p>Spring Cloud Gateway 包括许多内置的Route Predicate工厂, 所有这些Predicate都与HTTP请求的不同属性匹配，可以组合使用。</p>
+<p>Spring Cloud Gateway 创建 Route 对象时，使用RoutePredicateFactory 创建 Predicate 对象，Predicate 对象可以赋值给Route。</p>
+<p>所有这些谓词（判断标准）都匹配HTTP请求的不同属性。多种谓词工厂可以组合。</p>
+<h4 id="342factories">3.4.2内置断言Factories<a class="headerlink" href="#342factories" title="Permanent link">&para;</a></h4>
+<p><a href="https://cloud.tencent.com/developer/article/1403887">Spring Cloud Gateway 2.1.0 中文官网文档-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p><a href="https://blog.csdn.net/weixin_43852058/article/details/110704665">12.gateway中的断言（predicate）的使用：内置断言介绍、自定义断言_gateway predicates_秀聚的博客-CSDN博客</a></p>
+<h5 id="1after-factory"><strong>1.After 路由断言 Factory</strong><a class="headerlink" href="#1after-factory" title="Permanent link">&para;</a></h5>
+<p>After Route Predicate Factory采用一个参数——日期时间。在该日期时间之后发生的请求都将被匹配</p>
+<p>例子：</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: http://example.org
+        predicates:
+        - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+</code></pre></div>
+<blockquote>
+<p>时间格式按照ZoneDateTime.now的格式</p>
+</blockquote>
+<h5 id="2before-factory">2.Before 路由断言 Factory<a class="headerlink" href="#2before-factory" title="Permanent link">&para;</a></h5>
+<p>Before Route Predicate Factory采用一个参数——日期时间。在该日期时间之前发生的请求都将被匹配。</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: http://example.org
+        predicates:
+        - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+</code></pre></div>
+<h5 id="3between-factory">3.Between 路由断言 Factory<a class="headerlink" href="#3between-factory" title="Permanent link">&para;</a></h5>
+<p>Between 路由断言 Factory有两个参数，datetime1和datetime2。在datetime1和datetime2之间的请求将被匹配。</p>
+<p>datetime2参数的实际时间必须在datetime1之后。</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: between_route
+        uri: http://example.org
+        predicates:
+        - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+</code></pre></div>
+<h5 id="4cookie-factory">4.Cookie 路由断言 Factory<a class="headerlink" href="#4cookie-factory" title="Permanent link">&para;</a></h5>
+<p>Cookie 路由断言 Factory有两个参数：cookie名称和正则表达式。请求包含cookie名称，且正则表达式为真的将会被匹配</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: cookie_route
+        uri: http://example.org
+        predicates:
+        - Cookie=chocolate, ch.p
+</code></pre></div>
+<p>chocolate 是 cookie 名字；ch.p 是 cookie 的值，支持正则表达式</p>
+<h5 id="5header-factory">5.Header  路由断言 Factory<a class="headerlink" href="#5header-factory" title="Permanent link">&para;</a></h5>
+<p>Header 路由断言 Factory有两个参数，header名称和正则表达式。请求包含次header名称且正则表达式为真的将会被匹配</p>
+<div class="highlight"><pre><span></span><code>spring:
+ cloud:
+   gateway:
+     routes:
+     - id: header_route
+       uri: http://example.org
+       predicates:
+       - Header=X-Request-Id, \d+
+</code></pre></div>
+<p>X-Request-Id 是 header 的名称, \d+ 是一个正则表达式</p>
+<h5 id="6host-factory">6.Host 路由断言 Factory<a class="headerlink" href="#6host-factory" title="Permanent link">&para;</a></h5>
+<p>Host 路由断言 Factory 包括一个参数：host name列表。使用Ant路径匹配规则，Host 可以有多个, 使用逗号间隔。</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: host_route
+        uri: http://example.org
+        predicates:
+        - Host=**.somehost.org,**.anotherhost.org
+</code></pre></div>
+<h5 id="7method-factory">7.Method 路由断言 Factory<a class="headerlink" href="#7method-factory" title="Permanent link">&para;</a></h5>
+<p>Method 路由断言 Factory只包含一个参数: 需要匹配的HTTP请求方式（GET或者POST方式）</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: method_route
+        uri: http://example.org
+        predicates:
+        - Method=GET
+</code></pre></div>
+<h5 id="8path-factory">8.Path 路由断言 Factory<a class="headerlink" href="#8path-factory" title="Permanent link">&para;</a></h5>
+<p>Path 路由断言 Factory 有2个参数：一个Spring <code>PathMatcher</code>表达式列表和可选<code>matchOptionalTrailingSeparator</code>标识 </p>
+<p>Path 可以有多个, 使用逗号间隔</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: host_route
+        uri: http://example.org
+        predicates:
+        - Path=/foo/{segment},/bar/{segment}
+</code></pre></div>
+<h5 id="9query-factory">9.Query 路由断言 Factory<a class="headerlink" href="#9query-factory" title="Permanent link">&para;</a></h5>
+<p>Query 路由断言 Factory 有2个参数: 必选项 <code>param</code> 和可选项 <code>regexp</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">spring</span><span class="o">:</span>
+<span class="w">  </span><span class="nx">cloud</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">gateway</span><span class="o">:</span>
+<span class="w">      </span><span class="nx">routes</span><span class="o">:</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">query_route</span>
+<span class="w">        </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="nx">http</span><span class="o">:</span><span class="c1">//example.org</span>
+<span class="w">        </span><span class="nx">predicates</span><span class="o">:</span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="nx">Query</span><span class="o">=</span><span class="nx">email</span>
+</code></pre></div>
+<p>上面表示包含了请求参数 email 的都将被匹配。</p>
+<div class="highlight"><pre><span></span><code><span class="nx">spring</span><span class="o">:</span>
+<span class="w">  </span><span class="nx">cloud</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">gateway</span><span class="o">:</span>
+<span class="w">      </span><span class="nx">routes</span><span class="o">:</span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">query_route</span>
+<span class="w">        </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="nx">http</span><span class="o">:</span><span class="c1">//example.org</span>
+<span class="w">        </span><span class="nx">predicates</span><span class="o">:</span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="nx">Query</span><span class="o">=</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="err">\</span><span class="nx">d</span><span class="p">]</span><span class="o">+</span>
+</code></pre></div>
+<p>上面表示，如果请求参数里包含email参数，并且值要匹配数字且至少有一个数字，则将会被路由</p>
+<h5 id="10remoteaddr-factory">10.RemoteAddr 路由断言 Factory<a class="headerlink" href="#10remoteaddr-factory" title="Permanent link">&para;</a></h5>
+<p>RemoteAddr 路由断言 Factory的参数为 一个CIDR符号（IPv4或IPv6）字符串的列表，最小值为1，例如192.168.0.1/16（其中192.168.0.1是IP地址并且16是子网掩码）</p>
+<div class="highlight"><pre><span></span><code>spring:
+  cloud:
+    gateway:
+      routes:
+      - id: remoteaddr_route
+        uri: http://example.org
+        predicates:
+        - RemoteAddr=192.168.1.1/24
+</code></pre></div>
+<p>如上，若请求的remote address 为 <code>192.168.1.10</code>，则会被路由</p>
+<blockquote>
+<p>注意：这里的remote address不是服务方的地址，而是调用端（客户端）的地址。</p>
+</blockquote>
+<h5 id="11weightfactory">11.Weight路由断言Factory<a class="headerlink" href="#11weightfactory" title="Permanent link">&para;</a></h5>
+<p>WeightRoutePredicateFactory：接收一个 <strong>[组名,权重]</strong> 然后对于**同一个组**内的路由按照权重转发</p>
+<div class="highlight"><pre><span></span><code>gateway:
+  routes:
+  - id: weight_high
+    uri: https://weighthigh.org
+    predicates:
+      - Weight=group1, 8
+  - id: weight_low
+    uri: https://weighlow.org
+    predicates:
+      - Weight= group1, 2
+</code></pre></div>
+<p>将会把80%的流量转发到weighthigh，将20%的流量转发到weighlow</p>
+<h3 id="35filter">3.5Filter/过滤器<a class="headerlink" href="#35filter" title="Permanent link">&para;</a></h3>
+<p><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.1.RELEASE/reference/html/#gatewayfilter-factories">gatewayfilter-factories</a></p>
+<p><a href="https://blog.csdn.net/zouliping123456/article/details/116128179">Spring Cloud : Gateway 网关过滤器 GatewayFilter</a></p>
+<p>Spring Cloud Gateway 内置了多种路由过滤器，他们都由GatewayFilter的工厂类来产生。Gateway 根据作用范围划分为 GatewayFilter 和 GlobalFilter，区别如下：</p>
+<p><strong>1.GatewayFilter</strong>：网关过滤器，需要通过 spring.cloud.routes.filters 配置在具体路由下，只作用在当前路由上或通过 spring.cloud.default-filters 配置在全局，作用在所有路由上。</p>
+<p><strong>2.GlobalFilter</strong>：全局过滤器，不需要在配置文件中配置，作用在所有的路由上，最终通过GatewayFilterAdapter 包装成 GatewayFilterChain 可识别的过滤器，它为请求业务以及路由的 URI 转换为真实业务服务请求地址的核心过滤器，不需要配置系统初始化时加载，并作用在每个路由上。</p>
+<h4 id="351gatewayfilter">3.5.1网关过滤器GatewayFilter<a class="headerlink" href="#351gatewayfilter" title="Permanent link">&para;</a></h4>
+<p>网关过滤器用于拦截并链式处理 Web 请求，可以实现横切与应用无关的需求，比如：安全、访问超时的设置等。修改传入的 HTTP 请求或传出 HTTP 响应。</p>
+<p>Spring Cloud Gateway 包含许多内置的网关过滤器工厂，一共有 22 个，包括头部过滤器、 路径类过滤器、Hystrix 过滤器和重写请求 URL 的过滤器， 还有参数和状态码等其他类型的过滤器。</p>
+<p>根据过滤器工厂的用途来划分，可以分为以下几种：Header、Parameter、Path、Body、Status、Session、Redirect、Retry、RateLimiter 和 Hystrix。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/8c0b631debdd61384900aaa60fab41c3.png" alt="/resources/articles/spring/spring-cloud/gateway/20181202154250869.png" style="zoom: 50%;" /></p>
+<p>请求参数过滤器-例子：</p>
+<div class="highlight"><pre><span></span><code>filters:
+    AddRequestParameter=color,blue 
+    #过滤器在匹配的请求头加上一对请求头,名称为color,值为 blue
+    #比如原来的 http 请求为 http://localhost:10000/member/get/1 
+    #--过滤器处理后-&gt;http://localhost:10000/member/get/1?color=blue
+</code></pre></div>
+<h4 id="352globalfilter">3.5.2全局过滤器GlobalFilter<a class="headerlink" href="#352globalfilter" title="Permanent link">&para;</a></h4>
+<p>全局过滤器不需要在配置文件中配置，作用在所有的路由上，最终通过 GatewayFilterAdapter 包装成 GatewayFilterChain 可识别的过滤器，它是请求业务以及路由的 URI 转换为真实业务服务请求地址的核心过滤器，不需要配置系统初始化时加载，并作用在每个路由上。</p>
+<p><img src="https://liyuelian.oss-cn-shenzhen.aliyuncs.com/imgs/1091c47096d3f63ddb93e3ccd265aa01.png" alt="/resources/articles/spring/spring-cloud/gateway/920071-20190929104112590-1124234164.png"  /></p>
+<p>自定义GlobalFilter需要实现两个接口 ：<code>GatewayFilter</code>，<code>Ordered</code></p>
+<blockquote>
+<p>例子</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.li.springcloud.filter</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">...</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @author 李</span>
+<span class="cm"> * @version 1.0</span>
+<span class="cm"> */</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomGatewayFilter</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">GlobalFilter</span><span class="p">,</span><span class="w"> </span><span class="n">Ordered</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//filter方法中编写业务</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">ServerWebExchange</span><span class="w"> </span><span class="n">exchange</span><span class="p">,</span><span class="w"> </span><span class="n">GatewayFilterChain</span><span class="w"> </span><span class="n">chain</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//自定义网关过滤器...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">exchange</span><span class="p">);</span><span class="c1">// 继续向下执行</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//order 表示该过滤器执行的顺序，数字越小，优先级越高.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getOrder</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -4566,7 +5426,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../day06-Ribbon-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SpringCloud Ribbon-负载均衡" rel="prev">
+          <a href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SpringCloud OpenFeign-服务调用" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -4575,20 +5435,20 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                SpringCloud Ribbon-负载均衡
+                SpringCloud OpenFeign-服务调用
               </div>
             </div>
           </a>
         
         
           
-          <a href="../day07-OpenFeign-%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" class="md-footer__link md-footer__link--next" aria-label="下一页: SpringCloud OpenFeign-服务调用" rel="next">
+          <a href="../day09-Sleuth%2BZipkin-%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/" class="md-footer__link md-footer__link--next" aria-label="下一页: SpringCloud Sleuth+Zipkin-链路追踪" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                SpringCloud OpenFeign-服务调用
+                SpringCloud Sleuth+Zipkin-链路追踪
               </div>
             </div>
             <div class="md-footer__button md-icon">
